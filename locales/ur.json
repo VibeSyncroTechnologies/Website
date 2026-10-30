@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "language": "ur",
+    "coverage": "Core navigation, picker, CTA, quiz and theme labels; remaining copy falls back to English."
+  },
+  "languageLabel": "زبان منتخب کریں",
+  "languageSearch": "زبانیں تلاش کریں",
+  "navHome": "صفحۂ اول",
+  "navAbout": "ہمارے بارے میں",
+  "navProducts": "مصنوعات",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "تحقیق",
+  "navContact": "رابطہ",
+  "heroExplore": "ہماری ایپس دیکھیں",
+  "heroAbout": "VibeSyncro دریافت کریں",
+  "quizTitle": "آپ کے لیے کون سی ایپ موزوں ہے؟",
+  "quizOpen": "Google Play پر ایپ دیکھیں",
+  "themeChoose": "بصری تھیم منتخب کریں",
+  "themeSecure": "سائبر تحفظ",
+  "themePrivacy": "رازداری کی وضاحت",
+  "themeSafety": "محفوظ گرم جوشی",
+  "footerCompany": "کمپنی",
+  "footerPrivacy": "رازداری کی پالیسی",
+  "footerTerms": "سروس کی شرائط",
+  "footerRights": "جملہ حقوق محفوظ ہیں"
+}

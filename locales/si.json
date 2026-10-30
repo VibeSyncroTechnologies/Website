@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "language": "si",
+    "coverage": "Core navigation, picker, CTA, quiz and theme labels; remaining copy falls back to English."
+  },
+  "languageLabel": "භාෂාව තෝරන්න",
+  "languageSearch": "භාෂා සොයන්න",
+  "navHome": "මුල් පිටුව",
+  "navAbout": "අප ගැන",
+  "navProducts": "නිෂ්පාදන",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "පර්යේෂණ",
+  "navContact": "අමතන්න",
+  "heroExplore": "අපගේ යෙදුම් බලන්න",
+  "heroAbout": "VibeSyncro හඳුනාගන්න",
+  "quizTitle": "ඔබට ගැළපෙන යෙදුම කුමක්ද?",
+  "quizOpen": "Google Play හි යෙදුම බලන්න",
+  "themeChoose": "දෘශ්‍ය තේමාව තෝරන්න",
+  "themeSecure": "සයිබර් ආරක්ෂාව",
+  "themePrivacy": "පෞද්ගලිකත්වයේ පැහැදිලිභාවය",
+  "themeSafety": "ආරක්ෂිත උණුසුම",
+  "footerCompany": "සමාගම",
+  "footerPrivacy": "පෞද්ගලිකත්ව ප්‍රතිපත්තිය",
+  "footerTerms": "සේවා කොන්දේසි",
+  "footerRights": "සියලු හිමිකම් ඇවිරිණි"
+}

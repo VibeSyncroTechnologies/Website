@@ -1,9 +1,26 @@
 {
-  "skip": "ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ",
+  "_meta": {
+    "language": "kn",
+    "coverage": "Core navigation, picker, CTA, quiz and theme labels; remaining copy falls back to English."
+  },
+  "languageLabel": "ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+  "languageSearch": "ಭಾಷೆಗಳನ್ನು ಹುಡುಕಿ",
   "navHome": "ಮುಖಪುಟ",
   "navAbout": "ನಮ್ಮ ಬಗ್ಗೆ",
-  "navProducts": "ಉತ್ಪನ್ನಗಳು ಮತ್ತು ಆ್ಯಪ್‌ಗಳು",
-  "navSafeMobile": "ಸೇಫ್‌ಮೊಬೈಲ್",
-  "navResearch": "AI ಮತ್ತು ಭದ್ರತಾ ಸಂಶೋಧನೆ",
-  "navContact": "ಸಂಪರ್ಕ"
+  "navProducts": "ಉತ್ಪನ್ನಗಳು",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "ಸಂಶೋಧನೆ",
+  "navContact": "ಸಂಪರ್ಕ",
+  "heroExplore": "ನಮ್ಮ ಆ್ಯಪ್‌ಗಳನ್ನು ಅನ್ವೇಷಿಸಿ",
+  "heroAbout": "VibeSyncro ಬಗ್ಗೆ ತಿಳಿಯಿರಿ",
+  "quizTitle": "ನಿಮಗೆ ಯಾವ ಆ್ಯಪ್ ಸೂಕ್ತ?",
+  "quizOpen": "Google Play ನಲ್ಲಿ ಆ್ಯಪ್ ನೋಡಿ",
+  "themeChoose": "ದೃಶ್ಯ ಥೀಮ್ ಆಯ್ಕೆಮಾಡಿ",
+  "themeSecure": "ಸೈಬರ್ ಸುರಕ್ಷತೆ",
+  "themePrivacy": "ಗೌಪ್ಯತೆಯ ಸ್ಪಷ್ಟತೆ",
+  "themeSafety": "ಸುರಕ್ಷಿತ ಉಷ್ಣತೆ",
+  "footerCompany": "ಕಂಪನಿ",
+  "footerPrivacy": "ಗೌಪ್ಯತಾ ನೀತಿ",
+  "footerTerms": "ಸೇವಾ ನಿಯಮಗಳು",
+  "footerRights": "ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ"
 }

@@ -1,9 +1,26 @@
 {
-  "skip": "முக்கிய உள்ளடக்கத்திற்குச் செல்லவும்",
+  "_meta": {
+    "language": "ta",
+    "coverage": "Core navigation, picker, CTA, quiz and theme labels; remaining copy falls back to English."
+  },
+  "languageLabel": "மொழியைத் தேர்ந்தெடுக்கவும்",
+  "languageSearch": "மொழிகளைத் தேடுங்கள்",
   "navHome": "முகப்பு",
   "navAbout": "எங்களைப் பற்றி",
-  "navProducts": "தயாரிப்புகள் & செயலிகள்",
-  "navSafeMobile": "சேஃப்மொபைல்",
-  "navResearch": "AI & பாதுகாப்பு ஆராய்ச்சி",
-  "navContact": "தொடர்பு"
+  "navProducts": "தயாரிப்புகள்",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "ஆராய்ச்சி",
+  "navContact": "தொடர்பு",
+  "heroExplore": "எங்கள் செயலிகளைப் பாருங்கள்",
+  "heroAbout": "VibeSyncro-வை அறியுங்கள்",
+  "quizTitle": "உங்களுக்கு ஏற்ற செயலி எது?",
+  "quizOpen": "Google Play-இல் செயலியைப் பாருங்கள்",
+  "themeChoose": "காட்சி தீமையைத் தேர்ந்தெடுக்கவும்",
+  "themeSecure": "சைபர் பாதுகாப்பு",
+  "themePrivacy": "தனியுரிமை தெளிவு",
+  "themeSafety": "பாதுகாப்பான வெப்பம்",
+  "footerCompany": "நிறுவனம்",
+  "footerPrivacy": "தனியுரிமைக் கொள்கை",
+  "footerTerms": "சேவை விதிமுறைகள்",
+  "footerRights": "அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை"
 }

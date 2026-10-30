@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "language": "ml",
+    "coverage": "Core navigation, picker, CTA, quiz and theme labels; remaining copy falls back to English."
+  },
+  "languageLabel": "ഭാഷ തിരഞ്ഞെടുക്കുക",
+  "languageSearch": "ഭാഷകൾ തിരയുക",
+  "navHome": "ഹോം",
+  "navAbout": "ഞങ്ങളെക്കുറിച്ച്",
+  "navProducts": "ഉൽപ്പന്നങ്ങൾ",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "ഗവേഷണം",
+  "navContact": "ബന്ധപ്പെടുക",
+  "heroExplore": "ഞങ്ങളുടെ ആപ്പുകൾ കാണുക",
+  "heroAbout": "VibeSyncroയെ അറിയുക",
+  "quizTitle": "നിങ്ങൾക്ക് അനുയോജ്യമായ ആപ്പ് ഏത്?",
+  "quizOpen": "Google Play-ൽ ആപ്പ് കാണുക",
+  "themeChoose": "ദൃശ്യ തീം തിരഞ്ഞെടുക്കുക",
+  "themeSecure": "സൈബർ സുരക്ഷ",
+  "themePrivacy": "സ്വകാര്യതയുടെ വ്യക്തത",
+  "themeSafety": "സുരക്ഷിതമായ ഊഷ്മളത",
+  "footerCompany": "കമ്പനി",
+  "footerPrivacy": "സ്വകാര്യതാ നയം",
+  "footerTerms": "സേവന നിബന്ധനകൾ",
+  "footerRights": "എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം"
+}

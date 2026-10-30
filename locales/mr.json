@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "language": "mr",
+    "coverage": "Core navigation, picker, CTA, quiz and theme labels; remaining copy falls back to English."
+  },
+  "languageLabel": "भाषा निवडा",
+  "languageSearch": "भाषा शोधा",
+  "navHome": "मुख्यपृष्ठ",
+  "navAbout": "आमच्याबद्दल",
+  "navProducts": "उत्पादने",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "संशोधन",
+  "navContact": "संपर्क",
+  "heroExplore": "आमची अॅप्स पाहा",
+  "heroAbout": "VibeSyncro जाणून घ्या",
+  "quizTitle": "तुमच्यासाठी कोणते अॅप योग्य आहे?",
+  "quizOpen": "Google Play वर अॅप पहा",
+  "themeChoose": "दृश्य थीम निवडा",
+  "themeSecure": "सायबर सुरक्षितता",
+  "themePrivacy": "गोपनीयतेची स्पष्टता",
+  "themeSafety": "सुरक्षित उबदारपणा",
+  "footerCompany": "कंपनी",
+  "footerPrivacy": "गोपनीयता धोरण",
+  "footerTerms": "सेवा अटी",
+  "footerRights": "सर्व हक्क राखीव"
+}

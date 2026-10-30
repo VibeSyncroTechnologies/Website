@@ -1,9 +1,26 @@
 {
-  "skip": "ప్రధాన విషయానికి వెళ్లండి",
+  "_meta": {
+    "language": "te",
+    "coverage": "Core navigation, picker, CTA, quiz and theme labels; remaining copy falls back to English."
+  },
+  "languageLabel": "భాషను ఎంచుకోండి",
+  "languageSearch": "భాషలను వెతకండి",
   "navHome": "హోమ్",
   "navAbout": "మా గురించి",
-  "navProducts": "ఉత్పత్తులు & యాప్‌లు",
-  "navSafeMobile": "సేఫ్‌మొబైల్",
-  "navResearch": "AI & భద్రత పరిశోధన",
-  "navContact": "సంప్రదించండి"
+  "navProducts": "ఉత్పత్తులు",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "పరిశోధన",
+  "navContact": "సంప్రదించండి",
+  "heroExplore": "మా యాప్‌లను చూడండి",
+  "heroAbout": "VibeSyncro గురించి తెలుసుకోండి",
+  "quizTitle": "మీకు సరిపోయే యాప్ ఏది?",
+  "quizOpen": "Google Playలో యాప్‌ను చూడండి",
+  "themeChoose": "దృశ్య థీమ్‌ను ఎంచుకోండి",
+  "themeSecure": "సైబర్ సురక్షితం",
+  "themePrivacy": "గోప్యత స్పష్టత",
+  "themeSafety": "భద్రతా సౌకర్యం",
+  "footerCompany": "కంపెనీ",
+  "footerPrivacy": "గోప్యతా విధానం",
+  "footerTerms": "సేవా నిబంధనలు",
+  "footerRights": "అన్ని హక్కులు ప్రత్యేకించబడ్డాయి"
 }

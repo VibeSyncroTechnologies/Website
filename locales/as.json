@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "language": "as",
+    "coverage": "Core navigation, picker, CTA, quiz and theme labels; remaining copy falls back to English."
+  },
+  "languageLabel": "ভাষা বাছনি কৰক",
+  "languageSearch": "ভাষা বিচাৰক",
+  "navHome": "মুখ্য পৃষ্ঠা",
+  "navAbout": "আমাৰ বিষয়ে",
+  "navProducts": "সামগ্ৰী",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "গৱেষণা",
+  "navContact": "যোগাযোগ",
+  "heroExplore": "আমাৰ এপসমূহ চাওক",
+  "heroAbout": "VibeSyncroৰ বিষয়ে জানক",
+  "quizTitle": "আপোনাৰ বাবে কোনটো এপ উপযুক্ত?",
+  "quizOpen": "Google Playত এপ চাওক",
+  "themeChoose": "দৃশ্য থীম বাছনি কৰক",
+  "themeSecure": "চাইবাৰ সুৰক্ষা",
+  "themePrivacy": "গোপনীয়তাৰ স্পষ্টতা",
+  "themeSafety": "নিৰাপদ উম",
+  "footerCompany": "কোম্পানী",
+  "footerPrivacy": "গোপনীয়তা নীতি",
+  "footerTerms": "সেৱাৰ চৰ্তাৱলী",
+  "footerRights": "সকলো অধিকাৰ সংৰক্ষিত"
+}
