@@ -27,7 +27,7 @@ Modern Corporate Tech, light-mode default:
 
 ## Image assets
 
-The repository contains `logo.png` and `office-hero.jpg`. Upload the remaining supplied office photographs to the root as `office-team.jpg`, `office-meeting.jpg` and `office-innovation.jpg`; each corresponding image slot temporarily falls back to `office-hero.jpg`.
+The repository contains all supplied brand and office photography at the root: `logo.png`, `office-hero.jpg`, `office-team.jpg`, `office-meeting.jpg` and `office-innovation.jpg`. The three secondary office photos are optimised display copies; the index and About page still retain `office-hero.jpg` as a resilient image fallback.
 
 The following launch assets are still needed:
 - `og-banner.png` — 1200×630 social preview used in Open Graph and Twitter metadata
