@@ -93,5 +93,6 @@
   "themePrivacyDescription": "लाइट · क्लीन रूम",
   "themeSafetyDescription": "वार्म · सुरक्षा कवच",
   "trustLanguagesLabel": "भाषा विकल्प",
-  "languageSearch": "भाषाएँ खोजें"
+  "languageSearch": "भाषाएँ खोजें",
+  "languageNoResults": "कोई भाषा नहीं मिली।"
 }

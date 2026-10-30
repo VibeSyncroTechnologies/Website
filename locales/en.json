@@ -93,5 +93,6 @@
   "themePrivacyDescription": "Light · Clean Room",
   "themeSafetyDescription": "Warm · Protective Shield",
   "trustLanguagesLabel": "language options",
-  "languageSearch": "Search languages"
+  "languageSearch": "Search languages",
+  "languageNoResults": "No languages found."
 }
