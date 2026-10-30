@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Vybrat jazyk",
+  "languageSearch": "Hledat jazyky",
+  "navHome": "Domů",
+  "navAbout": "O nás",
+  "navProducts": "Produkty",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Výzkum",
+  "navContact": "Kontakt",
+  "heroExplore": "Prozkoumat naše aplikace",
+  "heroAbout": "Poznejte VibeSyncro",
+  "quizTitle": "Která aplikace je pro vás vhodná?",
+  "quizOpen": "Zobrazit aplikaci na Google Play",
+  "themeChoose": "Vybrat vzhled",
+  "themeSecure": "Kybernetická bezpečnost",
+  "themePrivacy": "Jasné soukromí",
+  "themeSafety": "Bezpečné teplo",
+  "footerCompany": "Společnost",
+  "footerPrivacy": "Zásady ochrany osobních údajů",
+  "footerTerms": "Podmínky služby",
+  "footerRights": "Všechna práva vyhrazena.",
+  "_meta": {
+    "language": "cs",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
