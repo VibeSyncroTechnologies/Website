@@ -1,0 +1,26 @@
+{
+  "languageLabel": "اختر اللغة",
+  "languageSearch": "ابحث عن اللغات",
+  "navHome": "الرئيسية",
+  "navAbout": "من نحن",
+  "navProducts": "المنتجات",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "الأبحاث",
+  "navContact": "اتصل بنا",
+  "heroExplore": "استكشف تطبيقاتنا",
+  "heroAbout": "اكتشف VibeSyncro",
+  "quizTitle": "ما التطبيق المناسب لك؟",
+  "quizOpen": "عرض التطبيق على Google Play",
+  "themeChoose": "اختر المظهر",
+  "themeSecure": "الأمن السيبراني",
+  "themePrivacy": "وضوح الخصوصية",
+  "themeSafety": "دفء الأمان",
+  "footerCompany": "الشركة",
+  "footerPrivacy": "سياسة الخصوصية",
+  "footerTerms": "شروط الخدمة",
+  "footerRights": "جميع الحقوق محفوظة.",
+  "_meta": {
+    "language": "ar",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
