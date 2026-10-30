@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Επιλογή γλώσσας",
+  "languageSearch": "Αναζήτηση γλωσσών",
+  "navHome": "Αρχική",
+  "navAbout": "Σχετικά με εμάς",
+  "navProducts": "Προϊόντα",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Έρευνα",
+  "navContact": "Επικοινωνία",
+  "heroExplore": "Εξερευνήστε τις εφαρμογές μας",
+  "heroAbout": "Γνωρίστε τη VibeSyncro",
+  "quizTitle": "Ποια εφαρμογή σας ταιριάζει;",
+  "quizOpen": "Προβολή εφαρμογής στο Google Play",
+  "themeChoose": "Επιλογή οπτικού θέματος",
+  "themeSecure": "Κυβερνοασφάλεια",
+  "themePrivacy": "Σαφήνεια απορρήτου",
+  "themeSafety": "Ασφάλεια και ζεστασιά",
+  "footerCompany": "Εταιρεία",
+  "footerPrivacy": "Πολιτική απορρήτου",
+  "footerTerms": "Όροι υπηρεσίας",
+  "footerRights": "Με την επιφύλαξη παντός δικαιώματος.",
+  "_meta": {
+    "language": "el",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
