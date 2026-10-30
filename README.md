@@ -38,7 +38,7 @@ Screenshot placeholders and a text fallback keep the product cards usable before
 
 ## Forms
 
-Contact and Notify-Me forms retain Formspree integration. Replace `REPLACE_WITH_FORM_ID` with the real Formspree ID before launch. Until configured, the shared script validates inputs and opens a prepared mailto message to `hello@vibesyncro.com`; the visitor must send it from their email client. Verify the mailbox exists before launch.
+Contact and Notify-Me forms retain Formspree integration. Replace `REPLACE_WITH_FORM_ID` with the real Formspree ID before launch. Until configured, the shared script validates inputs and opens a prepared mailto message to `admin@vibesyncro.com`; the visitor must send it from their email client. Verify the mailbox exists before launch.
 
 ## Localization
 
