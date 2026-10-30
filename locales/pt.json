@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Escolher idioma",
+  "languageSearch": "Pesquisar idiomas",
+  "navHome": "Início",
+  "navAbout": "Sobre nós",
+  "navProducts": "Produtos",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Pesquisa",
+  "navContact": "Contato",
+  "heroExplore": "Explore nossos aplicativos",
+  "heroAbout": "Conheça a VibeSyncro",
+  "quizTitle": "Qual aplicativo combina com você?",
+  "quizOpen": "Ver aplicativo no Google Play",
+  "themeChoose": "Escolher tema visual",
+  "themeSecure": "Segurança cibernética",
+  "themePrivacy": "Clareza e privacidade",
+  "themeSafety": "Acolhimento e proteção",
+  "footerCompany": "Empresa",
+  "footerPrivacy": "Política de Privacidade",
+  "footerTerms": "Termos de Serviço",
+  "footerRights": "Todos os direitos reservados.",
+  "_meta": {
+    "language": "pt",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
