@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Pumili ng wika",
+  "languageSearch": "Maghanap ng mga wika",
+  "navHome": "Tahanan",
+  "navAbout": "Tungkol sa amin",
+  "navProducts": "Mga produkto",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Pananaliksik",
+  "navContact": "Makipag-ugnayan",
+  "heroExplore": "Tuklasin ang aming mga app",
+  "heroAbout": "Kilalanin ang VibeSyncro",
+  "quizTitle": "Aling app ang angkop sa iyo?",
+  "quizOpen": "Tingnan ang app sa Google Play",
+  "themeChoose": "Pumili ng tema",
+  "themeSecure": "Cyber secure",
+  "themePrivacy": "Malinaw na privacy",
+  "themeSafety": "Mainit na proteksyon",
+  "footerCompany": "Kumpanya",
+  "footerPrivacy": "Patakaran sa privacy",
+  "footerTerms": "Mga tuntunin ng serbisyo",
+  "footerRights": "Nakalaan ang lahat ng karapatan.",
+  "_meta": {
+    "language": "tl",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
