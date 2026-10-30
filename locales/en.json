@@ -32,7 +32,7 @@
   "heroCommitment": "Our commitment",
   "heroCommitmentLine": "Useful by design. Private by principle.",
   "trustLanguages": "2 languages available",
-  "trustLanguagesNote": "English and Hindi",
+  "trustLanguagesNote": "52 language choices; some page content may use English fallback",
   "trustAndroid": "Android applications",
   "trustAndroidNote": "Published on Google Play",
   "trustPrivacy": "Privacy-first principles",
@@ -92,6 +92,6 @@
   "themeSecureDescription": "Dark · Command Center",
   "themePrivacyDescription": "Light · Clean Room",
   "themeSafetyDescription": "Warm · Protective Shield",
-  "trustLanguagesLabel": "languages supported",
+  "trustLanguagesLabel": "language options",
   "languageSearch": "Search languages"
 }

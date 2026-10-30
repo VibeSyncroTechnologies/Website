@@ -32,7 +32,7 @@
   "heroCommitment": "हमारी प्रतिबद्धता",
   "heroCommitmentLine": "उपयोगी डिज़ाइन। गोपनीयता हमारा सिद्धांत।",
   "trustLanguages": "2 भाषाएँ उपलब्ध",
-  "trustLanguagesNote": "अंग्रेज़ी और हिंदी",
+  "trustLanguagesNote": "52 भाषा विकल्प; कुछ पेज सामग्री अंग्रेज़ी में हो सकती है",
   "trustAndroid": "Android ऐप्लिकेशन",
   "trustAndroidNote": "Google Play पर प्रकाशित",
   "trustPrivacy": "गोपनीयता-प्रथम सिद्धांत",
@@ -92,6 +92,6 @@
   "themeSecureDescription": "डार्क · कमांड सेंटर",
   "themePrivacyDescription": "लाइट · क्लीन रूम",
   "themeSafetyDescription": "वार्म · सुरक्षा कवच",
-  "trustLanguagesLabel": "भाषाएँ समर्थित",
+  "trustLanguagesLabel": "भाषा विकल्प",
   "languageSearch": "भाषाएँ खोजें"
 }
