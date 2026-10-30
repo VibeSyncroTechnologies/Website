@@ -4,117 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | VibeSyncro Technologies Pvt Ltd</title>
-    <meta name="description" content="Read the VibeSyncro Technologies privacy policy for this website and its Android apps, including information use, advertising, third parties and user choices.">
+    <meta name="description" content="Read the VibeSyncro Technologies privacy policy for its website and Android apps, including information use, advertising, third parties and privacy choices.">
     <meta name="keywords" content="VibeSyncro Technologies, Android apps, privacy security, SafeMobile antivirus, AI research, Google Play developer India">
+    <link rel="canonical" href="https://vibesyncrotechnologies.github.io/Website/privacy.html">
     <meta property="og:title" content="Privacy Policy | VibeSyncro Technologies Pvt Ltd">
-    <meta property="og:description" content="Read the VibeSyncro Technologies privacy policy for this website and its Android apps, including information use, advertising, third parties and user choices.">
+    <meta property="og:description" content="Read the VibeSyncro Technologies privacy policy for its website and Android apps, including information use, advertising, third parties and privacy choices.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://vibesyncrotechnologies.github.io/Website/privacy.html">
+    <meta property="og:image" content="https://vibesyncrotechnologies.github.io/Website/og-banner.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://vibesyncrotechnologies.github.io/Website/og-banner.png">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind = { config: { theme: { extend: {
-            colors: { brandDark: "#0B0F19", brandCard: "#131D31", brandBlue: "#2563EB", brandCyan: "#06B6D4" },
-            fontFamily: { sans: ["Inter", "sans-serif"] }
-        } } } };
-    </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- corrected from prior bug: tailwind.config assignment -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandDark: "#0B0F19",
+              brandCard: "#131D31",
+              brandBlue: "#2563EB",
+              brandCyan: "#06B6D4"
+            },
+            fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"] }
+          }
+        }
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+      .reveal.is-visible { opacity: 1; transform: translateY(0); }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
+    </style>
+    
 </head>
 <body class="min-h-screen bg-brandDark font-sans text-slate-100 antialiased selection:bg-cyan-500/30">
     <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
         <div class="absolute -top-56 left-1/2 h-[34rem] w-[52rem] -translate-x-1/2 rounded-full bg-blue-600/10 blur-3xl"></div>
         <div class="absolute right-[-12rem] top-[44rem] h-96 w-96 rounded-full bg-cyan-500/5 blur-3xl"></div>
     </div>
-    <header class="sticky top-0 z-50 h-20 border-b border-slate-800/90 bg-brandDark/85 backdrop-blur-xl">
-        <div class="mx-auto flex h-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-            <a href="index.html" class="flex min-w-0 items-center gap-3" aria-label="VibeSyncro Technologies home">
-                <img src="logo.png" alt="VibeSyncro Technologies logo" class="h-10 w-10 object-contain" onerror="this.outerHTML='<span class=\'h-10 w-10 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center font-bold text-white\'>V</span>'">
-                <span class="truncate text-lg font-extrabold tracking-tight sm:text-xl"><span class="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">VIBESYNCRO</span><span class="hidden text-[10px] font-semibold tracking-[.16em] text-slate-400 sm:block">TECHNOLOGIES PVT LTD</span></span>
-            </a>
-            <nav class="hidden items-center gap-6 lg:gap-7 md:flex" aria-label="Main navigation">
-                <a href="index.html"  class="whitespace-nowrap text-slate-300 hover:text-cyan-300 transition">Home</a>
-                    <a href="about.html"  class="whitespace-nowrap text-slate-300 hover:text-cyan-300 transition">About Us</a>
-                    <a href="products.html"  class="whitespace-nowrap text-slate-300 hover:text-cyan-300 transition">Products & Apps</a>
-                    <a href="research.html"  class="whitespace-nowrap text-slate-300 hover:text-cyan-300 transition">AI & Security R&D</a>
-                    <a href="contact.html"  class="whitespace-nowrap text-slate-300 hover:text-cyan-300 transition">Contact</a>
-            </nav>
-            <div class="flex shrink-0 items-center gap-3">
-                <a href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener" class="hidden rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-900/25 transition hover:bg-blue-500 sm:inline-flex items-center gap-2"><i class="fa-brands fa-google-play"></i> Play Store</a>
-                <button id="menuButton" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-700 text-slate-200 transition hover:border-cyan-500/60 hover:text-cyan-300 md:hidden" aria-label="Open navigation menu" aria-controls="mobileMenu" aria-expanded="false"><i class="fas fa-bars"></i></button>
-            </div>
-        </div>
-        <nav id="mobileMenu" class="hidden border-t border-slate-800 bg-brandDark/95 px-4 py-4 shadow-2xl backdrop-blur-xl md:hidden" aria-label="Mobile navigation">
-            <div class="mx-auto flex max-w-7xl flex-col gap-1">
-                <a href="index.html"  class="block rounded-xl px-4 py-3 text-slate-300 hover:text-cyan-300 transition">Home</a>
-                <a href="about.html"  class="block rounded-xl px-4 py-3 text-slate-300 hover:text-cyan-300 transition">About Us</a>
-                <a href="products.html"  class="block rounded-xl px-4 py-3 text-slate-300 hover:text-cyan-300 transition">Products & Apps</a>
-                <a href="research.html"  class="block rounded-xl px-4 py-3 text-slate-300 hover:text-cyan-300 transition">AI & Security R&D</a>
-                <a href="contact.html"  class="block rounded-xl px-4 py-3 text-slate-300 hover:text-cyan-300 transition">Contact</a>
-                <a href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener" class="mt-2 rounded-full bg-blue-600 px-4 py-3 text-center text-sm font-semibold text-white">Explore on Google Play <i class="fa-brands fa-google-play ml-1"></i></a>
-            </div>
+    <header class="sticky top-0 z-50 h-20 border-b border-slate-800 bg-brandDark/90 backdrop-blur-md">
+      <div class="mx-auto flex h-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+        <a href="index.html" class="flex min-w-0 items-center gap-3" aria-label="VibeSyncro Technologies home">
+          <img src="logo.png" alt="VibeSyncro Technologies logo" class="h-10 w-10 rounded-lg object-contain" onerror="this.outerHTML='<span class=&quot;h-10 w-10 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center font-bold text-white&quot;>V</span>'">
+          <span class="min-w-0"><span class="block truncate bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-lg font-extrabold tracking-tight text-transparent sm:text-xl">VIBESYNCRO</span><span class="hidden text-[9px] font-semibold tracking-[.14em] text-slate-400 sm:block">TECHNOLOGIES PVT LTD</span></span>
+        </a>
+        <nav class="hidden items-center gap-4 lg:gap-6 md:flex" aria-label="Main navigation">
+          <a href="index.html"  class="inline-flex min-h-11 items-center whitespace-nowrap text-slate-300 transition hover:text-cyan-400">Home</a>
+                    <a href="about.html"  class="inline-flex min-h-11 items-center whitespace-nowrap text-slate-300 transition hover:text-cyan-400">About Us</a>
+                    <a href="products.html"  class="inline-flex min-h-11 items-center whitespace-nowrap text-slate-300 transition hover:text-cyan-400">Products & Apps</a>
+                    <a href="research.html"  class="inline-flex min-h-11 items-center whitespace-nowrap text-slate-300 transition hover:text-cyan-400">AI & Security R&D</a>
+                    <a href="contact.html"  class="inline-flex min-h-11 items-center whitespace-nowrap text-slate-300 transition hover:text-cyan-400">Contact</a>
         </nav>
+        <div class="flex shrink-0 items-center gap-2">
+          <a href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener" class="hidden min-h-11 items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-500 sm:inline-flex"><i class="fa-brands fa-google-play"></i> Play Store</a>
+          <button id="menuBtn" class="md:hidden flex h-11 w-11 items-center justify-center rounded-xl border border-slate-700 text-2xl text-slate-300 transition hover:border-cyan-500/60 hover:text-cyan-300" aria-label="Toggle navigation" aria-controls="mobileMenu" aria-expanded="false" type="button"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+      <nav id="mobileMenu" class="absolute left-0 right-0 top-full hidden border-b border-slate-800 bg-brandDark px-4 py-3 shadow-2xl md:hidden" aria-label="Mobile navigation">
+        <div class="mx-auto flex max-w-7xl flex-col gap-1">
+          <a href="index.html"  class="block min-h-11 rounded-xl px-4 py-3 text-slate-300 transition hover:text-cyan-400">Home</a>
+                    <a href="about.html"  class="block min-h-11 rounded-xl px-4 py-3 text-slate-300 transition hover:text-cyan-400">About Us</a>
+                    <a href="products.html"  class="block min-h-11 rounded-xl px-4 py-3 text-slate-300 transition hover:text-cyan-400">Products & Apps</a>
+                    <a href="research.html"  class="block min-h-11 rounded-xl px-4 py-3 text-slate-300 transition hover:text-cyan-400">AI & Security R&D</a>
+                    <a href="contact.html"  class="block min-h-11 rounded-xl px-4 py-3 text-slate-300 transition hover:text-cyan-400">Contact</a>
+          <a href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener" class="mt-2 flex min-h-11 items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white"><i class="fa-brands fa-google-play"></i> Play Store</a>
+        </div>
+      </nav>
     </header>
-    <main class="relative flex-1">
-        <section class="mx-auto max-w-4xl px-4 pb-20 pt-16 sm:px-6 lg:px-8">
-    <p class="text-xs font-bold uppercase tracking-[.24em] text-cyan-300">Legal</p><h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">Privacy Policy</h1><p class="mt-4 text-slate-400">VibeSyncro Technologies Pvt Ltd · <span id="lastUpdated">Last updated: October 2026</span></p>
-    <div class="mt-10 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-5 text-sm leading-7 text-slate-300">This policy describes the general privacy approach for this website and the Android applications published under VibeSyncro Technologies. Each app may have different features and technical integrations; review the relevant Google Play Data safety section and in-app notices for app-specific details.</div>
-    <div class="mt-10 space-y-9 text-slate-300">
-        <section><h2 class="text-xl font-bold text-white">1. Information We Collect</h2><p class="mt-3 leading-7 text-slate-400">This static website does not provide user accounts or a server-side contact form. When you browse it, your browser and hosting provider may process standard technical data such as IP address, request time and device or browser information in order to deliver and secure the site. Our Android apps may process information needed to provide their respective features, permissions and services. The categories, purposes and retention can vary by app and version and are described in the applicable store disclosures and app notices.</p></section>
-        <section><h2 class="text-xl font-bold text-white">2. How We Use Information</h2><p class="mt-3 leading-7 text-slate-400">Information processed by a product may be used to provide and maintain its functions, respond to support requests, diagnose issues, protect the service, comply with legal obligations and improve reliability. We aim to follow data-minimisation principles and avoid collecting information that is not needed for a stated purpose.</p></section>
-        <section><h2 class="text-xl font-bold text-white">3. Third-Party Services</h2><p class="mt-3 leading-7 text-slate-400">Some products may rely on third-party platforms or services, including Google Play services and advertising or analytics providers where enabled. Their processing is governed by their own privacy terms. Check the app’s Google Play Data safety section and the notices presented within that app for the current integrations and details.</p></section>
-        <section><h2 class="text-xl font-bold text-white">4. Advertising</h2><p class="mt-3 leading-7 text-slate-400">The published apps identified on our Products page are described as containing ads. Google AdMob may be used as an advertising partner in supported app versions. Advertising providers may use device or advertising identifiers and related signals according to the user’s settings, applicable law and the provider’s policies. Ad personalisation and privacy controls may be available through Android and Google settings.</p></section>
-        <section><h2 class="text-xl font-bold text-white">5. Children’s Privacy</h2><p class="mt-3 leading-7 text-slate-400">One of our published apps is intended for young children. Parents and guardians should review its store disclosures, age rating, permissions and in-app experience before use. We do not intend this website to collect personal information directly from children. Any child-directed app must be assessed against the applicable child-safety, advertising and privacy requirements for the regions where it is distributed.</p></section>
-        <section><h2 class="text-xl font-bold text-white">6. Data Security</h2><p class="mt-3 leading-7 text-slate-400">We use reasonable technical and organisational measures appropriate to the nature of the services we operate. No internet transmission or storage system can be guaranteed to be completely secure. Specific app protections depend on the design and release of each app.</p></section>
-        <section><h2 class="text-xl font-bold text-white">7. Your Rights and Choices</h2><p class="mt-3 leading-7 text-slate-400">Depending on your location and the applicable law, you may have rights to access, correct or delete personal information, withdraw consent, restrict certain processing or raise a concern with a relevant authority. You can also manage Android app permissions and advertising preferences through your device settings. Requests relating to a particular app should identify the app and version concerned.</p></section>
-        <section><h2 class="text-xl font-bold text-white">8. Retention</h2><p class="mt-3 leading-7 text-slate-400">Retention periods depend on the purpose for which information is processed, the app’s features and applicable legal requirements. Data is retained only for as long as reasonably necessary for those purposes, unless a longer period is required by law.</p></section>
-        <section><h2 class="text-xl font-bold text-white">9. Changes to This Policy</h2><p class="mt-3 leading-7 text-slate-400">We may update this policy when products, services or legal requirements change. The latest version will be published on this page with an updated date. Material app-specific changes may also be communicated through the relevant app or store listing.</p></section>
-        <section><h2 class="text-xl font-bold text-white">10. Contact</h2><p class="mt-3 leading-7 text-slate-400">VibeSyncro Technologies Pvt Ltd<br>Doddanna Angadi, Bhumenahalli, Karnataka 561205, India<br>Plus Code: 9JH6+99V</p><a href="https://share.google/oauOAzBQ0746YFdlu" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-white">View company location <i class="fa-solid fa-arrow-up-right-from-square"></i></a></section>
-    </div>
-    <p class="mt-12 border-t border-slate-800 pt-6 text-xs leading-6 text-slate-500">Important: Before submitting this policy as the privacy policy for each Google Play app, verify it against that app’s actual SDKs, permissions, data flows, retention, advertising setup and Data safety declaration. This general company policy does not replace app-specific disclosures.</p>
+    <main class="relative">
+      <section class="mx-auto max-w-4xl px-4 pb-20 pt-16 sm:px-6 lg:px-8">
+  <p class="text-xs font-bold uppercase tracking-[.24em] text-cyan-300">Legal</p><h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">Privacy Policy</h1><p class="mt-4 text-slate-400">VibeSyncro Technologies Pvt Ltd · <span id="lastUpdated">Last updated: October 2026</span></p>
+  <div class="mt-10 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-5 text-sm leading-7 text-slate-300">This policy describes how VibeSyncro Technologies Pvt Ltd approaches information in connection with this website and the Android applications published under our developer account. Information practices can differ by app, feature and release version.</div>
+  <div class="mt-10 space-y-9 text-slate-300">
+    <section><h2 class="text-xl font-bold text-white">1. Information We Collect</h2><p class="mt-3 leading-7 text-slate-400">This static website does not require an account. When you visit, website hosting and security systems may process standard technical information such as IP address, request time, browser type and device information to deliver and protect the site. Our Android apps may process information needed to operate their features, permissions and services. The information involved varies by app and version and is described in the relevant Google Play Data safety section and in-app notices.</p></section>
+    <section><h2 class="text-xl font-bold text-white">2. How We Use It</h2><p class="mt-3 leading-7 text-slate-400">Information may be used to provide app and website functionality, respond to requests, maintain reliability, diagnose issues, prevent abuse, protect services and meet legal obligations. We aim to apply data-minimisation principles and use information only for purposes relevant to the product or interaction.</p></section>
+    <section><h2 class="text-xl font-bold text-white">3. Third-Party Services</h2><p class="mt-3 leading-7 text-slate-400">Depending on the app and its release, third-party services may support distribution, core platform features, advertising, crash reporting or other functionality. These services may process information under their own privacy policies. Relevant integrations and disclosures should be reviewed in the applicable Google Play listing and within the app.</p></section>
+    <section><h2 class="text-xl font-bold text-white">4. Advertising</h2><p class="mt-3 leading-7 text-slate-400">The published applications described on our Products page are identified as containing ads. Google AdMob may be used as an advertising partner in supported app versions. Advertising services may process device identifiers, advertising identifiers, usage signals or other information as described by the provider and the app's disclosures. You can manage advertising and privacy settings through the controls available on your Android device and Google account.</p></section>
+    <section><h2 class="text-xl font-bold text-white">5. Children's Privacy</h2><p class="mt-3 leading-7 text-slate-400">One of our published apps is intended for young children. Parents and guardians should review the app's age rating, Data safety information, permissions, advertising disclosures and in-app experience before use. We do not knowingly use this company website to solicit personal information directly from children. Child-directed app features and services should be used with appropriate parental guidance and subject to applicable child-protection requirements.</p></section>
+    <section><h2 class="text-xl font-bold text-white">6. Data Security</h2><p class="mt-3 leading-7 text-slate-400">We seek to use reasonable technical and organisational measures appropriate to the nature of the services. No system or transmission over the internet can be guaranteed to be completely secure. Security protections depend on the product, device, operating system and app version.</p></section>
+    <section><h2 class="text-xl font-bold text-white">7. Your Rights</h2><p class="mt-3 leading-7 text-slate-400">Depending on your location and applicable law, you may have rights to request access to, correction of or deletion of personal information, withdraw consent, object to or restrict certain processing, or raise a concern with a relevant authority. You can also manage app permissions and advertising preferences through your device settings. Requests should identify the relevant app or service so they can be directed appropriately.</p></section>
+    <section><h2 class="text-xl font-bold text-white">8. Retention and Changes</h2><p class="mt-3 leading-7 text-slate-400">Information is retained for periods appropriate to the purpose for which it is processed, relevant product functions and legal requirements. We may update this policy as our products and services evolve. The current version and its updated date will be published on this page.</p></section>
+    <section><h2 class="text-xl font-bold text-white">9. Contact</h2><p class="mt-3 leading-7 text-slate-400">VibeSyncro Technologies Pvt Ltd<br>Doddanna Angadi, Bhumenahalli, Karnataka 561205, India<br>Plus Code: 9JH6+99V<br>Email: <a href="mailto:hello@vibesyncro.com" class="text-cyan-300 hover:text-white">hello@vibesyncro.com</a></p></section>
+  </div>
+  <section class="mt-12 rounded-3xl border border-slate-800 bg-brandCard p-7"><h2 class="text-2xl font-bold">App-Specific Policies</h2><p class="mt-3 leading-7 text-slate-400">Additional privacy information for individual applications will be published here as dedicated policy pages become available.</p><div class="mt-5 grid gap-3 sm:grid-cols-2"><a href="#" aria-disabled="true" class="pointer-events-none flex min-h-12 items-center justify-between rounded-xl border border-slate-700 px-4 py-3 text-sm text-slate-400">PDF Suite <span class="text-xs text-cyan-300">Coming soon</span></a><a href="#" aria-disabled="true" class="pointer-events-none flex min-h-12 items-center justify-between rounded-xl border border-slate-700 px-4 py-3 text-sm text-slate-400">Developer Options Shortcut <span class="text-xs text-cyan-300">Coming soon</span></a><a href="#" aria-disabled="true" class="pointer-events-none flex min-h-12 items-center justify-between rounded-xl border border-slate-700 px-4 py-3 text-sm text-slate-400">Kids Drawing: Toddler Paint <span class="text-xs text-cyan-300">Coming soon</span></a><a href="#" aria-disabled="true" class="pointer-events-none flex min-h-12 items-center justify-between rounded-xl border border-slate-700 px-4 py-3 text-sm text-slate-400">SafeMobile <span class="text-xs text-cyan-300">Coming soon</span></a></div></section>
 </section>
     </main>
-    <footer class="border-t border-slate-800 bg-brandDark py-12 text-sm text-slate-400">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                <div>
-                    <a href="index.html" class="inline-flex items-center gap-3">
-                        <img src="logo.png" alt="VibeSyncro Technologies logo" class="h-10 w-10 object-contain" onerror="this.outerHTML='<span class=\'h-10 w-10 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center font-bold text-white\'>V</span>'">
-                        <span class="text-lg font-bold text-white">VibeSyncro Technologies</span>
-                    </a>
-                    <p class="mt-4 max-w-sm leading-7">Building &amp; Connecting People with Privacy &amp; Security. Thoughtful mobile experiences, privacy-led product ideas and responsible technology research.</p>
-                </div>
-                <div>
-                    <h2 class="font-semibold text-white">Quick Links</h2>
-                    <ul class="mt-4 space-y-3">
-                        <li><a class="hover:text-cyan-300 transition" href="about.html">About Us</a></li>
-                        <li><a class="hover:text-cyan-300 transition" href="products.html">Products &amp; Apps</a></li>
-                        <li><a class="hover:text-cyan-300 transition" href="research.html">AI &amp; Security R&amp;D</a></li>
-                        <li><a class="hover:text-cyan-300 transition" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 class="font-semibold text-white">Legal &amp; Support</h2>
-                    <ul class="mt-4 space-y-3">
-                        <li><a class="hover:text-cyan-300 transition" href="privacy.html">Privacy Policy</a></li>
-                        <li><a class="hover:text-cyan-300 transition" href="terms.html">Terms of Service</a></li>
-                        <li><a class="hover:text-cyan-300 transition" href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener">Google Play Developer Page <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-10 border-t border-slate-800 pt-6 text-xs leading-6 text-slate-500">
-                © <span id="year"></span> VibeSyncro Technologies Pvt Ltd. All rights reserved. · Doddanna Angadi, Bhumenahalli, Karnataka 561205, India
-            </div>
+    <footer class="border-t border-slate-800 bg-brandDark py-12 text-sm text-slate-500">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <a href="index.html" class="inline-flex min-h-11 items-center gap-3">
+              <img src="logo.png" alt="VibeSyncro Technologies logo" class="h-10 w-10 rounded-lg object-contain" onerror="this.outerHTML='<span class=&quot;h-10 w-10 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center font-bold text-white&quot;>V</span>'">
+              <span class="text-lg font-bold text-white">VibeSyncro Technologies</span>
+            </a>
+            <p class="mt-4 max-w-sm leading-7">Building &amp; Connecting People with Privacy &amp; Security.</p>
+          </div>
+          <div>
+            <h2 class="font-semibold text-white">Quick Links</h2>
+            <ul class="mt-4 space-y-2">
+              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="about.html">About Us</a></li>
+              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="products.html">Products &amp; Apps</a></li>
+              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="research.html">AI &amp; Security R&amp;D</a></li>
+              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="font-semibold text-white">Legal &amp; Support</h2>
+            <ul class="mt-4 space-y-2">
+              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="privacy.html">Privacy Policy</a></li>
+              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="terms.html">Terms of Service</a></li>
+              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener">Google Play <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i></a></li>
+            </ul>
+          </div>
         </div>
+        <div class="mt-10 border-t border-slate-800 pt-6 text-xs leading-6 text-slate-500">© <span id="year"></span> VibeSyncro Technologies Pvt Ltd. All rights reserved. · Doddanna Angadi, Bhumenahalli, Karnataka 561205</div>
+      </div>
     </footer>
     <script>
-        const menuButton = document.getElementById("menuButton");
-        const mobileMenu = document.getElementById("mobileMenu");
-        menuButton?.addEventListener("click", () => { const open = mobileMenu.classList.toggle("hidden") === false; menuButton.setAttribute("aria-expanded", String(open)); menuButton.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu"); menuButton.innerHTML = open ? '<i class="fas fa-xmark"></i>' : '<i class="fas fa-bars"></i>'; });
-        document.getElementById("year").textContent = new Date().getFullYear();
-        const updated = document.getElementById("lastUpdated"); if (updated) updated.textContent = "Last updated: " + new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn?.addEventListener("click", () => {
+        const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+        menuBtn.setAttribute("aria-expanded", String(!expanded));
+        mobileMenu.classList.toggle("hidden", expanded);
+        menuBtn.innerHTML = expanded ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-xmark"></i>';
+        menuBtn.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
+      });
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const updated = document.getElementById("lastUpdated");
+      if (updated) updated.textContent = "Last updated: " + new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+      document.querySelectorAll(".notify-form").forEach((form) => form.addEventListener("submit", (event) => {
+        const email = form.querySelector('input[type="email"]');
+        if (!email || !email.checkValidity()) { event.preventDefault(); email?.reportValidity(); return; }
+        if (form.action.includes("REPLACE_WITH_FORM_ID")) {
+          event.preventDefault();
+          const toast = form.parentElement.querySelector(".notify-success");
+          if (toast) toast.classList.remove("hidden");
+          const subject = form.querySelector('[name="_subject"]')?.value || "SafeMobile Beta Updates";
+          const body = "Please notify me about SafeMobile updates. My email address is " + email.value.trim() + ".";
+          window.location.href = "mailto:hello@vibesyncro.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        }
+      }));
+      const contactForm = document.getElementById("contactForm");
+      contactForm?.addEventListener("submit", (event) => {
+        if (!contactForm.checkValidity()) { event.preventDefault(); contactForm.reportValidity(); return; }
+        const email = contactForm.elements.email.value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { event.preventDefault(); contactForm.elements.email.focus(); return; }
+        if (contactForm.action.includes("REPLACE_WITH_FORM_ID")) {
+          event.preventDefault();
+          const subject = contactForm.elements.subject.value.trim();
+          const body = "Name: " + contactForm.elements.name.value.trim() + "\nEmail: " + email + "\n\n" + contactForm.elements.message.value.trim();
+          window.location.href = "mailto:hello@vibesyncro.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+          const status = document.getElementById("contactStatus");
+          status.textContent = "Your email app is opening with your message. Send the email there to contact us.";
+          status.classList.remove("hidden");
+        }
+      });
+      const reveals = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+          if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); }
+        }), { threshold: 0.12 });
+        reveals.forEach((element) => observer.observe(element));
+      } else { reveals.forEach((element) => element.classList.add("is-visible")); }
     </script>
 </body>
 </html>

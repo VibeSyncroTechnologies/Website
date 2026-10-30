@@ -1,37 +1,52 @@
-# VibeSyncro Technologies Pvt Ltd — Company Website
+# VibeSyncro Technologies Pvt Ltd — Official Website
 
-A static, multi-page company website built with HTML5, Tailwind CSS (CDN), Font Awesome and vanilla JavaScript. There is no npm install, bundler or build step.
+A multi-page corporate website built with semantic HTML5, Tailwind CSS through its CDN, Font Awesome and vanilla JavaScript. It is static and deploys to GitHub Pages without npm, a bundler or a build step.
 
-## Deploy with GitHub Pages
+## Pages
 
-1. Open **Settings → Pages** in this repository.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select branch **main** and folder **/ (root)**, then save.
-4. GitHub Pages will publish the site at `https://vibesyncrotechnologies.github.io/Website/` after deployment completes.
-5. Keep `logo.png` in the repository root. It is the supplied VibeSyncro brand mark used by the shared header and footer.
-
-## Files
-
-- `index.html` — Home
-- `about.html` — Company and location
-- `products.html` — Public Android apps and SafeMobile status
-- `research.html` — AI, privacy and security R&D
-- `contact.html` — Company location and front-end contact form demo
-- `privacy.html` — General company privacy policy
+- `index.html` — Home, company overview and SafeMobile beta interest
+- `about.html` — Company profile, values, facts and embedded map
+- `products.html` — Three published Android apps and SafeMobile showcase
+- `research.html` — AI, privacy and security research direction
+- `contact.html` — Company details, map and Formspree/email contact form
+- `privacy.html` — General company privacy policy and app-specific policy links
 - `terms.html` — Terms of service
-- `404.html` — GitHub Pages not-found page
-- `robots.txt` and `sitemap.xml` — Search indexing
+- `404.html` — Custom GitHub Pages not-found page
+- `robots.txt` and `sitemap.xml` — Search engine crawl guidance
 
-## Before launch
+## Publish with GitHub Pages
 
-- Connect the contact form to Formspree, Google Forms or another backend. It currently validates in the browser only and does not deliver messages.
-- Review the privacy policy against the actual SDKs, permissions, advertising and data practices for each Play Store app before submitting it as an app-specific privacy policy.
-- Update the sitemap URLs if the GitHub Pages repository URL changes or a custom domain is connected.
+1. Open repository **Settings → Pages**.
+2. Under **Build and deployment**, select **Deploy from a branch**.
+3. Choose branch **main** and folder **/ (root)**, then save.
+4. Wait for the Pages workflow to finish and test the published URL: https://vibesyncrotechnologies.github.io/Website/
+
+## Asset upload checklist
+
+- Upload `logo.png` (square, 256×256 recommended) and `og-banner.png` (1200×630) to the repo root before linking from Play Store.
+- Upload `play-badge.png` (Google's official asset, download from https://play.google.com/intl/en_us/badges/) to the repo root. The current website uses accessible styled Google Play badges so it works before this optional image is added.
+- Upload `app-shot-1.png`, `app-shot-2.png` and `app-shot-3.png` if you want to replace the screenshot placeholder panels on Products & Apps with real app screenshots.
+- The supplied `logo.png` is already present in the repository root. Replace it only with the approved square brand artwork if a new export is needed.
+- `og-banner.png` is referenced by Open Graph and Twitter metadata but is not included. Add your approved 1200×630 social sharing artwork to make social preview images resolve.
+
+## Configure the forms
+
+The Contact and SafeMobile Notify Me forms use a Formspree placeholder endpoint. To enable direct website submissions:
+
+1. Create a Formspree form and copy its endpoint ID.
+2. Replace every occurrence of `REPLACE_WITH_FORM_ID` in `contact.html`, `index.html`, `products.html` and `research.html` with that ID.
+3. Test each form with an address you control and confirm that Formspree receives it.
+
+Until the endpoint is configured, JavaScript opens a pre-filled email to `hello@vibesyncro.com`. This requires a mail application to be configured on the visitor's device. You can also use the direct mail link shown on the Contact page.
+
+## Privacy and Google Play
+
+The published app descriptions and Data safety declarations must match each app's actual permissions, SDKs, advertising integrations, collection, sharing, retention and deletion practices. Review the general company policy and prepare the linked app-specific policies before submitting or updating Google Play listings. The website currently lists Google AdMob as an advertising partner where enabled, based on the supplied app advertising disclosure.
 
 ## Future custom domain
 
-When a domain is selected, configure it in **Settings → Pages → Custom domain**. Add the DNS records GitHub specifies (typically the four GitHub Pages A records for the apex domain and a CNAME for `www`), add the resulting `CNAME` file at the repository root, allow DNS to propagate, then enable **Enforce HTTPS** when available. Revisit canonical URLs and `sitemap.xml` after the domain change.
+When a domain is selected, set it under **Settings → Pages → Custom domain** and configure the DNS records GitHub Pages provides. For a typical apex domain this includes GitHub Pages A records; a `www` subdomain generally uses a CNAME pointing to the GitHub Pages hostname. Add the resulting `CNAME` file to the repository root, wait for DNS verification, then enable **Enforce HTTPS**. Update canonical URLs, Open Graph URLs, the sitemap and the Organization schema to the new domain.
 
 ## Public portfolio boundary
 
-Only the three published Android apps supplied for this website and the SafeMobile initiative (clearly labelled **In Development**) are presented publicly. No private project directories are part of this website repository.
+Only the three public Google Play apps supplied for this website and the SafeMobile initiative, clearly labelled **In Development**, are presented publicly. Private ongoing project directories are intentionally excluded from this repository and website.

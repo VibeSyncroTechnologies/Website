@@ -6,158 +6,226 @@
     <title>Home | VibeSyncro Technologies Pvt Ltd</title>
     <meta name="description" content="VibeSyncro Technologies builds Android apps and explores privacy-first security and AI. Discover our products, SafeMobile research and company in Karnataka.">
     <meta name="keywords" content="VibeSyncro Technologies, Android apps, privacy security, SafeMobile antivirus, AI research, Google Play developer India">
-    <meta property="og:title" content="Building & Connecting People with Privacy & Security | VibeSyncro Technologies Pvt Ltd">
+    <link rel="canonical" href="https://vibesyncrotechnologies.github.io/Website/">
+    <meta property="og:title" content="Home | VibeSyncro Technologies Pvt Ltd">
     <meta property="og:description" content="VibeSyncro Technologies builds Android apps and explores privacy-first security and AI. Discover our products, SafeMobile research and company in Karnataka.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://vibesyncrotechnologies.github.io/Website/">
+    <meta property="og:image" content="https://vibesyncrotechnologies.github.io/Website/og-banner.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://vibesyncrotechnologies.github.io/Website/og-banner.png">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind = { config: { theme: { extend: {
-            colors: { brandDark: "#0B0F19", brandCard: "#131D31", brandBlue: "#2563EB", brandCyan: "#06B6D4" },
-            fontFamily: { sans: ["Inter", "sans-serif"] }
-        } } } };
-    </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- corrected from prior bug: tailwind.config assignment -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandDark: "#0B0F19",
+              brandCard: "#131D31",
+              brandBlue: "#2563EB",
+              brandCyan: "#06B6D4"
+            },
+            fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"] }
+          }
+        }
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+      .reveal.is-visible { opacity: 1; transform: translateY(0); }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
+    </style>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "VibeSyncro Technologies Pvt Ltd",
+      "url": "https://vibesyncrotechnologies.github.io/Website/",
+      "logo": "https://vibesyncrotechnologies.github.io/Website/logo.png",
+      "description": "Building & Connecting People with Privacy & Security.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Doddanna Angadi, Bhumenahalli",
+        "addressRegion": "Karnataka",
+        "postalCode": "561205",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
 </head>
 <body class="min-h-screen bg-brandDark font-sans text-slate-100 antialiased selection:bg-cyan-500/30">
     <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
         <div class="absolute -top-56 left-1/2 h-[34rem] w-[52rem] -translate-x-1/2 rounded-full bg-blue-600/10 blur-3xl"></div>
         <div class="absolute right-[-12rem] top-[44rem] h-96 w-96 rounded-full bg-cyan-500/5 blur-3xl"></div>
     </div>
-    <header class="sticky top-0 z-50 h-20 border-b border-slate-800/90 bg-brandDark/85 backdrop-blur-xl">
-        <div class="mx-auto flex h-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-            <a href="index.html" class="flex min-w-0 items-center gap-3" aria-label="VibeSyncro Technologies home">
-                <img src="logo.png" alt="VibeSyncro Technologies logo" class="h-10 w-10 object-contain" onerror="this.outerHTML='<span class=\'h-10 w-10 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center font-bold text-white\'>V</span>'">
-                <span class="truncate text-lg font-extrabold tracking-tight sm:text-xl"><span class="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">VIBESYNCRO</span><span class="hidden text-[10px] font-semibold tracking-[.16em] text-slate-400 sm:block">TECHNOLOGIES PVT LTD</span></span>
-            </a>
-            <nav class="hidden items-center gap-6 lg:gap-7 md:flex" aria-label="Main navigation">
-                <a href="index.html" aria-current="page" class="whitespace-nowrap text-cyan-300 font-semibold hover:text-cyan-300 transition">Home</a>
-                    <a href="about.html"  class="whitespace-nowrap text-slate-300 hover:text-cyan-300 transition">About Us</a>
-                    <a href="products.html"  class="whitespace-nowrap text-slate-300 hover:text-cyan-300 transition">Products & Apps</a>
-                    <a href="research.html"  class="whitespace-nowrap text-slate-300 hover:text-cyan-300 transition">AI & Security R&D</a>
-                    <a href="contact.html"  class="whitespace-nowrap text-slate-300 hover:text-cyan-300 transition">Contact</a>
-            </nav>
-            <div class="flex shrink-0 items-center gap-3">
-                <a href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener" class="hidden rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-900/25 transition hover:bg-blue-500 sm:inline-flex items-center gap-2"><i class="fa-brands fa-google-play"></i> Play Store</a>
-                <button id="menuButton" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-700 text-slate-200 transition hover:border-cyan-500/60 hover:text-cyan-300 md:hidden" aria-label="Open navigation menu" aria-controls="mobileMenu" aria-expanded="false"><i class="fas fa-bars"></i></button>
-            </div>
-        </div>
-        <nav id="mobileMenu" class="hidden border-t border-slate-800 bg-brandDark/95 px-4 py-4 shadow-2xl backdrop-blur-xl md:hidden" aria-label="Mobile navigation">
-            <div class="mx-auto flex max-w-7xl flex-col gap-1">
-                <a href="index.html" aria-current="page" class="block rounded-xl px-4 py-3 text-cyan-300 font-semibold hover:text-cyan-300 transition">Home</a>
-                <a href="about.html"  class="block rounded-xl px-4 py-3 text-slate-300 hover:text-cyan-300 transition">About Us</a>
-                <a href="products.html"  class="block rounded-xl px-4 py-3 text-slate-300 hover:text-cyan-300 transition">Products & Apps</a>
-                <a href="research.html"  class="block rounded-xl px-4 py-3 text-slate-300 hover:text-cyan-300 transition">AI & Security R&D</a>
-                <a href="contact.html"  class="block rounded-xl px-4 py-3 text-slate-300 hover:text-cyan-300 transition">Contact</a>
-                <a href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener" class="mt-2 rounded-full bg-blue-600 px-4 py-3 text-center text-sm font-semibold text-white">Explore on Google Play <i class="fa-brands fa-google-play ml-1"></i></a>
-            </div>
+    <header class="sticky top-0 z-50 h-20 border-b border-slate-800 bg-brandDark/90 backdrop-blur-md">
+      <div class="mx-auto flex h-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+        <a href="index.html" class="flex min-w-0 items-center gap-3" aria-label="VibeSyncro Technologies home">
+          <img src="logo.png" alt="VibeSyncro Technologies logo" class="h-10 w-10 rounded-lg object-contain" onerror="this.outerHTML='<span class=&quot;h-10 w-10 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center font-bold text-white&quot;>V</span>'">
+          <span class="min-w-0"><span class="block truncate bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-lg font-extrabold tracking-tight text-transparent sm:text-xl">VIBESYNCRO</span><span class="hidden text-[9px] font-semibold tracking-[.14em] text-slate-400 sm:block">TECHNOLOGIES PVT LTD</span></span>
+        </a>
+        <nav class="hidden items-center gap-4 lg:gap-6 md:flex" aria-label="Main navigation">
+          <a href="index.html" aria-current="page" class="inline-flex min-h-11 items-center whitespace-nowrap font-semibold text-cyan-400 transition hover:text-cyan-400">Home</a>
+                    <a href="about.html"  class="inline-flex min-h-11 items-center whitespace-nowrap text-slate-300 transition hover:text-cyan-400">About Us</a>
+                    <a href="products.html"  class="inline-flex min-h-11 items-center whitespace-nowrap text-slate-300 transition hover:text-cyan-400">Products & Apps</a>
+                    <a href="research.html"  class="inline-flex min-h-11 items-center whitespace-nowrap text-slate-300 transition hover:text-cyan-400">AI & Security R&D</a>
+                    <a href="contact.html"  class="inline-flex min-h-11 items-center whitespace-nowrap text-slate-300 transition hover:text-cyan-400">Contact</a>
         </nav>
+        <div class="flex shrink-0 items-center gap-2">
+          <a href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener" class="hidden min-h-11 items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-500 sm:inline-flex"><i class="fa-brands fa-google-play"></i> Play Store</a>
+          <button id="menuBtn" class="md:hidden flex h-11 w-11 items-center justify-center rounded-xl border border-slate-700 text-2xl text-slate-300 transition hover:border-cyan-500/60 hover:text-cyan-300" aria-label="Toggle navigation" aria-controls="mobileMenu" aria-expanded="false" type="button"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+      <nav id="mobileMenu" class="absolute left-0 right-0 top-full hidden border-b border-slate-800 bg-brandDark px-4 py-3 shadow-2xl md:hidden" aria-label="Mobile navigation">
+        <div class="mx-auto flex max-w-7xl flex-col gap-1">
+          <a href="index.html" aria-current="page" class="block min-h-11 rounded-xl px-4 py-3 font-semibold text-cyan-400 transition hover:text-cyan-400">Home</a>
+                    <a href="about.html"  class="block min-h-11 rounded-xl px-4 py-3 text-slate-300 transition hover:text-cyan-400">About Us</a>
+                    <a href="products.html"  class="block min-h-11 rounded-xl px-4 py-3 text-slate-300 transition hover:text-cyan-400">Products & Apps</a>
+                    <a href="research.html"  class="block min-h-11 rounded-xl px-4 py-3 text-slate-300 transition hover:text-cyan-400">AI & Security R&D</a>
+                    <a href="contact.html"  class="block min-h-11 rounded-xl px-4 py-3 text-slate-300 transition hover:text-cyan-400">Contact</a>
+          <a href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener" class="mt-2 flex min-h-11 items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white"><i class="fa-brands fa-google-play"></i> Play Store</a>
+        </div>
+      </nav>
     </header>
-    <main class="relative flex-1">
-        <section class="relative overflow-hidden">
-    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-blue-950/35 via-brandDark to-brandDark"></div>
-    <div class="mx-auto grid max-w-7xl items-center gap-14 px-4 pb-24 pt-20 sm:px-6 sm:pt-28 lg:grid-cols-[1.12fr_.88fr] lg:px-8 lg:pb-32">
-        <div>
-            <div class="inline-flex items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-400/10 px-4 py-2 text-xs font-semibold tracking-wide text-cyan-200"><span class="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_14px_#06B6D4]"></span> NEXT-GEN MOBILE SOLUTIONS &amp; SECURITY</div>
-            <h1 class="mt-7 max-w-3xl text-4xl font-extrabold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">Building &amp; Connecting People with <span class="bg-gradient-to-r from-blue-400 via-cyan-300 to-sky-200 bg-clip-text text-transparent">Privacy &amp; Security</span></h1>
-            <p class="mt-7 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">We create useful Android applications and explore intelligent, privacy-conscious technologies. Our work is guided by a simple belief: digital experiences should connect people without losing sight of their trust and control.</p>
-            <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-                <a href="products.html" class="inline-flex items-center justify-center gap-3 rounded-full bg-blue-600 px-7 py-3.5 font-semibold text-white shadow-xl shadow-blue-900/30 transition hover:-translate-y-0.5 hover:bg-blue-500">Explore Our Ecosystem <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="research.html" class="inline-flex items-center justify-center gap-3 rounded-full border border-slate-700 bg-white/5 px-7 py-3.5 font-semibold text-slate-100 transition hover:border-cyan-500/60 hover:bg-cyan-500/10">Discover SafeMobile <i class="fa-solid fa-shield-halved text-cyan-300"></i></a>
-            </div>
-            <div class="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-400">
-                <span><i class="fa-brands fa-android mr-2 text-cyan-300"></i>Android app publishing</span>
-                <span><i class="fa-solid fa-user-shield mr-2 text-cyan-300"></i>Privacy-led thinking</span>
-                <span><i class="fa-solid fa-microchip mr-2 text-cyan-300"></i>AI exploration</span>
-            </div>
-        </div>
-        <div class="relative mx-auto w-full max-w-xl">
-            <div class="absolute inset-10 rounded-full bg-blue-500/20 blur-3xl"></div>
-            <div class="relative rounded-[2rem] border border-slate-700/80 bg-gradient-to-br from-brandCard via-[#101c30] to-[#0e1727] p-7 shadow-2xl shadow-blue-950/40 sm:p-10">
-                <div class="flex items-center justify-between border-b border-slate-700/80 pb-5"><span class="text-xs font-semibold uppercase tracking-[.22em] text-slate-400">The VibeSyncro approach</span><span class="rounded-full border border-cyan-500/30 bg-cyan-400/10 px-3 py-1 text-xs text-cyan-200">People first</span></div>
-                <div class="flex items-center justify-center py-10">
-                    <div class="flex h-40 w-40 items-center justify-center rounded-[2.5rem] border border-cyan-400/25 bg-gradient-to-br from-blue-600/25 to-cyan-500/10 shadow-[0_0_90px_rgba(37,99,235,.18)]">
-                        <img src="logo.png" alt="VibeSyncro Technologies logo" class="h-28 w-28 object-contain" onerror="this.outerHTML='<span class=\'text-7xl font-extrabold text-cyan-300\'>V</span>'">
-                    </div>
-                </div>
-                <div class="grid grid-cols-3 gap-3">
-                    <div class="rounded-2xl border border-slate-700/80 bg-black/20 p-3 text-center"><i class="fa-brands fa-android text-xl text-cyan-300"></i><p class="mt-2 text-xs font-semibold text-slate-200">Build</p></div>
-                    <div class="rounded-2xl border border-slate-700/80 bg-black/20 p-3 text-center"><i class="fa-solid fa-shield-halved text-xl text-cyan-300"></i><p class="mt-2 text-xs font-semibold text-slate-200">Protect</p></div>
-                    <div class="rounded-2xl border border-slate-700/80 bg-black/20 p-3 text-center"><i class="fa-solid fa-brain text-xl text-cyan-300"></i><p class="mt-2 text-xs font-semibold text-slate-200">Explore</p></div>
-                </div>
-                <p class="mt-5 text-center text-sm leading-6 text-slate-400">Useful apps today. Responsible innovation for tomorrow.</p>
-            </div>
-        </div>
+    <main class="relative">
+      <section class="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/25 via-brandDark to-brandDark">
+  <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 pt-16 sm:px-6 sm:pt-24 lg:grid-cols-[1.1fr_.9fr] lg:px-8 lg:pb-28">
+    <div class="reveal">
+      <span class="inline-flex min-h-9 items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-400/10 px-4 py-2 text-xs font-semibold tracking-wide text-cyan-200"><span class="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_14px_#06B6D4]"></span> NEXT-GEN MOBILE SOLUTIONS &amp; SECURITY</span>
+      <h1 class="mt-7 max-w-3xl text-4xl font-extrabold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">Building &amp; Connecting People with <span class="bg-gradient-to-r from-blue-400 via-cyan-300 to-sky-200 bg-clip-text text-transparent">Privacy &amp; Security</span></h1>
+      <p class="mt-7 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">We build practical Android applications and explore emerging technologies for safer digital experiences. Our work brings together useful tools, thoughtful AI research and a commitment to privacy-led product design.</p>
+      <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+        <a href="products.html" class="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-blue-600 px-7 py-3.5 font-semibold text-white shadow-xl shadow-blue-900/30 transition hover:-translate-y-0.5 hover:bg-blue-500">Explore Our Ecosystem <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="research.html" class="inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-slate-700 bg-white/5 px-7 py-3.5 font-semibold text-slate-100 transition hover:border-cyan-500/60 hover:bg-cyan-500/10">Discover SafeMobile <i class="fa-solid fa-shield-halved text-cyan-300"></i></a>
+      </div>
+      <div class="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-400"><span><i class="fa-brands fa-android mr-2 text-cyan-300"></i>Android app publishing</span><span><i class="fa-solid fa-user-shield mr-2 text-cyan-300"></i>Privacy-led thinking</span><span><i class="fa-solid fa-microchip mr-2 text-cyan-300"></i>AI exploration</span></div>
     </div>
+    <div class="reveal relative mx-auto w-full max-w-xl">
+      <div class="absolute inset-10 rounded-full bg-blue-500/20 blur-3xl"></div>
+      <div class="relative rounded-[2rem] border border-slate-700/80 bg-gradient-to-br from-brandCard via-[#101c30] to-[#0e1727] p-7 shadow-2xl shadow-blue-950/40 sm:p-10">
+        <div class="flex items-center justify-between border-b border-slate-700/80 pb-5"><span class="text-xs font-semibold uppercase tracking-[.22em] text-slate-400">The VibeSyncro approach</span><span class="rounded-full border border-cyan-500/30 bg-cyan-400/10 px-3 py-1 text-xs text-cyan-200">People first</span></div>
+        <div class="flex items-center justify-center py-10"><div class="flex h-40 w-40 items-center justify-center rounded-[2.5rem] border border-cyan-400/25 bg-gradient-to-br from-blue-600/25 to-cyan-500/10 shadow-[0_0_90px_rgba(37,99,235,.18)]"><img src="logo.png" alt="VibeSyncro Technologies logo" class="h-28 w-28 rounded-lg object-contain" onerror="this.outerHTML='<span class=&quot;text-7xl font-extrabold text-cyan-300&quot;>V</span>'"></div></div>
+        <div class="grid grid-cols-3 gap-3"><div class="rounded-2xl border border-slate-700/80 bg-black/20 p-3 text-center"><i class="fa-brands fa-android text-xl text-cyan-300"></i><p class="mt-2 text-xs font-semibold text-slate-200">Build</p></div><div class="rounded-2xl border border-slate-700/80 bg-black/20 p-3 text-center"><i class="fa-solid fa-shield-halved text-xl text-cyan-300"></i><p class="mt-2 text-xs font-semibold text-slate-200">Protect</p></div><div class="rounded-2xl border border-slate-700/80 bg-black/20 p-3 text-center"><i class="fa-solid fa-brain text-xl text-cyan-300"></i><p class="mt-2 text-xs font-semibold text-slate-200">Explore</p></div></div>
+        <p class="mt-5 text-center text-sm leading-6 text-slate-400">Useful apps today. Responsible innovation for tomorrow.</p>
+      </div>
+    </div>
+  </div>
 </section>
 <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-2xl text-center"><p class="text-xs font-bold uppercase tracking-[.24em] text-cyan-300">What we focus on</p><h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Technology with a <span class="text-cyan-300">human purpose</span></h2><p class="mt-4 leading-7 text-slate-400">Three connected areas shape the products we publish and the ideas we investigate.</p></div>
-    <div class="mt-12 grid gap-5 md:grid-cols-3">
-        <article class="rounded-3xl border border-slate-800 bg-brandCard/80 p-7 transition hover:-translate-y-1 hover:border-cyan-500/40"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/15 text-xl text-cyan-300"><i class="fa-brands fa-android"></i></div><h3 class="mt-6 text-xl font-bold">Android Applications</h3><p class="mt-3 leading-7 text-slate-400">Practical mobile utilities and creative experiences designed to make everyday tasks simpler and more accessible.</p><a href="products.html" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-white">Explore apps <i class="fa-solid fa-arrow-right"></i></a></article>
-        <article class="rounded-3xl border border-slate-800 bg-brandCard/80 p-7 transition hover:-translate-y-1 hover:border-cyan-500/40"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/10 text-xl text-cyan-300"><i class="fa-solid fa-user-shield"></i></div><h3 class="mt-6 text-xl font-bold">Privacy &amp; Security</h3><p class="mt-3 leading-7 text-slate-400">A user-first approach to digital safety, transparent product design and stronger control over personal information.</p><a href="research.html" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-white">Our direction <i class="fa-solid fa-arrow-right"></i></a></article>
-        <article class="rounded-3xl border border-slate-800 bg-brandCard/80 p-7 transition hover:-translate-y-1 hover:border-cyan-500/40"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-500/15 text-xl text-cyan-300"><i class="fa-solid fa-brain"></i></div><h3 class="mt-6 text-xl font-bold">AI Research</h3><p class="mt-3 leading-7 text-slate-400">Exploring useful AI applications and on-device intelligence with attention to transparency, security and user agency.</p><a href="research.html" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-white">Explore R&amp;D <i class="fa-solid fa-arrow-right"></i></a></article>
-    </div>
+  <div class="mx-auto max-w-2xl text-center reveal"><p class="text-xs font-bold uppercase tracking-[.24em] text-cyan-300">What we focus on</p><h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Technology with a <span class="text-cyan-300">human purpose</span></h2><p class="mt-4 leading-7 text-slate-400">Three connected areas shape the products we publish and the ideas we investigate.</p></div>
+  <div class="mt-12 grid gap-5 md:grid-cols-3">
+    <article class="reveal rounded-3xl border border-slate-800 bg-brandCard p-7 transition hover:-translate-y-1 hover:border-cyan-500/50"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/15 text-xl text-cyan-300"><i class="fa-brands fa-android"></i></div><h3 class="mt-6 text-xl font-bold">Android Applications</h3><p class="mt-3 leading-7 text-slate-400">Practical mobile utilities and creative experiences designed to make everyday tasks simpler and more accessible.</p><a href="products.html" class="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-white">Explore apps <i class="fa-solid fa-arrow-right"></i></a></article>
+    <article class="reveal rounded-3xl border border-slate-800 bg-brandCard p-7 transition hover:-translate-y-1 hover:border-cyan-500/50"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/10 text-xl text-cyan-300"><i class="fa-solid fa-user-shield"></i></div><h3 class="mt-6 text-xl font-bold">Privacy &amp; Security</h3><p class="mt-3 leading-7 text-slate-400">A user-first approach to digital safety, transparent product design and stronger control over personal information.</p><a href="research.html" class="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-white">Our direction <i class="fa-solid fa-arrow-right"></i></a></article>
+    <article class="reveal rounded-3xl border border-slate-800 bg-brandCard p-7 transition hover:-translate-y-1 hover:border-cyan-500/50"><div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-500/15 text-xl text-cyan-300"><i class="fa-solid fa-brain"></i></div><h3 class="mt-6 text-xl font-bold">AI Research</h3><p class="mt-3 leading-7 text-slate-400">Exploring useful AI applications and on-device intelligence with attention to transparency, security and user agency.</p><a href="research.html" class="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-white">Explore R&amp;D <i class="fa-solid fa-arrow-right"></i></a></article>
+  </div>
 </section>
 <section class="border-y border-slate-800/80 bg-[#0d1524]">
-    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p class="text-xs font-bold uppercase tracking-[.24em] text-cyan-300">On Google Play</p><h2 class="mt-3 text-3xl font-bold">A growing app portfolio</h2><p class="mt-3 max-w-2xl leading-7 text-slate-400">Discover the Android apps currently published under our developer profile.</p></div><a href="products.html" class="inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-white">View all apps <i class="fa-solid fa-arrow-right"></i></a></div>
-        <div class="mt-9 grid gap-4 md:grid-cols-3">
-            <a href="products.html" class="rounded-2xl border border-slate-800 bg-brandCard p-5 transition hover:border-cyan-500/40"><span class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/15 text-lg text-cyan-300"><i class="fa-regular fa-file-pdf"></i></span><h3 class="mt-4 font-bold">VibeSync All in ONE PDF Suite</h3><p class="mt-2 text-sm leading-6 text-slate-400">A mobile PDF utility suite for document workflows.</p></a>
-            <a href="products.html" class="rounded-2xl border border-slate-800 bg-brandCard p-5 transition hover:border-cyan-500/40"><span class="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/10 text-lg text-cyan-300"><i class="fa-solid fa-sliders"></i></span><h3 class="mt-4 font-bold">Developer Options Shortcut</h3><p class="mt-2 text-sm leading-6 text-slate-400">A quick route to Android developer settings.</p></a>
-            <a href="products.html" class="rounded-2xl border border-slate-800 bg-brandCard p-5 transition hover:border-cyan-500/40"><span class="flex h-11 w-11 items-center justify-center rounded-xl bg-pink-500/10 text-lg text-cyan-300"><i class="fa-solid fa-palette"></i></span><h3 class="mt-4 font-bold">Kids Drawing: Toddler Paint</h3><p class="mt-2 text-sm leading-6 text-slate-400">A creative drawing and colouring experience for children.</p></a>
-        </div>
+  <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"><div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p class="text-xs font-bold uppercase tracking-[.24em] text-cyan-300">On Google Play</p><h2 class="mt-3 text-3xl font-bold">Featured Apps</h2><p class="mt-3 max-w-2xl leading-7 text-slate-400">Explore the Android apps currently published under our official developer profile.</p></div><a href="products.html" class="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-cyan-300 hover:text-white">View all apps <i class="fa-solid fa-arrow-right"></i></a></div>
+    <div class="mt-9 grid gap-4 md:grid-cols-3">
+      <article class="reveal rounded-2xl border border-slate-800 bg-brandCard p-5"><span class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/15 text-lg text-cyan-300"><i class="fa-regular fa-file-pdf"></i></span><h3 class="mt-4 font-bold">VibeSync All in ONE PDF Suite</h3><p class="mt-2 text-sm leading-6 text-slate-400">A mobile PDF utility suite for everyday document workflows.</p><div class="mt-4"><a href="https://play.google.com/store/apps/details?id=com.vibesync.toolkit.pdf&hl=en_IN" target="_blank" rel="noopener" aria-label="Get it on Google Play" class="inline-flex min-h-12 items-center gap-3 rounded-xl border border-slate-700 bg-black px-4 py-2.5 transition hover:border-cyan-500/60 hover:bg-slate-950"><i class="fa-brands fa-google-play text-2xl text-cyan-400"></i><span class="text-left leading-tight"><span class="block text-[10px] uppercase tracking-wide text-slate-400">Get it on</span><span class="block text-sm font-semibold text-white">Google Play</span></span></a></div></article>
+      <article class="reveal rounded-2xl border border-slate-800 bg-brandCard p-5"><span class="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/10 text-lg text-cyan-300"><i class="fa-solid fa-sliders"></i></span><h3 class="mt-4 font-bold">Developer Options Shortcut</h3><p class="mt-2 text-sm leading-6 text-slate-400">A quick route to Android developer settings.</p><div class="mt-4"><a href="https://play.google.com/store/apps/details?id=com.utility.devoptions&pcampaignid=web_share" target="_blank" rel="noopener" aria-label="Get it on Google Play" class="inline-flex min-h-12 items-center gap-3 rounded-xl border border-slate-700 bg-black px-4 py-2.5 transition hover:border-cyan-500/60 hover:bg-slate-950"><i class="fa-brands fa-google-play text-2xl text-cyan-400"></i><span class="text-left leading-tight"><span class="block text-[10px] uppercase tracking-wide text-slate-400">Get it on</span><span class="block text-sm font-semibold text-white">Google Play</span></span></a></div></article>
+      <article class="reveal rounded-2xl border border-slate-800 bg-brandCard p-5"><span class="flex h-11 w-11 items-center justify-center rounded-xl bg-pink-500/10 text-lg text-cyan-300"><i class="fa-solid fa-palette"></i></span><h3 class="mt-4 font-bold">Kids Drawing: Toddler Paint</h3><p class="mt-2 text-sm leading-6 text-slate-400">A creative drawing and painting experience for young children.</p><div class="mt-4"><a href="https://play.google.com/store/apps/details?id=com.navya.kids_drawing_studio&pcampaignid=web_share" target="_blank" rel="noopener" aria-label="Get it on Google Play" class="inline-flex min-h-12 items-center gap-3 rounded-xl border border-slate-700 bg-black px-4 py-2.5 transition hover:border-cyan-500/60 hover:bg-slate-950"><i class="fa-brands fa-google-play text-2xl text-cyan-400"></i><span class="text-left leading-tight"><span class="block text-[10px] uppercase tracking-wide text-slate-400">Get it on</span><span class="block text-sm font-semibold text-white">Google Play</span></span></a></div></article>
     </div>
+  </div>
 </section>
 <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-    <div class="relative overflow-hidden rounded-[2rem] border border-cyan-500/25 bg-gradient-to-br from-blue-950/80 via-brandCard to-[#101a2b] p-8 sm:p-12">
-        <div class="absolute -right-16 -top-24 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl"></div>
-        <div class="relative grid items-center gap-8 lg:grid-cols-[1fr_auto]"><div><span class="inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-200">IN DEVELOPMENT · COMING SOON</span><h2 class="mt-5 text-3xl font-bold sm:text-4xl">Meet the SafeMobile initiative</h2><p class="mt-4 max-w-3xl leading-7 text-slate-300">We are researching a privacy-focused Android security product with planned capabilities around device risk awareness, safer financial activity and on-device intelligence. SafeMobile is not yet available for download.</p></div><a href="research.html" class="inline-flex items-center justify-center gap-3 rounded-full bg-cyan-500 px-6 py-3.5 font-semibold text-slate-950 transition hover:bg-cyan-300">Explore the initiative <i class="fa-solid fa-arrow-right"></i></a></div>
-    </div>
+  <div class="reveal relative overflow-hidden rounded-[2rem] border border-cyan-500/30 bg-gradient-to-br from-blue-950/80 via-brandCard to-[#101a2b] p-8 shadow-[0_20px_90px_rgba(6,182,212,.07)] sm:p-12">
+    <div class="absolute -right-16 -top-24 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl"></div><div class="relative grid gap-8 lg:grid-cols-[1fr_.9fr] lg:items-center"><div><span class="inline-flex min-h-8 items-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-200">COMING SOON · IN DEVELOPMENT</span><h2 class="mt-5 text-3xl font-bold sm:text-4xl">The SafeMobile initiative</h2><p class="mt-4 max-w-3xl leading-7 text-slate-300">We are researching a privacy-focused Android security product with planned capabilities around device risk awareness, safer financial activity and on-device intelligence. SafeMobile is not yet available for download.</p></div><div><h3 class="font-semibold text-white">Interested in beta updates?</h3><form class="notify-form mt-5 flex max-w-lg flex-col gap-3 sm:flex-row" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
+      <label class="sr-only" for="homeNotifyEmail">Email address</label>
+      <input id="homeNotifyEmail" type="email" name="email" required autocomplete="email" placeholder="you@example.com" class="min-h-12 min-w-0 flex-1 rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-slate-100 outline-none placeholder:text-slate-500 focus:border-cyan-500">
+      <input type="hidden" name="_subject" value="SafeMobile Beta — Notify Me">
+      <button type="submit" class="min-h-12 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-3 font-semibold text-white transition hover:from-blue-500 hover:to-cyan-500">Notify Me</button>
+    </form>
+    <p class="notify-success mt-3 hidden rounded-xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-sm text-cyan-200" role="status" aria-live="polite">Thanks — your email app is opening so you can request a SafeMobile beta update.</p><p class="mt-2 text-xs leading-5 text-slate-500">We will use your email only to respond to this SafeMobile update request.</p></div></div>
+  </div>
 </section>
     </main>
-    <footer class="border-t border-slate-800 bg-brandDark py-12 text-sm text-slate-400">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-                <div>
-                    <a href="index.html" class="inline-flex items-center gap-3">
-                        <img src="logo.png" alt="VibeSyncro Technologies logo" class="h-10 w-10 object-contain" onerror="this.outerHTML='<span class=\'h-10 w-10 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center font-bold text-white\'>V</span>'">
-                        <span class="text-lg font-bold text-white">VibeSyncro Technologies</span>
-                    </a>
-                    <p class="mt-4 max-w-sm leading-7">Building &amp; Connecting People with Privacy &amp; Security. Thoughtful mobile experiences, privacy-led product ideas and responsible technology research.</p>
-                </div>
-                <div>
-                    <h2 class="font-semibold text-white">Quick Links</h2>
-                    <ul class="mt-4 space-y-3">
-                        <li><a class="hover:text-cyan-300 transition" href="about.html">About Us</a></li>
-                        <li><a class="hover:text-cyan-300 transition" href="products.html">Products &amp; Apps</a></li>
-                        <li><a class="hover:text-cyan-300 transition" href="research.html">AI &amp; Security R&amp;D</a></li>
-                        <li><a class="hover:text-cyan-300 transition" href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 class="font-semibold text-white">Legal &amp; Support</h2>
-                    <ul class="mt-4 space-y-3">
-                        <li><a class="hover:text-cyan-300 transition" href="privacy.html">Privacy Policy</a></li>
-                        <li><a class="hover:text-cyan-300 transition" href="terms.html">Terms of Service</a></li>
-                        <li><a class="hover:text-cyan-300 transition" href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener">Google Play Developer Page <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-10 border-t border-slate-800 pt-6 text-xs leading-6 text-slate-500">
-                © <span id="year"></span> VibeSyncro Technologies Pvt Ltd. All rights reserved. · Doddanna Angadi, Bhumenahalli, Karnataka 561205, India
-            </div>
+    <footer class="border-t border-slate-800 bg-brandDark py-12 text-sm text-slate-500">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+          <div>
+            <a href="index.html" class="inline-flex min-h-11 items-center gap-3">
+              <img src="logo.png" alt="VibeSyncro Technologies logo" class="h-10 w-10 rounded-lg object-contain" onerror="this.outerHTML='<span class=&quot;h-10 w-10 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center font-bold text-white&quot;>V</span>'">
+              <span class="text-lg font-bold text-white">VibeSyncro Technologies</span>
+            </a>
+            <p class="mt-4 max-w-sm leading-7">Building &amp; Connecting People with Privacy &amp; Security.</p>
+          </div>
+          <div>
+            <h2 class="font-semibold text-white">Quick Links</h2>
+            <ul class="mt-4 space-y-2">
+              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="about.html">About Us</a></li>
+              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="products.html">Products &amp; Apps</a></li>
+              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="research.html">AI &amp; Security R&amp;D</a></li>
+              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="font-semibold text-white">Legal &amp; Support</h2>
+            <ul class="mt-4 space-y-2">
+              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="privacy.html">Privacy Policy</a></li>
+              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="terms.html">Terms of Service</a></li>
+              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener">Google Play <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i></a></li>
+            </ul>
+          </div>
         </div>
+        <div class="mt-10 border-t border-slate-800 pt-6 text-xs leading-6 text-slate-500">© <span id="year"></span> VibeSyncro Technologies Pvt Ltd. All rights reserved. · Doddanna Angadi, Bhumenahalli, Karnataka 561205</div>
+      </div>
     </footer>
     <script>
-        const menuButton = document.getElementById("menuButton");
-        const mobileMenu = document.getElementById("mobileMenu");
-        menuButton?.addEventListener("click", () => { const open = mobileMenu.classList.toggle("hidden") === false; menuButton.setAttribute("aria-expanded", String(open)); menuButton.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu"); menuButton.innerHTML = open ? '<i class="fas fa-xmark"></i>' : '<i class="fas fa-bars"></i>'; });
-        document.getElementById("year").textContent = new Date().getFullYear();
-        const updated = document.getElementById("lastUpdated"); if (updated) updated.textContent = "Last updated: " + new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      menuBtn?.addEventListener("click", () => {
+        const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+        menuBtn.setAttribute("aria-expanded", String(!expanded));
+        mobileMenu.classList.toggle("hidden", expanded);
+        menuBtn.innerHTML = expanded ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-xmark"></i>';
+        menuBtn.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
+      });
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const updated = document.getElementById("lastUpdated");
+      if (updated) updated.textContent = "Last updated: " + new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+      document.querySelectorAll(".notify-form").forEach((form) => form.addEventListener("submit", (event) => {
+        const email = form.querySelector('input[type="email"]');
+        if (!email || !email.checkValidity()) { event.preventDefault(); email?.reportValidity(); return; }
+        if (form.action.includes("REPLACE_WITH_FORM_ID")) {
+          event.preventDefault();
+          const toast = form.parentElement.querySelector(".notify-success");
+          if (toast) toast.classList.remove("hidden");
+          const subject = form.querySelector('[name="_subject"]')?.value || "SafeMobile Beta Updates";
+          const body = "Please notify me about SafeMobile updates. My email address is " + email.value.trim() + ".";
+          window.location.href = "mailto:hello@vibesyncro.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        }
+      }));
+      const contactForm = document.getElementById("contactForm");
+      contactForm?.addEventListener("submit", (event) => {
+        if (!contactForm.checkValidity()) { event.preventDefault(); contactForm.reportValidity(); return; }
+        const email = contactForm.elements.email.value.trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { event.preventDefault(); contactForm.elements.email.focus(); return; }
+        if (contactForm.action.includes("REPLACE_WITH_FORM_ID")) {
+          event.preventDefault();
+          const subject = contactForm.elements.subject.value.trim();
+          const body = "Name: " + contactForm.elements.name.value.trim() + "\nEmail: " + email + "\n\n" + contactForm.elements.message.value.trim();
+          window.location.href = "mailto:hello@vibesyncro.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+          const status = document.getElementById("contactStatus");
+          status.textContent = "Your email app is opening with your message. Send the email there to contact us.";
+          status.classList.remove("hidden");
+        }
+      });
+      const reveals = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
+          if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); }
+        }), { threshold: 0.12 });
+        reveals.forEach((element) => observer.observe(element));
+      } else { reveals.forEach((element) => element.classList.add("is-visible")); }
     </script>
 </body>
 </html>
