@@ -63,13 +63,16 @@ header nav a:hover{color:var(--brand-primary)!important}
 footer,footer.bg-brandNavy{background-color:var(--footer-bg)!important;color:#fff}
 footer .text-slate-300{color:var(--footer-muted)!important}
 button.bg-primaryRed,a.bg-primaryRed{color:var(--on-brand)!important}
-.hover\\:bg-red-700:hover,.hover\\:bg-red-800:hover{background-color:var(--brand-primary-hover)!important}
-.hover\\:bg-red-50:hover{background-color:var(--accent-soft)!important}
-.hover\\:text-primaryRed:hover{color:var(--brand-primary)!important}
+.hover\:bg-red-700:hover,.hover\:bg-red-800:hover{background-color:var(--brand-primary-hover)!important}
+.hover\:bg-red-50:hover{background-color:var(--accent-soft)!important}
+.hover\:text-primaryRed:hover{color:var(--brand-primary)!important}
 .from-red-50,.from-slate-50{--tw-gradient-from:var(--accent-soft)!important;--tw-gradient-to:var(--accent-soft)!important}
 .to-white,.via-white{--tw-gradient-to:var(--bg-surface)!important}
 .to-brandNavy,.from-brandNavy{--tw-gradient-to:var(--deep-panel)!important;--tw-gradient-from:var(--deep-panel)!important}
 .to-blue-50{--tw-gradient-to:var(--surface-soft)!important}
+.from-slate-200{--tw-gradient-from:var(--surface-soft)!important}
+.via-slate-50{--tw-gradient-stops:var(--tw-gradient-from),var(--surface-soft),var(--tw-gradient-to)!important}
+.to-cyan-400{--tw-gradient-to:var(--brand-secondary)!important}
 .from-blue-500{--tw-gradient-from:var(--brand-secondary)!important}
 .to-blue-600{--tw-gradient-to:var(--brand-secondary)!important}
 input,textarea,select{accent-color:var(--brand-primary)}
