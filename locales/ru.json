@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Выбрать язык",
+  "languageSearch": "Поиск языков",
+  "navHome": "Главная",
+  "navAbout": "О нас",
+  "navProducts": "Продукты",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Исследования",
+  "navContact": "Контакты",
+  "heroExplore": "Посмотреть наши приложения",
+  "heroAbout": "Открыть для себя VibeSyncro",
+  "quizTitle": "Какое приложение вам подходит?",
+  "quizOpen": "Открыть приложение в Google Play",
+  "themeChoose": "Выбрать тему оформления",
+  "themeSecure": "Кибербезопасность",
+  "themePrivacy": "Ясность конфиденциальности",
+  "themeSafety": "Тёплая защита",
+  "footerCompany": "Компания",
+  "footerPrivacy": "Политика конфиденциальности",
+  "footerTerms": "Условия использования",
+  "footerRights": "Все права защищены.",
+  "_meta": {
+    "language": "ru",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
