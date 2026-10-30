@@ -1,191 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI & Security R&D | VibeSyncro Technologies Pvt Ltd</title>
-    <meta name="description" content="Explore VibeSyncro research into artificial intelligence, on-device intelligence, Android security and the SafeMobile Antivirus initiative in development.">
-    <meta name="keywords" content="VibeSyncro Technologies, Android apps, privacy security, SafeMobile antivirus, AI research, Google Play developer India">
-    <link rel="canonical" href="https://vibesyncrotechnologies.github.io/Website/research.html">
-    <meta property="og:title" content="AI & Security R&D | VibeSyncro Technologies Pvt Ltd">
-    <meta property="og:description" content="Explore VibeSyncro research into artificial intelligence, on-device intelligence, Android security and the SafeMobile Antivirus initiative in development.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vibesyncrotechnologies.github.io/Website/research.html">
-    <meta property="og:image" content="https://vibesyncrotechnologies.github.io/Website/og-banner.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://vibesyncrotechnologies.github.io/Website/og-banner.png">
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- corrected from prior bug: tailwind.config assignment -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brandDark: "#0B0F19",
-              brandCard: "#131D31",
-              brandBlue: "#2563EB",
-              brandCyan: "#06B6D4"
-            },
-            fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"] }
-          }
-        }
-      };
-    </script>
-    <style>
-      html { scroll-behavior: smooth; }
-      .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-      .reveal.is-visible { opacity: 1; transform: translateY(0); }
-      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
-    </style>
-    
-</head>
-<body class="min-h-screen bg-brandDark font-sans text-slate-100 antialiased selection:bg-cyan-500/30">
-    <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
-        <div class="absolute -top-56 left-1/2 h-[34rem] w-[52rem] -translate-x-1/2 rounded-full bg-blue-600/10 blur-3xl"></div>
-        <div class="absolute right-[-12rem] top-[44rem] h-96 w-96 rounded-full bg-cyan-500/5 blur-3xl"></div>
-    </div>
-    <header class="sticky top-0 z-50 h-20 border-b border-slate-800 bg-brandDark/90 backdrop-blur-md">
-      <div class="mx-auto flex h-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
-        <a href="index.html" class="flex min-w-0 items-center gap-3" aria-label="VibeSyncro Technologies home">
-          <img src="logo.png" alt="VibeSyncro Technologies logo" class="h-10 w-10 rounded-lg object-contain" onerror="this.outerHTML='<span class=&quot;h-10 w-10 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center font-bold text-white&quot;>V</span>'">
-          <span class="min-w-0"><span class="block truncate bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-lg font-extrabold tracking-tight text-transparent sm:text-xl">VIBESYNCRO</span><span class="hidden text-[9px] font-semibold tracking-[.14em] text-slate-400 sm:block">TECHNOLOGIES PVT LTD</span></span>
-        </a>
-        <nav class="hidden items-center gap-4 lg:gap-6 md:flex" aria-label="Main navigation">
-          <a href="index.html"  class="inline-flex min-h-11 items-center whitespace-nowrap text-slate-300 transition hover:text-cyan-400">Home</a>
-                    <a href="about.html"  class="inline-flex min-h-11 items-center whitespace-nowrap text-slate-300 transition hover:text-cyan-400">About Us</a>
-                    <a href="products.html"  class="inline-flex min-h-11 items-center whitespace-nowrap text-slate-300 transition hover:text-cyan-400">Products & Apps</a>
-                    <a href="research.html" aria-current="page" class="inline-flex min-h-11 items-center whitespace-nowrap font-semibold text-cyan-400 transition hover:text-cyan-400">AI & Security R&D</a>
-                    <a href="contact.html"  class="inline-flex min-h-11 items-center whitespace-nowrap text-slate-300 transition hover:text-cyan-400">Contact</a>
-        </nav>
-        <div class="flex shrink-0 items-center gap-2">
-          <a href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener" class="hidden min-h-11 items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-500 sm:inline-flex"><i class="fa-brands fa-google-play"></i> Play Store</a>
-          <button id="menuBtn" class="md:hidden flex h-11 w-11 items-center justify-center rounded-xl border border-slate-700 text-2xl text-slate-300 transition hover:border-cyan-500/60 hover:text-cyan-300" aria-label="Toggle navigation" aria-controls="mobileMenu" aria-expanded="false" type="button"><i class="fas fa-bars"></i></button>
-        </div>
-      </div>
-      <nav id="mobileMenu" class="absolute left-0 right-0 top-full hidden border-b border-slate-800 bg-brandDark px-4 py-3 shadow-2xl md:hidden" aria-label="Mobile navigation">
-        <div class="mx-auto flex max-w-7xl flex-col gap-1">
-          <a href="index.html"  class="block min-h-11 rounded-xl px-4 py-3 text-slate-300 transition hover:text-cyan-400">Home</a>
-                    <a href="about.html"  class="block min-h-11 rounded-xl px-4 py-3 text-slate-300 transition hover:text-cyan-400">About Us</a>
-                    <a href="products.html"  class="block min-h-11 rounded-xl px-4 py-3 text-slate-300 transition hover:text-cyan-400">Products & Apps</a>
-                    <a href="research.html" aria-current="page" class="block min-h-11 rounded-xl px-4 py-3 font-semibold text-cyan-400 transition hover:text-cyan-400">AI & Security R&D</a>
-                    <a href="contact.html"  class="block min-h-11 rounded-xl px-4 py-3 text-slate-300 transition hover:text-cyan-400">Contact</a>
-          <a href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener" class="mt-2 flex min-h-11 items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white"><i class="fa-brands fa-google-play"></i> Play Store</a>
-        </div>
-      </nav>
-    </header>
-    <main class="relative">
-      <section class="mx-auto max-w-7xl px-4 pb-20 pt-16 sm:px-6 lg:px-8">
-  <div class="max-w-3xl reveal"><p class="text-xs font-bold uppercase tracking-[.24em] text-cyan-300">Research &amp; Development</p><h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">SafeMobile Antivirus <span class="text-cyan-300">&amp; AI Initiative</span></h1><p class="mt-5 text-lg leading-8 text-slate-300">Our R&amp;D direction explores how security and intelligent systems can help people use mobile technology with greater confidence and control.</p></div>
-  <div class="mt-12 grid gap-6 lg:grid-cols-[1.05fr_.95fr]">
-    <article class="reveal rounded-3xl border border-cyan-500/25 bg-gradient-to-br from-blue-950/70 to-brandCard p-8"><div class="flex items-center justify-between gap-3"><span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-xl text-cyan-300"><i class="fa-solid fa-shield-halved"></i></span><span class="rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyan-200">In Development</span></div><h2 class="mt-6 text-2xl font-bold">SafeMobile Antivirus for Android</h2><p class="mt-4 leading-7 text-slate-300">SafeMobile is a planned Android security product focused on helping users understand device risks and protect sensitive digital activity. The research direction includes real-time security checks, safeguards for financial interactions and privacy-conscious processing. We are also exploring how on-device AI may support useful analysis while reducing unnecessary data sharing. SafeMobile is not yet released.</p><h3 class="mt-7 font-semibold text-white">Research areas under consideration</h3><ul class="mt-4 space-y-3 text-sm leading-6 text-slate-300"><li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-cyan-300"></i>Real-time vulnerability and device-risk scanning</li><li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-cyan-300"></i>Financial transaction safety and risk awareness</li><li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-cyan-300"></i>Zero-telemetry architecture as a design objective</li><li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-cyan-300"></i>On-device AI research for privacy-conscious assistance</li></ul></article>
-    <div class="space-y-6"><article class="reveal rounded-3xl border border-slate-800 bg-brandCard p-8"><span class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/15 text-lg text-cyan-300"><i class="fa-solid fa-brain"></i></span><h2 class="mt-5 text-2xl font-bold">Artificial Intelligence R&amp;D</h2><p class="mt-4 leading-7 text-slate-400">We are exploring AI technologies that can make digital products more helpful, responsive and context-aware. Our interests include practical AI experiences and approaches that keep security, transparency and user choice in view.</p></article><article class="reveal rounded-3xl border border-slate-800 bg-brandCard p-8"><h2 class="text-xl font-bold">Why it matters</h2><p class="mt-4 leading-7 text-slate-400">Innovation should strengthen people, not make them surrender control. Our motto — <em>Building &amp; Connecting People with Privacy &amp; Security</em> — is a reminder to evaluate new ideas through the lens of trust, responsible design and real user needs.</p></article></div>
-  </div>
-  <section class="mt-16 reveal"><p class="text-xs font-bold uppercase tracking-[.24em] text-cyan-300">A considered path forward</p><h2 class="mt-3 text-3xl font-bold">Development Roadmap</h2><div class="mt-8 grid gap-4 md:grid-cols-3"><div class="rounded-2xl border border-slate-800 bg-brandCard p-6"><span class="text-xs font-bold uppercase tracking-wider text-cyan-300">Phase 01</span><h3 class="mt-3 text-xl font-bold">Research</h3><p class="mt-3 text-sm leading-6 text-slate-400">Explore threat models, privacy requirements, feasibility and product architecture.</p></div><div class="rounded-2xl border border-slate-800 bg-brandCard p-6"><span class="text-xs font-bold uppercase tracking-wider text-cyan-300">Phase 02</span><h3 class="mt-3 text-xl font-bold">Beta</h3><p class="mt-3 text-sm leading-6 text-slate-400">Planned validation through controlled testing, usability feedback and security review.</p></div><div class="rounded-2xl border border-slate-800 bg-brandCard p-6"><span class="text-xs font-bold uppercase tracking-wider text-cyan-300">Phase 03</span><h3 class="mt-3 text-xl font-bold">Public Launch</h3><p class="mt-3 text-sm leading-6 text-slate-400">A public release will be considered after development and validation milestones are met.</p></div></div></section>
-  <section class="reveal mt-16 rounded-3xl border border-cyan-500/25 bg-brandCard p-8 sm:p-10"><div class="grid gap-6 lg:grid-cols-[1fr_.9fr] lg:items-center"><div><span class="text-xs font-bold uppercase tracking-[.22em] text-cyan-300">Stay connected</span><h2 class="mt-3 text-2xl font-bold">Notify Me about SafeMobile Beta</h2><p class="mt-3 max-w-xl leading-7 text-slate-400">Leave your email to request an update when the SafeMobile beta programme is ready to share.</p></div><div><form class="notify-form mt-5 flex max-w-lg flex-col gap-3 sm:flex-row" action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST">
-      <label class="sr-only" for="researchNotifyEmail">Email address</label>
-      <input id="researchNotifyEmail" type="email" name="email" required autocomplete="email" placeholder="you@example.com" class="min-h-12 min-w-0 flex-1 rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-slate-100 outline-none placeholder:text-slate-500 focus:border-cyan-500">
-      <input type="hidden" name="_subject" value="SafeMobile Beta Updates">
-      <button type="submit" class="min-h-12 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-3 font-semibold text-white transition hover:from-blue-500 hover:to-cyan-500">Notify Me</button>
-    </form>
-    <p class="notify-success mt-3 hidden rounded-xl border border-cyan-400/20 bg-cyan-400/10 px-4 py-3 text-sm text-cyan-200" role="status" aria-live="polite">Thanks — your email app is opening so you can request a SafeMobile beta update.</p></div></div></section>
-</section>
-    </main>
-    <footer class="border-t border-slate-800 bg-brandDark py-12 text-sm text-slate-500">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          <div>
-            <a href="index.html" class="inline-flex min-h-11 items-center gap-3">
-              <img src="logo.png" alt="VibeSyncro Technologies logo" class="h-10 w-10 rounded-lg object-contain" onerror="this.outerHTML='<span class=&quot;h-10 w-10 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center font-bold text-white&quot;>V</span>'">
-              <span class="text-lg font-bold text-white">VibeSyncro Technologies</span>
-            </a>
-            <p class="mt-4 max-w-sm leading-7">Building &amp; Connecting People with Privacy &amp; Security.</p>
-          </div>
-          <div>
-            <h2 class="font-semibold text-white">Quick Links</h2>
-            <ul class="mt-4 space-y-2">
-              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="about.html">About Us</a></li>
-              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="products.html">Products &amp; Apps</a></li>
-              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="research.html">AI &amp; Security R&amp;D</a></li>
-              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="font-semibold text-white">Legal &amp; Support</h2>
-            <ul class="mt-4 space-y-2">
-              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="privacy.html">Privacy Policy</a></li>
-              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="terms.html">Terms of Service</a></li>
-              <li><a class="inline-flex min-h-11 items-center hover:text-cyan-300" href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&hl=en_IN" target="_blank" rel="noopener">Google Play <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="mt-10 border-t border-slate-800 pt-6 text-xs leading-6 text-slate-500">© <span id="year"></span> VibeSyncro Technologies Pvt Ltd. All rights reserved. · Doddanna Angadi, Bhumenahalli, Karnataka 561205</div>
-      </div>
-    </footer>
-    <script>
-      const menuBtn = document.getElementById("menuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-      menuBtn?.addEventListener("click", () => {
-        const expanded = menuBtn.getAttribute("aria-expanded") === "true";
-        menuBtn.setAttribute("aria-expanded", String(!expanded));
-        mobileMenu.classList.toggle("hidden", expanded);
-        menuBtn.innerHTML = expanded ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-xmark"></i>';
-        menuBtn.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
-      });
-      document.getElementById("year").textContent = new Date().getFullYear();
-      const updated = document.getElementById("lastUpdated");
-      if (updated) updated.textContent = "Last updated: " + new Date().toLocaleDateString("en-IN", { month: "long", year: "numeric" });
-      document.querySelectorAll(".notify-form").forEach((form) => form.addEventListener("submit", async (event) => {
-        const email = form.querySelector('input[type="email"]');
-        if (!email || !email.checkValidity()) { event.preventDefault(); email?.reportValidity(); return; }
-        event.preventDefault();
-        const toast = form.parentElement.querySelector(".notify-success");
-        const subject = form.querySelector('[name="_subject"]')?.value || "SafeMobile Beta Updates";
-        const body = "Please notify me about SafeMobile updates. My email address is " + email.value.trim() + ".";
-        if (form.action.includes("REPLACE_WITH_FORM_ID")) {
-          if (toast) { toast.textContent = "Your email app is opening with your SafeMobile update request. Send the email there to subscribe."; toast.classList.remove("hidden"); }
-          window.location.href = "mailto:hello@vibesyncro.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-          return;
-        }
-        const button = form.querySelector('button[type="submit"]');
-        if (button) { button.disabled = true; button.textContent = "Sending…"; }
-        try {
-          const response = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
-          if (!response.ok) throw new Error("Form submission failed");
-          if (toast) { toast.textContent = "Thanks — your request has been received. We’ll email you when SafeMobile beta updates are available."; toast.classList.remove("hidden"); }
-          form.reset();
-        } catch (error) {
-          if (toast) { toast.textContent = "We couldn’t submit your request. Please email hello@vibesyncro.com instead."; toast.classList.remove("hidden"); }
-        } finally {
-          if (button) { button.disabled = false; button.textContent = "Notify Me"; }
-        }
-      }));
-      const contactForm = document.getElementById("contactForm");
-      contactForm?.addEventListener("submit", (event) => {
-        if (!contactForm.checkValidity()) { event.preventDefault(); contactForm.reportValidity(); return; }
-        const email = contactForm.elements.email.value.trim();
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { event.preventDefault(); contactForm.elements.email.focus(); return; }
-        if (contactForm.action.includes("REPLACE_WITH_FORM_ID")) {
-          event.preventDefault();
-          const subject = contactForm.elements.subject.value.trim();
-          const body = "Name: " + contactForm.elements.name.value.trim() + "\nEmail: " + email + "\n\n" + contactForm.elements.message.value.trim();
-          window.location.href = "mailto:hello@vibesyncro.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-          const status = document.getElementById("contactStatus");
-          status.textContent = "Your email app is opening with your message. Send the email there to contact us.";
-          status.classList.remove("hidden");
-        }
-      });
-      const reveals = document.querySelectorAll(".reveal");
-      if ("IntersectionObserver" in window) {
-        const observer = new IntersectionObserver((entries) => entries.forEach((entry) => {
-          if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); }
-        }), { threshold: 0.12 });
-        reveals.forEach((element) => observer.observe(element));
-      } else { reveals.forEach((element) => element.classList.add("is-visible")); }
-    </script>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI & Security R&D | VibeSyncro Technologies Pvt Ltd</title><meta name="description" content="Explore VibeSyncro research into artificial intelligence, on-device intelligence, Android security and the SafeMobile Antivirus initiative in development.">
+<meta name="keywords" content="VibeSyncro Technologies, Android apps, privacy security, SafeMobile antivirus, AI research, Google Play developer India">
+<link rel="canonical" href="https://vibesyncrotechnologies.github.io/Website/research.html">
+<link rel="alternate" hreflang="en" href="https://vibesyncrotechnologies.github.io/Website/research.html?lang=en">
+<link rel="alternate" hreflang="hi" href="https://vibesyncrotechnologies.github.io/Website/research.html?lang=hi">
+<link rel="alternate" hreflang="te" href="https://vibesyncrotechnologies.github.io/Website/research.html?lang=te">
+<link rel="alternate" hreflang="ta" href="https://vibesyncrotechnologies.github.io/Website/research.html?lang=ta">
+<link rel="alternate" hreflang="kn" href="https://vibesyncrotechnologies.github.io/Website/research.html?lang=kn">
+<link rel="alternate" hreflang="x-default" href="https://vibesyncrotechnologies.github.io/Website/research.html">
+<meta property="og:title" content="AI & Security R&D | VibeSyncro Technologies Pvt Ltd"><meta property="og:description" content="Explore VibeSyncro research into artificial intelligence, on-device intelligence, Android security and the SafeMobile Antivirus initiative in development."><meta property="og:type" content="website"><meta property="og:url" content="https://vibesyncrotechnologies.github.io/Website/research.html"><meta property="og:image" content="https://vibesyncrotechnologies.github.io/Website/og-banner.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://vibesyncrotechnologies.github.io/Website/og-banner.png"><link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><script src="https://cdn.tailwindcss.com"></script>
+<!-- corrected from prior bug: tailwind.config assignment -->
+<script>/* CRITICAL FIX: use tailwind.config, not tailwind = {config:{...}} */ tailwind.config={theme:{extend:{colors:{brandDark:"#0B0F19",brandCard:"#131D31",brandBlue:"#2563EB",brandCyan:"#06B6D4"},fontFamily:{sans:["Inter","ui-sans-serif","system-ui","sans-serif"]}}}};</script>
+<style>html{scroll-behavior:smooth}body{background:#0B0F19;font-family:Inter,"Noto Sans Devanagari","Noto Sans Telugu","Noto Sans Tamil","Noto Sans Kannada","Noto Sans Malayalam",ui-sans-serif,system-ui,sans-serif}:focus-visible{outline:3px solid #06B6D4;outline-offset:3px}.skip-link{position:absolute;top:-5rem;left:1rem;z-index:1000;border-radius:.75rem;background:#06B6D4;color:#0B0F19;padding:.75rem 1rem;font-weight:700}.skip-link:focus{top:1rem}.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}.reveal.is-visible{opacity:1;transform:none}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}</style>
+
+</head><body class="min-h-screen bg-brandDark font-sans text-slate-100 antialiased selection:bg-cyan-500/30"><a class="skip-link" href="#main-content" data-i18n="skip">Skip to content</a><div id="site-header"></div><main id="main-content" class="relative"><section class="mx-auto max-w-7xl px-4 pb-20 pt-16 sm:px-6 lg:px-8"><div class="max-w-3xl"><p class="text-xs font-bold uppercase tracking-[.24em] text-cyan-300">Research &amp; Development</p><h1 class="mt-4 text-4xl font-extrabold sm:text-5xl">AI, Privacy &amp; Security R&amp;D</h1><p class="mt-5 text-lg leading-8 text-slate-300">We explore how intelligent systems and privacy-conscious engineering can create safer, more useful digital experiences.</p></div><div class="mt-12 grid gap-6 lg:grid-cols-2"><article class="rounded-3xl border border-cyan-500/25 bg-gradient-to-br from-blue-950/70 to-brandCard p-8"><h2 class="text-2xl font-bold">SafeMobile Antivirus</h2><span class="mt-3 inline-flex rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3 py-1 text-xs text-cyan-200">In Development</span><p class="mt-4 leading-7 text-slate-300">SafeMobile is a planned Android security product. Research areas include device risk scanning, financial transaction safety, privacy-conscious processing and on-device AI. It is not yet released.</p><ul class="mt-6 space-y-3 text-sm text-slate-300"><li><i class="fa-solid fa-check mr-2 text-cyan-300"></i>Real-time vulnerability scanning research</li><li><i class="fa-solid fa-check mr-2 text-cyan-300"></i>Financial risk awareness</li><li><i class="fa-solid fa-check mr-2 text-cyan-300"></i>Zero-telemetry design objective</li><li><i class="fa-solid fa-check mr-2 text-cyan-300"></i>On-device AI investigation</li></ul><a href="safemobile.html" class="mt-6 inline-flex min-h-11 items-center gap-2 font-semibold text-cyan-300">Explore SafeMobile <i class="fa-solid fa-arrow-right"></i></a></article><article class="rounded-3xl border border-slate-800 bg-brandCard p-8"><i class="fa-solid fa-brain text-2xl text-cyan-300"></i><h2 class="mt-5 text-2xl font-bold">Artificial Intelligence R&amp;D</h2><p class="mt-4 leading-7 text-slate-400">We are exploring AI technologies that can make digital products more helpful, responsive and context-aware, with security, transparency and user choice in view.</p><h3 class="mt-7 text-lg font-bold">Why it matters</h3><p class="mt-3 leading-7 text-slate-400">Our motto — <em>Building &amp; Connecting People with Privacy &amp; Security</em> — guides us to evaluate ideas through trust, responsible design and real user needs.</p></article></div><section class="mt-16"><h2 class="text-3xl font-bold">Roadmap</h2><div class="mt-7 grid gap-4 md:grid-cols-3"><article class="rounded-2xl border border-slate-800 bg-brandCard p-6"><span class="text-xs font-bold text-cyan-300">PHASE 01</span><h3 class="mt-3 text-xl font-bold">Research</h3><p class="mt-3 text-sm text-slate-400">Threat modelling, privacy requirements and architecture exploration.</p></article><article class="rounded-2xl border border-slate-800 bg-brandCard p-6"><span class="text-xs font-bold text-cyan-300">PHASE 02</span><h3 class="mt-3 text-xl font-bold">Beta</h3><p class="mt-3 text-sm text-slate-400">Controlled testing, feedback and security validation.</p></article><article class="rounded-2xl border border-slate-800 bg-brandCard p-6"><span class="text-xs font-bold text-cyan-300">PHASE 03</span><h3 class="mt-3 text-xl font-bold">Public Launch</h3><p class="mt-3 text-sm text-slate-400">Release after product and review milestones are achieved.</p></article></div></section></section></main><div id="site-footer"></div><noscript><p class="mx-auto max-w-4xl p-4 text-sm text-slate-300">Enable JavaScript to load site navigation and shared layout components.</p></noscript><script src="js/i18n.js" defer></script><script src="js/include.js" defer></script></body></html>
