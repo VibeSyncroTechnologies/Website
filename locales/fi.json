@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Valitse kieli",
+  "languageSearch": "Etsi kieliä",
+  "navHome": "Etusivu",
+  "navAbout": "Tietoa meistä",
+  "navProducts": "Tuotteet",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Tutkimus",
+  "navContact": "Yhteystiedot",
+  "heroExplore": "Tutustu sovelluksiimme",
+  "heroAbout": "Tutustu VibeSyncroon",
+  "quizTitle": "Mikä sovellus sopii sinulle?",
+  "quizOpen": "Katso sovellus Google Playssa",
+  "themeChoose": "Valitse ulkoasuteema",
+  "themeSecure": "Kyberturvallisuus",
+  "themePrivacy": "Yksityisyyden selkeys",
+  "themeSafety": "Turvallinen lämpö",
+  "footerCompany": "Yritys",
+  "footerPrivacy": "Tietosuojakäytäntö",
+  "footerTerms": "Käyttöehdot",
+  "footerRights": "Kaikki oikeudet pidätetään.",
+  "_meta": {
+    "language": "fi",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
