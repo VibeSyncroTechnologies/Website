@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Chọn ngôn ngữ",
+  "languageSearch": "Tìm ngôn ngữ",
+  "navHome": "Trang chủ",
+  "navAbout": "Giới thiệu",
+  "navProducts": "Sản phẩm",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Nghiên cứu",
+  "navContact": "Liên hệ",
+  "heroExplore": "Khám phá ứng dụng",
+  "heroAbout": "Khám phá VibeSyncro",
+  "quizTitle": "Ứng dụng nào phù hợp với bạn?",
+  "quizOpen": "Xem ứng dụng trên Google Play",
+  "themeChoose": "Chọn giao diện",
+  "themeSecure": "An ninh mạng",
+  "themePrivacy": "Quyền riêng tư rõ ràng",
+  "themeSafety": "Ấm áp và an toàn",
+  "footerCompany": "Công ty",
+  "footerPrivacy": "Chính sách quyền riêng tư",
+  "footerTerms": "Điều khoản dịch vụ",
+  "footerRights": "Đã đăng ký bản quyền.",
+  "_meta": {
+    "language": "vi",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
