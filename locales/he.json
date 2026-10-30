@@ -1,0 +1,26 @@
+{
+  "languageLabel": "בחירת שפה",
+  "languageSearch": "חיפוש שפות",
+  "navHome": "דף הבית",
+  "navAbout": "עלינו",
+  "navProducts": "מוצרים",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "מחקר",
+  "navContact": "יצירת קשר",
+  "heroExplore": "גלו את האפליקציות שלנו",
+  "heroAbout": "הכירו את VibeSyncro",
+  "quizTitle": "איזו אפליקציה מתאימה לכם?",
+  "quizOpen": "צפייה באפליקציה ב-Google Play",
+  "themeChoose": "בחירת מראה",
+  "themeSecure": "אבטחת סייבר",
+  "themePrivacy": "בהירות ופרטיות",
+  "themeSafety": "חמימות ובטיחות",
+  "footerCompany": "חברה",
+  "footerPrivacy": "מדיניות פרטיות",
+  "footerTerms": "תנאי השירות",
+  "footerRights": "כל הזכויות שמורות.",
+  "_meta": {
+    "language": "he",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
