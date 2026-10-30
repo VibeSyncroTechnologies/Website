@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Изберете език",
+  "languageSearch": "Търсене на езици",
+  "navHome": "Начало",
+  "navAbout": "За нас",
+  "navProducts": "Продукти",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Изследвания",
+  "navContact": "Контакт",
+  "heroExplore": "Разгледайте нашите приложения",
+  "heroAbout": "Запознайте се с VibeSyncro",
+  "quizTitle": "Кое приложение е подходящо за вас?",
+  "quizOpen": "Вижте приложението в Google Play",
+  "themeChoose": "Изберете визуална тема",
+  "themeSecure": "Киберсигурност",
+  "themePrivacy": "Ясна поверителност",
+  "themeSafety": "Защитена топлина",
+  "footerCompany": "Компания",
+  "footerPrivacy": "Политика за поверителност",
+  "footerTerms": "Условия за ползване",
+  "footerRights": "Всички права запазени.",
+  "_meta": {
+    "language": "bg",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
