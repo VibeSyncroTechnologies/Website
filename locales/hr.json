@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Odaberite jezik",
+  "languageSearch": "Pretraži jezike",
+  "navHome": "Početna",
+  "navAbout": "O nama",
+  "navProducts": "Proizvodi",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Istraživanje",
+  "navContact": "Kontakt",
+  "heroExplore": "Istražite naše aplikacije",
+  "heroAbout": "Upoznajte VibeSyncro",
+  "quizTitle": "Koja je aplikacija prava za vas?",
+  "quizOpen": "Pogledajte aplikaciju na Google Playu",
+  "themeChoose": "Odaberite vizualnu temu",
+  "themeSecure": "Kibernetička sigurnost",
+  "themePrivacy": "Jasnoća privatnosti",
+  "themeSafety": "Topla sigurnost",
+  "footerCompany": "Tvrtka",
+  "footerPrivacy": "Pravila privatnosti",
+  "footerTerms": "Uvjeti korištenja",
+  "footerRights": "Sva prava pridržana.",
+  "_meta": {
+    "language": "hr",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
