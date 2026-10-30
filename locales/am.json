@@ -1,0 +1,26 @@
+{
+  "languageLabel": "ቋንቋ ይምረጡ",
+  "languageSearch": "ቋንቋዎችን ይፈልጉ",
+  "navHome": "መነሻ",
+  "navAbout": "ስለ እኛ",
+  "navProducts": "ምርቶች",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "ምርምር",
+  "navContact": "ያግኙን",
+  "heroExplore": "መተግበሪያዎቻችንን ይመልከቱ",
+  "heroAbout": "VibeSyncroን ይወቁ",
+  "quizTitle": "የትኛው መተግበሪያ ይስማማዎታል?",
+  "quizOpen": "መተግበሪያውን በGoogle Play ይመልከቱ",
+  "themeChoose": "የእይታ ገጽታ ይምረጡ",
+  "themeSecure": "የሳይበር ደህንነት",
+  "themePrivacy": "የግላዊነት ግልጽነት",
+  "themeSafety": "ደህንነት እና ሙቀት",
+  "footerCompany": "ኩባንያ",
+  "footerPrivacy": "የግላዊነት መመሪያ",
+  "footerTerms": "የአገልግሎት ውሎች",
+  "footerRights": "መብቶች በሙሉ የተጠበቁ ናቸው።",
+  "_meta": {
+    "language": "am",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
