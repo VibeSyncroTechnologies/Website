@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Nyelv kiválasztása",
+  "languageSearch": "Nyelvek keresése",
+  "navHome": "Kezdőlap",
+  "navAbout": "Rólunk",
+  "navProducts": "Termékek",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Kutatás",
+  "navContact": "Kapcsolat",
+  "heroExplore": "Alkalmazásaink felfedezése",
+  "heroAbout": "Ismerje meg a VibeSyncrót",
+  "quizTitle": "Melyik alkalmazás illik Önhöz?",
+  "quizOpen": "Alkalmazás megtekintése a Google Playen",
+  "themeChoose": "Megjelenési téma kiválasztása",
+  "themeSecure": "Kiberbiztonság",
+  "themePrivacy": "Adatvédelmi átláthatóság",
+  "themeSafety": "Biztonságos melegség",
+  "footerCompany": "Vállalat",
+  "footerPrivacy": "Adatvédelmi irányelvek",
+  "footerTerms": "Szolgáltatási feltételek",
+  "footerRights": "Minden jog fenntartva.",
+  "_meta": {
+    "language": "hu",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
