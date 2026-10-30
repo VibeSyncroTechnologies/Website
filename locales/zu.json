@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Khetha ulimi",
+  "languageSearch": "Sesha izilimi",
+  "navHome": "Ikhaya",
+  "navAbout": "Mayelana nathi",
+  "navProducts": "Imikhiqizo",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Ucwaningo",
+  "navContact": "Xhumana nathi",
+  "heroExplore": "Hlola izinhlelo zethu",
+  "heroAbout": "Yazi i-VibeSyncro",
+  "quizTitle": "Iluphi uhlelo olufanele wena?",
+  "quizOpen": "Buka uhlelo ku-Google Play",
+  "themeChoose": "Khetha ukubukeka",
+  "themeSecure": "Ukuphepha kwe-inthanethi",
+  "themePrivacy": "Ubumfihlo obucacile",
+  "themeSafety": "Ukuphepha nokufudumala",
+  "footerCompany": "Inkampani",
+  "footerPrivacy": "Inqubomgomo yobumfihlo",
+  "footerTerms": "Imigomo yesevisi",
+  "footerRights": "Wonke amalungelo agodliwe.",
+  "_meta": {
+    "language": "zu",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
