@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Dil seçin",
+  "languageSearch": "Dilleri ara",
+  "navHome": "Ana sayfa",
+  "navAbout": "Hakkımızda",
+  "navProducts": "Ürünler",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Araştırma",
+  "navContact": "İletişim",
+  "heroExplore": "Uygulamalarımızı keşfedin",
+  "heroAbout": "VibeSyncro'yu keşfedin",
+  "quizTitle": "Size hangi uygulama uygun?",
+  "quizOpen": "Google Play'de uygulamayı görüntüle",
+  "themeChoose": "Görsel temayı seçin",
+  "themeSecure": "Siber güvenlik",
+  "themePrivacy": "Gizlilik açıklığı",
+  "themeSafety": "Güvenli sıcaklık",
+  "footerCompany": "Şirket",
+  "footerPrivacy": "Gizlilik Politikası",
+  "footerTerms": "Hizmet Şartları",
+  "footerRights": "Tüm hakları saklıdır.",
+  "_meta": {
+    "language": "tr",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
