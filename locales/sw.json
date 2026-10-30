@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Chagua lugha",
+  "languageSearch": "Tafuta lugha",
+  "navHome": "Nyumbani",
+  "navAbout": "Kuhusu sisi",
+  "navProducts": "Bidhaa",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Utafiti",
+  "navContact": "Wasiliana nasi",
+  "heroExplore": "Gundua programu zetu",
+  "heroAbout": "Ijue VibeSyncro",
+  "quizTitle": "Ni programu gani inayokufaa?",
+  "quizOpen": "Tazama programu kwenye Google Play",
+  "themeChoose": "Chagua mwonekano",
+  "themeSecure": "Usalama wa mtandao",
+  "themePrivacy": "Uwazi wa faragha",
+  "themeSafety": "Usalama wenye utulivu",
+  "footerCompany": "Kampuni",
+  "footerPrivacy": "Sera ya faragha",
+  "footerTerms": "Masharti ya huduma",
+  "footerRights": "Haki zote zimehifadhiwa.",
+  "_meta": {
+    "language": "sw",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
