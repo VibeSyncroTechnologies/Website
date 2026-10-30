@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Velg språk",
+  "languageSearch": "Søk etter språk",
+  "navHome": "Hjem",
+  "navAbout": "Om oss",
+  "navProducts": "Produkter",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Forskning",
+  "navContact": "Kontakt",
+  "heroExplore": "Utforsk appene våre",
+  "heroAbout": "Bli kjent med VibeSyncro",
+  "quizTitle": "Hvilken app passer for deg?",
+  "quizOpen": "Se appen på Google Play",
+  "themeChoose": "Velg visuelt tema",
+  "themeSecure": "Cybersikkerhet",
+  "themePrivacy": "Personvern og klarhet",
+  "themeSafety": "Trygg varme",
+  "footerCompany": "Selskap",
+  "footerPrivacy": "Personvernerklæring",
+  "footerTerms": "Vilkår for bruk",
+  "footerRights": "Alle rettigheter forbeholdt.",
+  "_meta": {
+    "language": "no",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
