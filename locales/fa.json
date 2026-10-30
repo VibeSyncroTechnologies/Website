@@ -1,0 +1,26 @@
+{
+  "languageLabel": "انتخاب زبان",
+  "languageSearch": "جستجوی زبان‌ها",
+  "navHome": "خانه",
+  "navAbout": "درباره ما",
+  "navProducts": "محصولات",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "پژوهش",
+  "navContact": "تماس",
+  "heroExplore": "برنامه‌های ما را ببینید",
+  "heroAbout": "با VibeSyncro آشنا شوید",
+  "quizTitle": "کدام برنامه برای شما مناسب است؟",
+  "quizOpen": "مشاهده برنامه در Google Play",
+  "themeChoose": "انتخاب نمای ظاهری",
+  "themeSecure": "امنیت سایبری",
+  "themePrivacy": "شفافیت حریم خصوصی",
+  "themeSafety": "امنیت گرم و آرام",
+  "footerCompany": "شرکت",
+  "footerPrivacy": "سیاست حفظ حریم خصوصی",
+  "footerTerms": "شرایط خدمات",
+  "footerRights": "تمام حقوق محفوظ است.",
+  "_meta": {
+    "language": "fa",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
