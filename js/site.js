@@ -215,7 +215,7 @@
           instance.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.14, rootMargin: "0px 0px -35px 0px" });
+    }, { threshold: 0.14, rootMargin: "-50% 0px -50% 0px" });
 
     items.forEach((item) => {
       item.classList.add("reveal-pending");
