@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Вибрати мову",
+  "languageSearch": "Пошук мов",
+  "navHome": "Головна",
+  "navAbout": "Про нас",
+  "navProducts": "Продукти",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Дослідження",
+  "navContact": "Контакти",
+  "heroExplore": "Переглянути наші додатки",
+  "heroAbout": "Дізнатися про VibeSyncro",
+  "quizTitle": "Який додаток вам підходить?",
+  "quizOpen": "Переглянути додаток у Google Play",
+  "themeChoose": "Вибрати тему оформлення",
+  "themeSecure": "Кібербезпека",
+  "themePrivacy": "Прозорість приватності",
+  "themeSafety": "Теплий захист",
+  "footerCompany": "Компанія",
+  "footerPrivacy": "Політика конфіденційності",
+  "footerTerms": "Умови використання",
+  "footerRights": "Усі права захищено.",
+  "_meta": {
+    "language": "uk",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
