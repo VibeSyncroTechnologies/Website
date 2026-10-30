@@ -172,14 +172,14 @@
       if (frame) window.cancelAnimationFrame(frame);
     }
 
-    canvas.addEventListener("pointermove", (event) => {
+    hero.addEventListener("pointermove", (event) => {
       if (reducedMotion) return;
       const rect = canvas.getBoundingClientRect();
       pointer.x = event.clientX - rect.left;
       pointer.y = event.clientY - rect.top;
     }, { passive: true });
 
-    canvas.addEventListener("pointerleave", () => {
+    hero.addEventListener("pointerleave", () => {
       pointer = { x: -1000, y: -1000 };
     }, { passive: true });
 
