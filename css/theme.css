@@ -1,1 +1,45 @@
 :root{color-scheme:light;--brand-red:#C8102E;--brand-navy:#0A2540}html{scroll-behavior:smooth}body{background:#fff;color:#1E293B;font-family:Inter,sans-serif;line-height:1.65}h1,h2,h3,h4,h5,h6{font-family:"Plus Jakarta Sans",sans-serif;color:#0A2540;letter-spacing:-.025em}a,button{transition:color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}:focus-visible{outline:3px solid #C8102E;outline-offset:3px}.skip-link{position:absolute;left:1rem;top:-5rem;z-index:1000;border-radius:.5rem;background:#C8102E;padding:.75rem 1rem;color:#fff;font-weight:700}.skip-link:focus{top:1rem;color:#fff}.form-control{width:100%;min-height:3rem;border:1px solid #cbd5e1;border-radius:.625rem;background:#fff;padding:.75rem 1rem;color:#1e293b}.form-control:focus{border-color:#C8102E;outline:2px solid rgb(200 16 46/.12)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+
+/* CSS pixel-art brand mark: V in primary red, S in brand navy.
+   This compact monogram is newly authored because the prompt contained
+   the placeholder [PASTE_THE_ENTIRE_BOX_SHADOW_LIST_HERE], not the original list. */
+.logo-css-art {
+  position: absolute;
+  left: 3px;
+  top: 9px;
+  display: block;
+  width: 2px;
+  height: 2px;
+  transform-origin: top left;
+  transform: scale(1.5);
+  background: transparent;
+  box-shadow: 0px 0px 0 #C8102E,
+    8px 0px 0 #C8102E,
+    14px 0px 0 #0A2540,
+    16px 0px 0 #0A2540,
+    18px 0px 0 #0A2540,
+    20px 0px 0 #0A2540,
+    0px 2px 0 #C8102E,
+    8px 2px 0 #C8102E,
+    12px 2px 0 #0A2540,
+    2px 4px 0 #C8102E,
+    6px 4px 0 #C8102E,
+    12px 4px 0 #0A2540,
+    2px 6px 0 #C8102E,
+    6px 6px 0 #C8102E,
+    14px 6px 0 #0A2540,
+    16px 6px 0 #0A2540,
+    18px 6px 0 #0A2540,
+    4px 8px 0 #C8102E,
+    20px 8px 0 #0A2540,
+    4px 10px 0 #C8102E,
+    20px 10px 0 #0A2540,
+    4px 12px 0 #C8102E,
+    12px 12px 0 #0A2540,
+    14px 12px 0 #0A2540,
+    16px 12px 0 #0A2540,
+    18px 12px 0 #0A2540;
+}
+.logo-css-art-footer {
+  filter: brightness(0) invert(1);
+}
