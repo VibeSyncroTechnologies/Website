@@ -630,3 +630,48 @@
 .logo-css-art-footer {
   filter: brightness(0) invert(1);
 }
+
+
+
+/* Interactive home experience */
+#homeHero {
+  min-height: 620px;
+}
+#heroParticles {
+  opacity: 0.78;
+}
+#privacyJourney .reveal-pending {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 650ms ease, transform 650ms ease;
+}
+#privacyJourney .reveal-pending.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#privacyJourney article:nth-of-type(2) {
+  transition-delay: 70ms;
+}
+#privacyJourney article:nth-of-type(3) {
+  transition-delay: 140ms;
+}
+#privacyJourney article:nth-of-type(4) {
+  transition-delay: 210ms;
+}
+#productsQuiz summary::-webkit-details-marker {
+  display: none;
+}
+[data-quiz-choice][aria-pressed="true"] {
+  box-shadow: 0 0 0 2px rgba(200, 16, 46, 0.12);
+}
+@media (prefers-reduced-motion: reduce) {
+  #privacyJourney .reveal-pending,
+  #privacyJourney .reveal-pending.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  #heroParticles {
+    opacity: 0.3;
+  }
+}
