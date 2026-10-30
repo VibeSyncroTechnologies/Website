@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Zaɓi harshe",
+  "languageSearch": "Nemo harsuna",
+  "navHome": "Gida",
+  "navAbout": "Game da mu",
+  "navProducts": "Kayayyaki",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Bincike",
+  "navContact": "Tuntuɓe mu",
+  "heroExplore": "Duba manhajojinmu",
+  "heroAbout": "Sanin VibeSyncro",
+  "quizTitle": "Wace manhaja ta dace da kai?",
+  "quizOpen": "Duba manhajar a Google Play",
+  "themeChoose": "Zaɓi yanayin gani",
+  "themeSecure": "Tsaron yanar gizo",
+  "themePrivacy": "Bayyananniyar sirri",
+  "themeSafety": "Kariya mai natsuwa",
+  "footerCompany": "Kamfani",
+  "footerPrivacy": "Manufar sirri",
+  "footerTerms": "Sharuɗɗan sabis",
+  "footerRights": "An kiyaye duk haƙƙoƙi.",
+  "_meta": {
+    "language": "ha",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
