@@ -21,22 +21,13 @@ Modern Corporate Tech, light-mode default:
 - `contact.html` — Contact details and contact form
 - `privacy.html` and `terms.html` — Legal pages
 - `404.html` — Custom not-found page
-- `partials/` — Shared navigation and footer loaded by `js/include.js`
+- `partials/` — Retired; header and footer are now hardcoded into each HTML page
 - `css/theme.css` — Shared light theme and accessibility/motion styles
-- `js/include.js`, `js/i18n.js`, `locales/` — Navigation, page interactions, locale selector and five current UI dictionaries
+- `js/site.js`, `js/i18n.js`, `locales/` — Mobile navigation, contact/Notify-Me form handling, SafeMobile interactions, locale selector and five current UI dictionaries
 
 ## Image assets
 
-The repository contains all supplied brand and office photography at the root: `logo.png`, `office-hero.jpg`, `office-team.jpg`, `office-meeting.jpg` and `office-innovation.jpg`. The three secondary office photos are optimised display copies; the index and About page still retain `office-hero.jpg` as a resilient image fallback.
-
-The following launch assets are still needed:
-- `og-banner.png` — 1200×630 social preview used in Open Graph and Twitter metadata
-- `play-badge-en.png` — official Google Play badge from https://play.google.com/intl/en_us/badges/
-- `app-pdf-shot.png`, `app-devoptions-shot.png`, `app-kids-shot.png` — real screenshots from the corresponding Play Console store listings
-
-Screenshot placeholders and a text fallback keep the product cards usable before these assets are uploaded. Do not use screenshots from private ongoing project directories.
-
-## Forms
+The website uses the root-level `logo.png` as its only local display image. Hero and team photography is loaded from remote Unsplash image URLs, and the app previews are CSS-only phone mockups. No missing local office-photo or app-screenshot files are referenced.\n\n## Forms
 
 Contact and Notify-Me forms retain Formspree integration. Replace `REPLACE_WITH_FORM_ID` with the real Formspree ID before launch. Until configured, the shared script validates inputs and opens a prepared mailto message to `admin@vibesyncro.com`; the visitor must send it from their email client. Verify the mailbox exists before launch.
 
@@ -44,7 +35,7 @@ Contact and Notify-Me forms retain Formspree integration. Replace `REPLACE_WITH_
 
 English, Hindi, Telugu, Tamil and Kannada UI dictionaries are currently shipped. The selector translates shared navigation and the skip link; page-body translations are not complete. Do not advertise full-site or 52-language coverage until reviewed translations are added.
 
-## GitHub Pages deployment
+## Navigation and page shell\n\nThe complete header and footer markup is included directly in all eight HTML pages. Each page references `logo.png` from the repository root in both locations; no JavaScript include is required to render the logo. `js/site.js` only handles the responsive hamburger menu, current-page state, form fallbacks and SafeMobile capability interactions.\n\n## GitHub Pages deployment
 
 Use repository **Settings → Pages → Deploy from a branch → main → /(root)** and verify deployment after GitHub reports a successful Pages build. The code change itself does not verify Pages settings or live deployment.
 
