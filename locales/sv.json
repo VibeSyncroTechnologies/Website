@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Välj språk",
+  "languageSearch": "Sök språk",
+  "navHome": "Hem",
+  "navAbout": "Om oss",
+  "navProducts": "Produkter",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Forskning",
+  "navContact": "Kontakt",
+  "heroExplore": "Utforska våra appar",
+  "heroAbout": "Upptäck VibeSyncro",
+  "quizTitle": "Vilken app passar dig?",
+  "quizOpen": "Visa appen på Google Play",
+  "themeChoose": "Välj visuellt tema",
+  "themeSecure": "Cybersäkerhet",
+  "themePrivacy": "Integritetsklarhet",
+  "themeSafety": "Trygg värme",
+  "footerCompany": "Företag",
+  "footerPrivacy": "Integritetspolicy",
+  "footerTerms": "Användarvillkor",
+  "footerRights": "Alla rättigheter förbehållna.",
+  "_meta": {
+    "language": "sv",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
