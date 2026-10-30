@@ -1,0 +1,26 @@
+{
+  "languageLabel": "เลือกภาษา",
+  "languageSearch": "ค้นหาภาษา",
+  "navHome": "หน้าแรก",
+  "navAbout": "เกี่ยวกับเรา",
+  "navProducts": "ผลิตภัณฑ์",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "งานวิจัย",
+  "navContact": "ติดต่อ",
+  "heroExplore": "สำรวจแอปของเรา",
+  "heroAbout": "รู้จัก VibeSyncro",
+  "quizTitle": "แอปใดเหมาะกับคุณ?",
+  "quizOpen": "ดูแอปบน Google Play",
+  "themeChoose": "เลือกธีมภาพ",
+  "themeSecure": "ความปลอดภัยทางไซเบอร์",
+  "themePrivacy": "ความชัดเจนด้านความเป็นส่วนตัว",
+  "themeSafety": "ความอบอุ่นและปลอดภัย",
+  "footerCompany": "บริษัท",
+  "footerPrivacy": "นโยบายความเป็นส่วนตัว",
+  "footerTerms": "ข้อกำหนดการใช้บริการ",
+  "footerRights": "สงวนลิขสิทธิ์ทั้งหมด",
+  "_meta": {
+    "language": "th",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
