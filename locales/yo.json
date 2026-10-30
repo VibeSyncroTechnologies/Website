@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Yan ede",
+  "languageSearch": "Wa ede kiri",
+  "navHome": "Ile",
+  "navAbout": "Nipa wa",
+  "navProducts": "Awon ọja",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Iwadi",
+  "navContact": "Kan si wa",
+  "heroExplore": "Wo awon ohun elo wa",
+  "heroAbout": "Mọ VibeSyncro",
+  "quizTitle": "Ewo ni ohun elo to ba ọ mu?",
+  "quizOpen": "Wo ohun elo lori Google Play",
+  "themeChoose": "Yan irisi",
+  "themeSecure": "Aabo ori ayelujara",
+  "themePrivacy": "Asiri to han gbangba",
+  "themeSafety": "Aabo ati itunu",
+  "footerCompany": "Ile-iṣẹ",
+  "footerPrivacy": "Ilana asiri",
+  "footerTerms": "Awọn ofin iṣẹ",
+  "footerRights": "Gbogbo ẹtọ wa ni ipamọ.",
+  "_meta": {
+    "language": "yo",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
