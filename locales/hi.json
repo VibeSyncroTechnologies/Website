@@ -1,4 +1,8 @@
 {
+  "_meta": {
+    "language": "hi",
+    "coverage": "Complete: all English source dictionary keys translated."
+  },
   "skip": "मुख्य सामग्री पर जाएँ",
   "languageLabel": "भाषा चुनें",
   "navHome": "होम",
