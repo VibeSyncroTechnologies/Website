@@ -85,6 +85,63 @@
   }
 
 
+
+  // Magnetic hero CTAs: RAF-throttled, bounded to 4px, and disabled for reduced motion/touch.
+  function initMagneticButtons() {
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const coarse = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+    if (reduce || coarse) return;
+    document.querySelectorAll("[data-magnetic]").forEach((button) => {
+      let frame = 0;
+      const reset = () => {
+        if (frame) cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          button.style.setProperty("--magnetic-x","0px");
+          button.style.setProperty("--magnetic-y","0px");
+          frame = 0;
+        });
+      };
+      button.addEventListener("pointermove",(event) => {
+        const r=button.getBoundingClientRect(),x=event.clientX-r.left,y=event.clientY-r.top;
+        const edge=Math.min(x,r.width-x,y,r.height-y);
+        if(edge>40)return reset();
+        const mx=Math.max(-4,Math.min(4,(x/r.width-.5)*8));
+        const my=Math.max(-4,Math.min(4,(y/r.height-.5)*8));
+        if(frame)cancelAnimationFrame(frame);
+        frame=requestAnimationFrame(()=>{
+          button.style.setProperty("--magnetic-x",mx.toFixed(2)+"px");
+          button.style.setProperty("--magnetic-y",my.toFixed(2)+"px");frame=0;
+        });
+      },{passive:true});
+      button.addEventListener("pointerleave",reset);
+      button.addEventListener("blur",reset);
+    });
+  }
+
+  // Trust-bar counters count once over 1.5 seconds when they enter the viewport.
+  function initAnimatedCounters() {
+    const counters=Array.from(document.querySelectorAll("[data-counter]"));
+    if(!counters.length)return;
+    const reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const format=n=>new Intl.NumberFormat(document.documentElement.lang||"en").format(n);
+    const finish=el=>{const n=Number(el.dataset.counter);if(Number.isFinite(n))el.textContent=format(n);};
+    if(reduce||!("IntersectionObserver" in window)){counters.forEach(finish);return;}
+    const observer=new IntersectionObserver((entries,instance)=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting)return;
+        const el=entry.target,target=Number(el.dataset.counter),duration=1500;let start=0;
+        if(!Number.isFinite(target)){instance.unobserve(el);return;}
+        const tick=now=>{
+          if(!start)start=now;const p=Math.min(1,(now-start)/duration),ease=1-Math.pow(1-p,3);
+          el.textContent=format(Math.round(target*ease));
+          if(p<1)requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);instance.unobserve(el);
+      });
+    },{threshold:.45});
+    counters.forEach(el=>observer.observe(el));
+  }
+
   // Mobile navigation
   const menu = document.getElementById("menuBtn");
   const panel = document.getElementById("mobileMenu");
@@ -500,4 +557,6 @@
 
   initParticleHero();
   initScrollReveal();
+  initMagneticButtons();
+  initAnimatedCounters();
 })();
