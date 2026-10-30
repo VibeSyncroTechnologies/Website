@@ -1,0 +1,26 @@
+{
+  "languageLabel": "言語を選択",
+  "languageSearch": "言語を検索",
+  "navHome": "ホーム",
+  "navAbout": "会社概要",
+  "navProducts": "製品",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "研究",
+  "navContact": "お問い合わせ",
+  "heroExplore": "アプリを見る",
+  "heroAbout": "VibeSyncroについて",
+  "quizTitle": "あなたに合うアプリは？",
+  "quizOpen": "Google Playでアプリを見る",
+  "themeChoose": "表示テーマを選択",
+  "themeSecure": "サイバーセキュア",
+  "themePrivacy": "プライバシーの明瞭さ",
+  "themeSafety": "安心できる温かさ",
+  "footerCompany": "会社",
+  "footerPrivacy": "プライバシーポリシー",
+  "footerTerms": "利用規約",
+  "footerRights": "無断転載を禁じます。",
+  "_meta": {
+    "language": "ja",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
