@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Pilih bahasa",
+  "languageSearch": "Cari bahasa",
+  "navHome": "Laman utama",
+  "navAbout": "Tentang kami",
+  "navProducts": "Produk",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Penyelidikan",
+  "navContact": "Hubungi",
+  "heroExplore": "Terokai aplikasi kami",
+  "heroAbout": "Kenali VibeSyncro",
+  "quizTitle": "Aplikasi manakah sesuai untuk anda?",
+  "quizOpen": "Lihat aplikasi di Google Play",
+  "themeChoose": "Pilih tema visual",
+  "themeSecure": "Keselamatan siber",
+  "themePrivacy": "Kejelasan privasi",
+  "themeSafety": "Kehangatan dan keselamatan",
+  "footerCompany": "Syarikat",
+  "footerPrivacy": "Dasar Privasi",
+  "footerTerms": "Terma Perkhidmatan",
+  "footerRights": "Hak cipta terpelihara.",
+  "_meta": {
+    "language": "ms",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
