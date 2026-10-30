@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Alege limba",
+  "languageSearch": "Caută limbi",
+  "navHome": "Acasă",
+  "navAbout": "Despre noi",
+  "navProducts": "Produse",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Cercetare",
+  "navContact": "Contact",
+  "heroExplore": "Descoperă aplicațiile noastre",
+  "heroAbout": "Descoperă VibeSyncro",
+  "quizTitle": "Ce aplicație ți se potrivește?",
+  "quizOpen": "Vezi aplicația pe Google Play",
+  "themeChoose": "Alege tema vizuală",
+  "themeSecure": "Securitate cibernetică",
+  "themePrivacy": "Claritate privind confidențialitatea",
+  "themeSafety": "Căldură și protecție",
+  "footerCompany": "Companie",
+  "footerPrivacy": "Politica de confidențialitate",
+  "footerTerms": "Termeni și condiții",
+  "footerRights": "Toate drepturile rezervate.",
+  "_meta": {
+    "language": "ro",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
