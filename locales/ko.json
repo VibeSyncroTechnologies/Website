@@ -1,0 +1,26 @@
+{
+  "languageLabel": "언어 선택",
+  "languageSearch": "언어 검색",
+  "navHome": "홈",
+  "navAbout": "회사 소개",
+  "navProducts": "제품",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "연구",
+  "navContact": "문의",
+  "heroExplore": "앱 둘러보기",
+  "heroAbout": "VibeSyncro 알아보기",
+  "quizTitle": "나에게 맞는 앱은 무엇인가요?",
+  "quizOpen": "Google Play에서 앱 보기",
+  "themeChoose": "화면 테마 선택",
+  "themeSecure": "사이버 보안",
+  "themePrivacy": "명확한 개인정보 보호",
+  "themeSafety": "따뜻한 안전",
+  "footerCompany": "회사",
+  "footerPrivacy": "개인정보 처리방침",
+  "footerTerms": "서비스 약관",
+  "footerRights": "모든 권리 보유",
+  "_meta": {
+    "language": "ko",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
