@@ -1,64 +1,57 @@
 # VibeSyncro Technologies Pvt Ltd — Official Website
 
-Static multi-page company website using semantic HTML5, Tailwind CSS via CDN, Font Awesome and vanilla JavaScript. No npm, bundler or build step is required.
+Static, responsive multi-page website for VibeSyncro Technologies Pvt Ltd. Built with semantic HTML, Tailwind CSS via CDN, Font Awesome and vanilla JavaScript; no npm or build pipeline is required.
 
-## Shared layout architecture
+## Design system
 
-This project uses **Option A: shared HTML partials**. Every page mounts `#site-header` and `#site-footer`; `js/include.js` loads `partials/header.html` and `partials/footer.html` at runtime. GitHub Pages serves these same-origin files as static HTML. Shared JavaScript initialises the mobile menu, forms, reduced-motion-aware animation, homepage particle field, Privacy Journey, product quiz and SafeMobile capability diagram.
+Modern Corporate Tech, light-mode default:
+- Primary red: `#C8102E`; brand navy: `#0A2540`
+- White background: `#FFFFFF`; alternating section background: `#F8FAFC`
+- Body text: `#1E293B`; muted text: `#64748B`
+- Inter typography, white cards, subtle borders and shadows
+- White sticky navbar and brand-navy footer
 
-## Pages and support files
+## Pages and shared structure
 
-- `index.html` — Home, particle hero, product links, Privacy Journey and beta interest form
-- `about.html` — Company profile, values, facts and embedded location map
-- `products.html` — Published Android apps, screenshots, official-badge slot and app quiz
-- `safemobile.html` — SafeMobile research concept, interactive capability diagram, roadmap, beta interest and FAQ
+- `index.html` — Home, split hero, trust strip, published apps, company preview, SafeMobile update form and privacy approach
+- `about.html` — Company story, four-photo grid and Bhumenahalli map
+- `products.html` — Three Google Play app cards, Play Badge fallback and screenshot placeholders
+- `safemobile.html` — SafeMobile research initiative, clearly labelled In Development
 - `research.html` — AI, privacy and security research direction
-- `contact.html` — Company details, map and contact form
-- `privacy.html` — Company privacy policy and future app-specific policy slots
-- `terms.html` — Terms of service
-- `404.html` — Custom GitHub Pages not-found page
-- `partials/` — Shared header and footer
-- `js/include.js` — Shared layout, page interactions and form fallback
-- `js/i18n.js`, `locales/` — JSON locale loader and current UI translations
-- `robots.txt`, `sitemap.xml` — Search-engine crawler configuration
+- `contact.html` — Contact details and contact form
+- `privacy.html` and `terms.html` — Legal pages
+- `404.html` — Custom not-found page
+- `partials/` — Shared navigation and footer loaded by `js/include.js`
+- `css/theme.css` — Shared light theme and accessibility/motion styles
+- `js/include.js`, `js/i18n.js`, `locales/` — Navigation, page interactions, locale selector and five current UI dictionaries
 
-## REQUIRED ASSETS — UPLOAD BEFORE LAUNCH
+## Image assets
 
-| File | Dimensions | Purpose | Where it is referenced |
-|---|---|---|---|
-| `logo.png` | ≥256×256, square, transparent background | Header logo, favicon, JSON-LD logo, brand mark | Shared header/footer partials; every HTML page favicon; homepage hero |
-| `og-banner.png` | 1200×630 | Social share preview (WhatsApp, LinkedIn, Twitter) | `og:image` and `twitter:image` on every page |
-| `play-badge-en.png` | Official Google Play badge, ≥28px tall in render | Download CTA on app cards and homepage | `products.html`, `index.html` |
-| `app-pdf-shot.png` | 1080×1920 (9:16 portrait), JPEG or 24-bit PNG | VibeSync PDF Suite preview | `products.html` card overlay |
-| `app-devoptions-shot.png` | 1080×1920 | Developer Options Shortcut preview | `products.html` card overlay |
-| `app-kids-shot.png` | 1080×1920 | Kids Drawing preview | `products.html` card overlay |
+The repository contains `logo.png` and `office-hero.jpg`. Upload the remaining supplied office photographs to the root as `office-team.jpg`, `office-meeting.jpg` and `office-innovation.jpg`; each corresponding image slot temporarily falls back to `office-hero.jpg`.
 
-The repository already contains the current `logo.png`; retain or replace it with the approved square high-resolution export if needed. Missing badge and screenshot images use styled fallbacks. Upload the remaining assets above before the final public launch. `og-banner.png` is referenced by social metadata and must be uploaded for share previews to render.
+The following launch assets are still needed:
+- `og-banner.png` — 1200×630 social preview used in Open Graph and Twitter metadata
+- `play-badge-en.png` — official Google Play badge from https://play.google.com/intl/en_us/badges/
+- `app-pdf-shot.png`, `app-devoptions-shot.png`, `app-kids-shot.png` — real screenshots from the corresponding Play Console store listings
 
-Official Google Play badge: download from https://play.google.com/intl/en_us/badges/ and save as `play-badge-en.png` in the repository root. App screenshots: download directly from each Play Console listing (Store presence → Main store listing → Graphics). Do not use screenshots from private project folders.
+Screenshot placeholders and a text fallback keep the product cards usable before these assets are uploaded. Do not use screenshots from private ongoing project directories.
 
-## Configure forms
+## Forms
 
-Contact and SafeMobile beta forms use the Formspree placeholder endpoint `REPLACE_WITH_FORM_ID`. Create a form at https://formspree.io/ and replace every placeholder in `contact.html`, `index.html`, `products.html` and `safemobile.html` with the actual endpoint ID. Until that is done, JavaScript validates the form and opens a prepared email to `hello@vibesyncro.com`; the visitor must send it from their email app. Confirm that this mailbox exists before launch.
+Contact and Notify-Me forms retain Formspree integration. Replace `REPLACE_WITH_FORM_ID` with the real Formspree ID before launch. Until configured, the shared script validates inputs and opens a prepared mailto message to `hello@vibesyncro.com`; the visitor must send it from their email client. Verify the mailbox exists before launch.
 
-## Multilingual interface
+## Localization
 
-The JSON locale loader and language selector are in `js/i18n.js`. Five locale files are currently supplied: English, Hindi, Telugu, Tamil and Kannada. At this stage, the translated strings cover shared navigation and the skip link; the page body content remains English. The requested 52-language target is not yet complete: the other locale files and reviewed translations must be added before claiming 52-language support. The existing loader is designed to be extended with additional JSON dictionaries.
+English, Hindi, Telugu, Tamil and Kannada UI dictionaries are currently shipped. The selector translates shared navigation and the skip link; page-body translations are not complete. Do not advertise full-site or 52-language coverage until reviewed translations are added.
 
-## Deploy with GitHub Pages
+## GitHub Pages deployment
 
-1. Open repository **Settings → Pages**.
-2. Under Build and deployment, select **Deploy from a branch**.
-3. Choose branch `main` and folder `/(root)`, then save.
-4. Wait for GitHub Pages to finish deploying.
-5. Verify https://vibesyncrotechnologies.github.io/Website/ and test the pages, forms and mobile navigation at 320px.
+Use repository **Settings → Pages → Deploy from a branch → main → /(root)** and verify deployment after GitHub reports a successful Pages build. The code change itself does not verify Pages settings or live deployment.
 
-The repository connector does not expose the GitHub Pages settings API, so activation and live deployment status must be confirmed in the repository Settings page.
+## Custom domain
 
-## Future custom domain
+When the final domain is ready, configure it in **Settings → Pages → Custom domain**, add the DNS records provided by GitHub, wait for DNS verification and enable HTTPS. Update canonical, sitemap and social preview URLs after changing domains.
 
-Set the domain under **Settings → Pages → Custom domain**, configure the DNS records shown by GitHub (apex A records and a `www` CNAME when applicable), add the generated `CNAME` file to the repository root, wait for DNS verification and enable **Enforce HTTPS**. Update canonical URLs, sitemap entries, Open Graph URLs and Organization schema after the domain switch.
+## Public product scope
 
-## Public portfolio boundary
-
-Only the three supplied public Google Play apps and SafeMobile, clearly labelled **In Development**, are presented. Ongoing private project directories are intentionally excluded from the repository.
+Only the three public Google Play apps supplied by the company and SafeMobile (In Development) are shown. Private ongoing project directories are intentionally excluded.
