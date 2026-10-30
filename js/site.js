@@ -240,13 +240,15 @@
   };
 
   document.querySelectorAll("[data-quiz-choice]").forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", async () => {
+      if (window.VibeI18n) await window.VibeI18n.init();
       const choice = quizChoices[button.dataset.quizChoice];
       const result = document.getElementById("quizResult");
       const resultText = document.getElementById("quizResultText");
       const resultLink = document.getElementById("quizResultLink");
       if (!choice || !result || !resultText || !resultLink) return;
 
+      resultText.setAttribute("data-i18n", choice.key);
       resultText.textContent = window.VibeI18n
         ? window.VibeI18n.t(choice.key)
         : choice.key;
