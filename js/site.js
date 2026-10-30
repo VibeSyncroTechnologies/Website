@@ -2,6 +2,89 @@
 (function () {
   "use strict";
 
+  // Brand-aligned themes use a strict allow-list; arbitrary CSS values are never accepted.
+  function initThemeSwitcher() {
+    const valid = { secure: true, privacy: true, safety: true };
+    const root = document.documentElement;
+    const menus = Array.from(document.querySelectorAll("[data-theme-menu]"));
+    if (!menus.length) return;
+    function initialTheme() {
+      const attr = root.getAttribute("data-theme");
+      if (Object.prototype.hasOwnProperty.call(valid, attr)) return attr;
+      try {
+        const saved = window.localStorage.getItem("vibesyncro-theme");
+        if (Object.prototype.hasOwnProperty.call(valid, saved)) return saved;
+      } catch (_) {}
+      return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "secure" : "privacy";
+    }
+    let active = initialTheme();
+    function close(menu, focus) {
+      const trigger = menu.querySelector(".theme-trigger");
+      const list = menu.querySelector(".theme-dropdown");
+      if (!trigger || !list) return;
+      list.classList.add("hidden");
+      trigger.setAttribute("aria-expanded","false");
+      if (focus) trigger.focus();
+    }
+    function sync() {
+      menus.forEach((menu) => {
+        const current = menu.querySelector(".theme-current-label");
+        const selected = menu.querySelector('[data-theme-value="' + active + '"]');
+        if (current && selected) current.textContent = selected.querySelector(".theme-option-label")?.textContent.trim() || active;
+        menu.querySelectorAll("[data-theme-value]").forEach((option) => {
+          option.setAttribute("aria-checked",String(option.getAttribute("data-theme-value")===active));
+        });
+      });
+    }
+    function setTheme(theme, persist) {
+      if (!Object.prototype.hasOwnProperty.call(valid, theme)) return false;
+      active = theme;
+      root.setAttribute("data-theme",theme);
+      if (persist) {
+        try { window.localStorage.setItem("vibesyncro-theme",theme); }
+        catch (_) { /* The current page still uses the selected palette. */ }
+      }
+      const color=getComputedStyle(root).getPropertyValue("--bg-main").trim();
+      const meta=document.querySelector('meta[name="theme-color"]');
+      if(meta&&color) meta.setAttribute("content",color);
+      sync();
+      document.dispatchEvent(new CustomEvent("vibesyncro:themechange",{detail:{theme:active}}));
+      return true;
+    }
+    menus.forEach((menu) => {
+      const trigger=menu.querySelector(".theme-trigger"), list=menu.querySelector(".theme-dropdown");
+      const options=Array.from(menu.querySelectorAll("[data-theme-value]"));
+      if(!trigger||!list) return;
+      trigger.addEventListener("click",() => {
+        const open=trigger.getAttribute("aria-expanded")!=="true";
+        menus.forEach((item)=>close(item,false));
+        if(open){list.classList.remove("hidden");trigger.setAttribute("aria-expanded","true");}
+      });
+      options.forEach((option) => {
+        option.addEventListener("click",() => {
+          if(!setTheme(option.getAttribute("data-theme-value"),true)) return;
+          close(menu,false);trigger.focus();
+        });
+        option.addEventListener("keydown",(event) => {
+          const i=options.indexOf(option);let next=null;
+          if(event.key==="ArrowDown") next=(i+1)%options.length;
+          if(event.key==="ArrowUp") next=(i-1+options.length)%options.length;
+          if(event.key==="Home") next=0;if(event.key==="End") next=options.length-1;
+          if(next!==null){event.preventDefault();options[next].focus();}
+        });
+      });
+    });
+    document.addEventListener("click",(event)=>menus.forEach((m)=>{if(!m.contains(event.target))close(m,false);}));
+    document.addEventListener("keydown",(event)=>{
+      if(event.key!=="Escape") return;
+      const open=menus.find((m)=>m.querySelector(".theme-trigger")?.getAttribute("aria-expanded")==="true");
+      if(open){event.preventDefault();close(open,true);}
+    });
+    document.addEventListener("vibesyncro:languagechange",sync);
+    setTheme(active,false);
+  }
+
+
   // Mobile navigation
   const menu = document.getElementById("menuBtn");
   const panel = document.getElementById("mobileMenu");
@@ -32,6 +115,8 @@
           !panel.contains(event.target) && !menu.contains(event.target)) closeMenu();
     });
   }
+
+  initThemeSwitcher();
 
   // Current navigation state and dynamic copyright
   const currentPage = location.pathname.split("/").pop() || "index.html";
@@ -68,6 +153,14 @@
     let visible = true;
     let running = false;
     let pixelRatio = 1;
+    let particleThemeColors = readParticleThemeColors();
+    function readParticleThemeColors() {
+      const styles=getComputedStyle(document.documentElement);
+      return {
+        primary:styles.getPropertyValue("--brand-primary").trim()||"#C8102E",
+        secondary:styles.getPropertyValue("--brand-secondary").trim()||"#0EA2EB"
+      };
+    }
 
     function resize() {
       const rect = canvas.getBoundingClientRect();
@@ -116,10 +209,10 @@
 
         context.beginPath();
         context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        context.fillStyle = particle.accent
-          ? "rgba(200, 16, 46, 0.36)"
-          : "rgba(10, 37, 64, 0.30)";
+        context.globalAlpha=particle.accent?0.36:0.30;
+        context.fillStyle=particle.accent?particleThemeColors.primary:particleThemeColors.secondary;
         context.fill();
+        context.globalAlpha=1;
 
         for (let j = i + 1; j < particles.length; j += 1) {
           const other = particles[j];
@@ -130,10 +223,11 @@
             context.beginPath();
             context.moveTo(particle.x, particle.y);
             context.lineTo(other.x, other.y);
-            context.strokeStyle = "rgba(10, 37, 64, " +
-              String((1 - distance / 112) * 0.16) + ")";
-            context.lineWidth = 0.7;
+            context.globalAlpha=(1-distance/112)*0.16;
+            context.strokeStyle=particleThemeColors.secondary;
+            context.lineWidth=0.7;
             context.stroke();
+            context.globalAlpha=1;
           }
         }
 
@@ -144,13 +238,16 @@
           context.beginPath();
           context.moveTo(particle.x, particle.y);
           context.lineTo(pointer.x, pointer.y);
-          context.strokeStyle = "rgba(200, 16, 46, " +
-            String((1 - mouseDistance / 145) * 0.24) + ")";
-          context.lineWidth = 0.8;
+          context.globalAlpha=(1-mouseDistance/145)*0.24;
+          context.strokeStyle=particleThemeColors.primary;
+          context.lineWidth=0.8;
           context.stroke();
+          context.globalAlpha=1;
         }
       }
     }
+
+    document.addEventListener("vibesyncro:themechange",()=>{particleThemeColors=readParticleThemeColors();draw();});
 
     function animate() {
       if (!running || reducedMotion || !visible) {

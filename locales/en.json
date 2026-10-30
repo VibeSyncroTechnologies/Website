@@ -84,5 +84,12 @@
   "quizHint": "Select an option to see a recommendation.",
   "footerGooglePlay": "Google Play",
   "footerRights": "All rights reserved.",
-  "heroImageAlt": "Colleagues collaborating around a table in a bright modern workspace"
+  "heroImageAlt": "Colleagues collaborating around a table in a bright modern workspace",
+  "themeChoose": "Choose visual theme",
+  "themeSecure": "Cyber Secure",
+  "themePrivacy": "Privacy Clarity",
+  "themeSafety": "Safety Warmth",
+  "themeSecureDescription": "Dark · Command Center",
+  "themePrivacyDescription": "Light · Clean Room",
+  "themeSafetyDescription": "Warm · Protective Shield"
 }
