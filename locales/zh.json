@@ -98,5 +98,6 @@
   "themeSafetyDescription": "暖色 · 守护盾牌",
   "trustLanguagesLabel": "语言选项",
   "languageSearch": "搜索语言",
-  "languageNoResults": "没有找到语言。"
+  "languageNoResults": "没有找到语言。",
+  "legalNotice": "本协议以英文撰写。如英文版本与任何翻译版本之间存在任何不一致或冲突，应以英文版本为准。"
 }

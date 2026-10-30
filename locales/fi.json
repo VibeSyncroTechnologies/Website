@@ -98,5 +98,6 @@
   "themeSafetyDescription": "Lämmin · Suojakilpi",
   "trustLanguagesLabel": "Kielivaihtoehdot",
   "languageSearch": "Etsi kieliä",
-  "languageNoResults": "Kieliä ei löytynyt."
+  "languageNoResults": "Kieliä ei löytynyt.",
+  "legalNotice": "Tämä sopimus on kirjoitettu englanniksi. Jos englanninkielisen version ja minkä tahansa käännetyn version välillä on ristiriita tai epäjohdonmukaisuus, englanninkielinen versio on ensisijainen."
 }

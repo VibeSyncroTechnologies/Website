@@ -98,5 +98,6 @@
   "themeSafetyDescription": "Chaleureux · Bouclier protecteur",
   "trustLanguagesLabel": "Choix de langue",
   "languageSearch": "Rechercher des langues",
-  "languageNoResults": "Aucune langue trouvée."
+  "languageNoResults": "Aucune langue trouvée.",
+  "legalNotice": "Le présent accord est rédigé en anglais. En cas de divergence ou de conflit entre la version anglaise et toute version traduite, la version anglaise prévaut."
 }

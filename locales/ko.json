@@ -98,5 +98,6 @@
   "themeSafetyDescription": "따뜻함 · 보호 방패",
   "trustLanguagesLabel": "언어 옵션",
   "languageSearch": "언어 검색",
-  "languageNoResults": "검색 결과에 언어가 없습니다."
+  "languageNoResults": "검색 결과에 언어가 없습니다.",
+  "legalNotice": "본 계약은 영어로 작성되었습니다. 영어본과 번역본 사이에 불일치나 충돌이 있는 경우 영어본이 우선합니다."
 }

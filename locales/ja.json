@@ -98,5 +98,6 @@
   "themeSafetyDescription": "ウォーム · 保護シールド",
   "trustLanguagesLabel": "言語の選択肢",
   "languageSearch": "言語を検索",
-  "languageNoResults": "該当する言語が見つかりません。"
+  "languageNoResults": "該当する言語が見つかりません。",
+  "legalNotice": "本契約は英語で作成されています。英語版と翻訳版との間に相違または矛盾がある場合は、英語版が優先されます。"
 }

@@ -98,5 +98,6 @@
   "themeSafetyDescription": "Sıcak · Koruyucu Kalkan",
   "trustLanguagesLabel": "Dil seçenekleri",
   "languageSearch": "Dilleri ara",
-  "languageNoResults": "Dil bulunamadı."
+  "languageNoResults": "Dil bulunamadı.",
+  "legalNotice": "Bu sözleşme İngilizce olarak yazılmıştır. İngilizce sürüm ile herhangi bir çeviri sürümü arasında tutarsızlık veya çelişki olması hâlinde İngilizce sürüm geçerli olacaktır."
 }
