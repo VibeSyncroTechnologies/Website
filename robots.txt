@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vibesyncrotechnologies.github.io/Website/sitemap.xml
+Sitemap: https://vibesyncro.com/sitemap.xml
