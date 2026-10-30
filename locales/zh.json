@@ -1,0 +1,26 @@
+{
+  "languageLabel": "选择语言",
+  "languageSearch": "搜索语言",
+  "navHome": "首页",
+  "navAbout": "关于我们",
+  "navProducts": "产品",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "研究",
+  "navContact": "联系",
+  "heroExplore": "探索我们的应用",
+  "heroAbout": "了解 VibeSyncro",
+  "quizTitle": "哪款应用适合您？",
+  "quizOpen": "在 Google Play 中查看应用",
+  "themeChoose": "选择视觉主题",
+  "themeSecure": "网络安全",
+  "themePrivacy": "清晰隐私",
+  "themeSafety": "温暖守护",
+  "footerCompany": "公司",
+  "footerPrivacy": "隐私政策",
+  "footerTerms": "服务条款",
+  "footerRights": "版权所有。",
+  "_meta": {
+    "language": "zh",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
