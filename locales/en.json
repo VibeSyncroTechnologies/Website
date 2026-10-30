@@ -81,5 +81,8 @@
   "quizResultDeveloper": "Developer Options Shortcut is made for quick access to Android Developer Options.",
   "quizResultKids": "Kids Drawing Studio offers a playful place for children to draw.",
   "quizOpen": "View app on Google Play",
-  "quizHint": "Select an option to see a recommendation."
+  "quizHint": "Select an option to see a recommendation.",
+  "footerGooglePlay": "Google Play",
+  "footerRights": "All rights reserved.",
+  "heroImageAlt": "Colleagues collaborating around a table in a bright modern workspace"
 }
