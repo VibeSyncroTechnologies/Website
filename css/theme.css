@@ -775,3 +775,92 @@ input:not([type="checkbox"]):not([type="radio"]),textarea{border-color:var(--bor
     opacity: 0.3;
   }
 }
+
+/* Global font support for Indic, RTL, East Asian and Ethiopic scripts. */
+html[lang="hi"] body,html[lang="mr"] body,html[lang="ne"] body{font-family:Inter,"Noto Sans Devanagari",sans-serif}
+html[lang="te"] body{font-family:Inter,"Noto Sans Telugu",sans-serif}
+html[lang="ta"] body{font-family:Inter,"Noto Sans Tamil",sans-serif}
+html[lang="kn"] body{font-family:Inter,"Noto Sans Kannada",sans-serif}
+html[lang="ml"] body{font-family:Inter,"Noto Sans Malayalam",sans-serif}
+html[lang="bn"] body,html[lang="as"] body{font-family:Inter,"Noto Sans Bengali",sans-serif}
+html[lang="gu"] body{font-family:Inter,"Noto Sans Gujarati",sans-serif}
+html[lang="pa"] body{font-family:Inter,"Noto Sans Gurmukhi",sans-serif}
+html[lang="ur"] body,html[lang="ar"] body,html[lang="fa"] body{font-family:Inter,"Noto Sans Arabic",sans-serif}
+html[lang="he"] body{font-family:Inter,"Noto Sans Hebrew",sans-serif}
+html[lang="si"] body{font-family:Inter,"Noto Sans Sinhala",sans-serif}
+html[lang="th"] body{font-family:Inter,"Noto Sans Thai",sans-serif}
+html[lang="ja"] body{font-family:Inter,"Noto Sans JP",sans-serif}
+html[lang="ko"] body{font-family:Inter,"Noto Sans KR",sans-serif}
+html[lang="zh"] body{font-family:Inter,"Noto Sans SC",sans-serif}
+html[lang="am"] body{font-family:Inter,"Noto Sans Ethiopic",sans-serif}
+html[dir="rtl"]{direction:rtl}
+html[dir="rtl"] body{text-align:start}
+html[dir="rtl"] .theme-dropdown,html[dir="rtl"] .language-dropdown{right:auto;left:0}
+html[dir="rtl"] .language-trigger{direction:rtl}
+
+/* Searchable language picker */
+.language-menu{position:relative}
+.language-trigger{display:inline-flex;min-height:2.55rem;align-items:center;justify-content:center;gap:.5rem;border:1px solid var(--border-color);border-radius:.7rem;background:var(--bg-surface);padding:.5rem .65rem;color:var(--text-primary);font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;white-space:nowrap}
+.language-trigger:hover{border-color:var(--brand-secondary)}
+.language-current-label{max-width:9.5rem;overflow:hidden;text-overflow:ellipsis}
+.language-dropdown{position:absolute;top:calc(100% + .55rem);right:0;z-index:110;width:min(22rem,calc(100vw - 2rem));padding:.55rem;border:1px solid var(--border-color);border-radius:.9rem;background:var(--bg-surface);box-shadow:0 16px 44px rgb(0 0 0 / 18%)}
+.language-dropdown.hidden{display:none}
+.language-search{width:100%;min-height:2.65rem;margin-bottom:.45rem;border:1px solid var(--border-color);border-radius:.55rem;background:var(--input-bg);padding:.55rem .75rem;color:var(--text-primary);font:inherit;font-size:.85rem}
+.language-options{max-height:18rem;overflow:auto;margin:0;padding:0;list-style:none}
+.language-options li[hidden]{display:none}
+.language-option{display:flex;width:100%;align-items:center;gap:.35rem;border:0;border-radius:.55rem;background:transparent;padding:.55rem .6rem;color:var(--text-primary);text-align:start;font:inherit;font-size:.84rem;cursor:pointer}
+.language-option:hover,.language-option:focus-visible{background:var(--surface-soft)}
+.language-option[aria-checked="true"]{background:var(--accent-soft)}
+.language-option-native{font-weight:700}
+.language-option-english{color:var(--text-muted);font-size:.78rem}
+.language-option-check{margin-inline-start:auto;color:var(--brand-primary);opacity:0}
+.language-option[aria-checked="true"] .language-option-check{opacity:1}
+.language-no-results{padding:.75rem;color:var(--text-muted);font-size:.82rem}
+.language-menu-mobile{width:100%}
+.language-menu-mobile .language-trigger{width:100%;justify-content:flex-start;min-height:2.85rem}
+.language-menu-mobile .language-dropdown{position:static;width:100%;margin-top:.45rem;box-shadow:none}
+
+/* Dropdown entrance; the reduced-motion override below disables it. */
+@keyframes dropdown-enter{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
+.theme-menu .theme-trigger[aria-expanded="true"]+.theme-dropdown,
+.language-menu .language-trigger[aria-expanded="true"]+.language-dropdown{animation:dropdown-enter 180ms ease-out both}
+.theme-option-check,.language-option-check{transition:opacity 150ms ease}
+
+/* Magnetic CTA displacement is bounded and applied by requestAnimationFrame. */
+[data-magnetic]{--magnetic-x:0px;--magnetic-y:0px;transform:translate3d(var(--magnetic-x),var(--magnetic-y),0);transition:transform 180ms ease-out,background-color .2s ease,border-color .2s ease}
+
+/* Product card / phone mockup hover reveal. */
+.product-card{border-color:var(--border-color);background:var(--bg-surface);transition:transform 260ms ease,box-shadow 260ms ease,border-color 260ms ease}
+.phone-mockup{transition:transform 300ms cubic-bezier(.2,.8,.2,1),box-shadow 300ms ease;transform:translateY(0)}
+.phone-app-icon{transition:transform 300ms cubic-bezier(.2,.8,.2,1);transform-origin:center}
+@media(hover:hover) and (pointer:fine){
+ .product-card:hover{transform:translateY(-4px);border-color:var(--brand-primary);box-shadow:0 18px 40px color-mix(in srgb,var(--brand-primary) 15%,transparent)}
+ .product-card:hover .phone-mockup{transform:translateY(-8px);box-shadow:0 22px 44px color-mix(in srgb,var(--brand-primary) 22%,transparent)}
+ .product-card:hover .phone-app-icon{transform:scale(1.1) rotate(-5deg)}
+}
+
+/* Animated underline and subtle direction-aware link motion. */
+header nav a,footer ul a{position:relative;transition:color 180ms ease,transform 180ms ease}
+header nav a::after,footer ul a::after{position:absolute;right:0;bottom:-.25rem;left:0;height:2px;background:var(--brand-primary);content:"";transform:scaleX(0);transform-origin:left center;transition:transform 180ms ease}
+header nav a:hover,footer ul a:hover{transform:translateX(2px)}
+header nav a:hover::after,footer ul a:hover::after,header nav a[aria-current="page"]::after{transform:scaleX(1)}
+html[dir="rtl"] header nav a:hover,html[dir="rtl"] footer ul a:hover{transform:translateX(-2px)}
+html[dir="rtl"] header nav a::after,html[dir="rtl"] footer ul a::after{transform-origin:right center}
+
+/* SafeMobile radar ring and Privacy Journey icon breathing. */
+.radar-wrap{position:relative;isolation:isolate}
+.radar-wrap::before{position:absolute;z-index:-1;inset:-12px;border:2px solid var(--brand-secondary);border-radius:50%;content:"";opacity:0;animation:radar-pulse 2.8s ease-out infinite}
+@keyframes radar-pulse{0%{transform:scale(.72);opacity:.55}80%,100%{transform:scale(1.35);opacity:0}}
+.journey-icon{transition:transform 260ms ease}
+#privacyJourney .reveal.is-visible .journey-icon{animation:icon-breathe 2.8s ease-in-out infinite}
+@keyframes icon-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+
+@media(prefers-reduced-motion:reduce){
+ [data-magnetic]{transform:none!important;transition:none!important}
+ .product-card,.phone-mockup,.phone-app-icon,.journey-icon,header nav a,footer ul a{transform:none!important;transition:none!important}
+ .product-card:hover,.product-card:hover .phone-mockup,.product-card:hover .phone-app-icon{transform:none!important;box-shadow:none!important}
+ .theme-menu .theme-trigger[aria-expanded="true"]+.theme-dropdown,
+ .language-menu .language-trigger[aria-expanded="true"]+.language-dropdown{animation:none!important}
+ .theme-option-check,.language-option-check{transition:none!important}
+ .radar-wrap::before,#privacyJourney .reveal.is-visible .journey-icon{animation:none!important}
+}

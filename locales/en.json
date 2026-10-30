@@ -91,5 +91,7 @@
   "themeSafety": "Safety Warmth",
   "themeSecureDescription": "Dark · Command Center",
   "themePrivacyDescription": "Light · Clean Room",
-  "themeSafetyDescription": "Warm · Protective Shield"
+  "themeSafetyDescription": "Warm · Protective Shield",
+  "trustLanguagesLabel": "languages supported",
+  "languageSearch": "Search languages"
 }

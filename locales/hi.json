@@ -91,5 +91,7 @@
   "themeSafety": "सुरक्षा की ऊष्मा",
   "themeSecureDescription": "डार्क · कमांड सेंटर",
   "themePrivacyDescription": "लाइट · क्लीन रूम",
-  "themeSafetyDescription": "वार्म · सुरक्षा कवच"
+  "themeSafetyDescription": "वार्म · सुरक्षा कवच",
+  "trustLanguagesLabel": "भाषाएँ समर्थित",
+  "languageSearch": "भाषाएँ खोजें"
 }
