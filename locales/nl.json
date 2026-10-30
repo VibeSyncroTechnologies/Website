@@ -1,0 +1,26 @@
+{
+  "languageLabel": "Taal kiezen",
+  "languageSearch": "Talen zoeken",
+  "navHome": "Home",
+  "navAbout": "Over ons",
+  "navProducts": "Producten",
+  "navSafeMobile": "SafeMobile",
+  "navResearch": "Onderzoek",
+  "navContact": "Contact",
+  "heroExplore": "Ontdek onze apps",
+  "heroAbout": "Ontdek VibeSyncro",
+  "quizTitle": "Welke app past bij jou?",
+  "quizOpen": "Bekijk app op Google Play",
+  "themeChoose": "Visueel thema kiezen",
+  "themeSecure": "Cyberbeveiliging",
+  "themePrivacy": "Privacyhelderheid",
+  "themeSafety": "Veilige warmte",
+  "footerCompany": "Bedrijf",
+  "footerPrivacy": "Privacybeleid",
+  "footerTerms": "Servicevoorwaarden",
+  "footerRights": "Alle rechten voorbehouden.",
+  "_meta": {
+    "language": "nl",
+    "coverage": "Core interface labels; remaining copy falls back to English."
+  }
+}
