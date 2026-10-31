@@ -1,7 +1,21 @@
-# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
-
 backend:
   name: github
   repo: VibeSyncroTechnologies/Website
   branch: main
   base_url: https://sveltia-cms-auth.vibesyncrotechnologies.workers.dev
+  # This is the Worker hostname previously supplied and configured for this project.
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "apps"
+    label: "Apps"
+    folder: "data"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "App Name", name: "name", widget: "string" }
+      - { label: "Play Store Link", name: "link", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Screenshot", name: "screenshot", widget: "image" }
