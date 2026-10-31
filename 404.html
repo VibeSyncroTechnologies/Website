@@ -1,0 +1,132 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+(function () {
+  var allowedThemes = ["secure", "privacy", "safety"];
+  var savedTheme = null;
+  var preferenceMigrationKey = "vibesyncro-theme-bright-default-v1";
+  try {
+    savedTheme = window.localStorage.getItem("vibesyncro-theme");
+    // One-time reset of a previously saved Safety Warmth value so the new
+    // bright default is applied. Users can still select Safety Warmth again.
+    if (window.localStorage.getItem(preferenceMigrationKey) !== "done") {
+      if (savedTheme === "safety") {
+        window.localStorage.removeItem("vibesyncro-theme");
+        savedTheme = null;
+      }
+      window.localStorage.setItem(preferenceMigrationKey, "done");
+    }
+  } catch (error) { savedTheme = null; }
+  var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var theme = allowedThemes.indexOf(savedTheme) !== -1
+    ? savedTheme
+    : (prefersDark ? "secure" : "privacy");
+  document.documentElement.setAttribute("data-theme", theme);
+})();
+</script><title>Page Not Found | VibeSyncro Technologies Pvt Ltd</title>
+<meta property="og:image" content="https://vibesyncro.com/logo.png"><meta name="description" content="The page could not be found. Return to VibeSyncro Technologies."><meta name="theme-color" content="#FFFFFF"><link rel="canonical" href="https://vibesyncro.com/404.html"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2212%22%20fill%3D%22%230A2540%22%2F%3E%3Cg%20fill%3D%22%23D4A373%22%3E%3Cpath%20d%3D%22M5%2011h10l12%2027%2012-27h10L31%2055h-8L5%2011z%22%2F%3E%3Cpath%20d%3D%22M57%2014c-4-4-10-6-17-6-11%200-18%205-18%2014%200%208%206%2012%2017%2015l3%201c5%201%207%203%207%205%200%204-3%206-9%206-6%200-11-2-15-6l-6%207c5%205%2012%208%2021%208%2012%200%2019-6%2019-15%200-8-5-12-16-15l-3-1c-5-1-8-3-8-6s3-5%207-5%209%202%2012%205z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><script src="https://cdn.tailwindcss.com"></script><script>tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primaryRed: "#C8102E",
+        brandNavy: "#0A2540",
+        bgLight: "#FFFFFF",
+        bgGray: "#F8FAFC",
+        textDark: "#1E293B",
+        textMuted: "#64748B"
+      },
+      fontFamily: {
+        heading: ["Plus Jakarta Sans", "sans-serif"],
+        sans: ["Inter", "sans-serif"]
+      }
+    }
+  }
+};</script><link rel="stylesheet" href="css/theme.css"><meta property="og:url" content="https://vibesyncro.com/404.html">
+<meta name="twitter:image" content="https://vibesyncro.com/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&family=Noto+Sans+Gurmukhi:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+Hebrew:wght@400;500;600;700&family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://vibesyncro.com/#organization",
+  "name": "VibeSyncro Technologies Pvt Ltd",
+  "legalName": "VibeSyncro Technologies Pvt Ltd",
+  "url": "https://vibesyncro.com/",
+  "logo": "https://vibesyncro.com/logo.png",
+  "email": "admin@vibesyncro.com",
+  "description": "Building & Connecting People with Privacy & Security.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Doddanna Angadi, Bhumenahalli",
+    "addressRegion": "Karnataka",
+    "postalCode": "561205",
+    "addressCountry": "IN"
+  }
+}
+</script>
+</head><body class="min-h-screen bg-bgLight font-sans text-textDark antialiased"><a class="skip-link" href="#main-content" data-i18n="skip">Skip to content</a><a class="skip-link" href="#main-content" data-i18n="skip">Skip to content</a><header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md">
+<div class="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+<a href="index.html" class="flex items-center gap-3" aria-label="VibeSyncro Technologies home">
+  <div class="h-10 w-10 overflow-hidden relative flex items-center justify-center" aria-hidden="true">
+    <div class="logo-css-art absolute"></div>
+  </div>
+  <span class="font-heading font-extrabold text-2xl tracking-tight"><span class="text-primaryRed">Vibe</span><span class="text-brandNavy">Syncro</span></span>
+</a>
+<nav class="hidden items-center gap-6 md:flex" aria-label="Primary navigation">
+<a href="index.html" class="text-sm font-medium text-brandNavy hover:text-primaryRed"><span data-i18n="navHome">Home</span></a><a href="about.html" class="text-sm font-medium text-brandNavy hover:text-primaryRed"><span data-i18n="navAbout">About</span></a><a href="products.html" class="text-sm font-medium text-brandNavy hover:text-primaryRed"><span data-i18n="navProducts">Products</span></a><a href="safemobile.html" class="text-sm font-medium text-brandNavy hover:text-primaryRed"><span data-i18n="navSafeMobile">SafeMobile</span></a><a href="research.html" class="text-sm font-medium text-brandNavy hover:text-primaryRed"><span data-i18n="navResearch">Research</span></a><a href="contact.html" class="text-sm font-medium text-brandNavy hover:text-primaryRed"><span data-i18n="navContact">Contact</span></a>
+</nav>
+<div class="flex items-center gap-3"><div class="language-menu hidden sm:block" data-language-menu>
+  <button id="languageTriggerDesktop" class="language-trigger" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="languagePanelDesktop" aria-label="Choose language" data-i18n-attr="aria-label:languageLabel">
+    <i class="fas fa-globe" aria-hidden="true"></i><span class="language-current-label">English (English)</span><i class="fas fa-chevron-down text-xs" aria-hidden="true"></i>
+  </button>
+  <div id="languagePanelDesktop" class="language-dropdown hidden">
+    <input class="language-search" type="search" placeholder="Search languages" aria-label="Search languages" data-i18n-attr="aria-label:languageSearch" data-language-search>
+    <ul class="language-options" role="menu" aria-label="Available languages"></ul>
+    <p class="language-no-results" data-i18n="languageNoResults" hidden>No languages found.</p>
+  </div>
+</div><div class="theme-menu hidden sm:block" data-theme-menu>
+  <button id="themeTriggerDesktop" class="theme-trigger" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="themeMenuDesktop" aria-label="Choose visual theme" data-i18n-attr="aria-label:themeChoose">
+    <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+    <span class="theme-current-label" aria-live="polite">Privacy Clarity</span>
+    <i class="fa-solid fa-chevron-down theme-chevron" aria-hidden="true"></i>
+  </button>
+  <ul id="themeMenuDesktop" class="theme-dropdown hidden" role="menu" aria-label="Choose visual theme">
+    <li><button class="theme-option" type="button" role="menuitemradio" data-theme-value="secure" aria-checked="false"><span class="theme-option-content"><span class="theme-option-label" data-i18n="themeSecure">Cyber Secure</span><span class="theme-option-description" data-i18n="themeSecureDescription">Dark · Command Center</span></span><i class="fa-solid fa-check theme-option-check" aria-hidden="true"></i></button></li>
+    <li><button class="theme-option" type="button" role="menuitemradio" data-theme-value="privacy" aria-checked="false"><span class="theme-option-content"><span class="theme-option-label" data-i18n="themePrivacy">Privacy Clarity</span><span class="theme-option-description" data-i18n="themePrivacyDescription">Light · Clean Room</span></span><i class="fa-solid fa-check theme-option-check" aria-hidden="true"></i></button></li>
+    <li><button class="theme-option" type="button" role="menuitemradio" data-theme-value="safety" aria-checked="false"><span class="theme-option-content"><span class="theme-option-label" data-i18n="themeSafety">Safety Warmth</span><span class="theme-option-description" data-i18n="themeSafetyDescription">Warm · Protective Shield</span></span><i class="fa-solid fa-check theme-option-check" aria-hidden="true"></i></button></li>
+  </ul>
+</div><a href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&amp;hl=en_IN" target="_blank" rel="noopener noreferrer" class="hidden rounded-lg bg-primaryRed px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-red-700 sm:inline-flex"><span data-i18n="playStore">Google Play</span></a><button id="menuBtn" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 bg-white text-brandNavy md:hidden" aria-label="Open navigation" aria-controls="mobileMenu" aria-expanded="false"><i class="fas fa-bars text-lg" aria-hidden="true"></i></button></div>
+</div>
+<nav id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-4 py-3 shadow-lg md:hidden" aria-label="Mobile navigation"><div class="mx-auto flex max-w-7xl flex-col gap-1">
+<a href="index.html" class="rounded-lg px-3 py-3 font-medium text-brandNavy hover:bg-red-50 hover:text-primaryRed"><span data-i18n="navHome">Home</span></a><a href="about.html" class="rounded-lg px-3 py-3 font-medium text-brandNavy hover:bg-red-50 hover:text-primaryRed"><span data-i18n="navAbout">About</span></a><a href="products.html" class="rounded-lg px-3 py-3 font-medium text-brandNavy hover:bg-red-50 hover:text-primaryRed"><span data-i18n="navProducts">Products</span></a><a href="safemobile.html" class="rounded-lg px-3 py-3 font-medium text-brandNavy hover:bg-red-50 hover:text-primaryRed"><span data-i18n="navSafeMobile">SafeMobile</span></a><a href="research.html" class="rounded-lg px-3 py-3 font-medium text-brandNavy hover:bg-red-50 hover:text-primaryRed"><span data-i18n="navResearch">Research</span></a><a href="contact.html" class="rounded-lg px-3 py-3 font-medium text-brandNavy hover:bg-red-50 hover:text-primaryRed"><span data-i18n="navContact">Contact</span></a>
+<a href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&amp;hl=en_IN" target="_blank" rel="noopener noreferrer" class="mt-2 rounded-lg bg-primaryRed px-4 py-3 text-center font-semibold text-white hover:bg-red-700"><span data-i18n="playStore">Google Play</span></a><div class="language-menu language-menu-mobile mt-2" data-language-menu>
+  <button id="languageTriggerMobile" class="language-trigger" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="languagePanelMobile" aria-label="Choose language" data-i18n-attr="aria-label:languageLabel">
+    <i class="fas fa-globe" aria-hidden="true"></i><span class="language-current-label">English (English)</span><i class="fas fa-chevron-down text-xs" aria-hidden="true"></i>
+  </button>
+  <div id="languagePanelMobile" class="language-dropdown hidden">
+    <input class="language-search" type="search" placeholder="Search languages" aria-label="Search languages" data-language-search>
+    <ul class="language-options" role="menu" aria-label="Available languages"></ul>
+    <p class="language-no-results" hidden>No languages found.</p>
+  </div>
+</div><div class="theme-menu theme-menu-mobile mt-2" data-theme-menu>
+  <button id="themeTriggerMobile" class="theme-trigger" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="themeMenuMobile" aria-label="Choose visual theme" data-i18n-attr="aria-label:themeChoose">
+    <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+    <span class="theme-current-label" aria-live="polite">Privacy Clarity</span>
+    <i class="fa-solid fa-chevron-down theme-chevron" aria-hidden="true"></i>
+  </button>
+  <ul id="themeMenuMobile" class="theme-dropdown hidden" role="menu" aria-label="Choose visual theme">
+    <li><button class="theme-option" type="button" role="menuitemradio" data-theme-value="secure" aria-checked="false"><span class="theme-option-content"><span class="theme-option-label" data-i18n="themeSecure">Cyber Secure</span><span class="theme-option-description" data-i18n="themeSecureDescription">Dark · Command Center</span></span><i class="fa-solid fa-check theme-option-check" aria-hidden="true"></i></button></li>
+    <li><button class="theme-option" type="button" role="menuitemradio" data-theme-value="privacy" aria-checked="false"><span class="theme-option-content"><span class="theme-option-label" data-i18n="themePrivacy">Privacy Clarity</span><span class="theme-option-description" data-i18n="themePrivacyDescription">Light · Clean Room</span></span><i class="fa-solid fa-check theme-option-check" aria-hidden="true"></i></button></li>
+    <li><button class="theme-option" type="button" role="menuitemradio" data-theme-value="safety" aria-checked="false"><span class="theme-option-content"><span class="theme-option-label" data-i18n="themeSafety">Safety Warmth</span><span class="theme-option-description" data-i18n="themeSafetyDescription">Warm · Protective Shield</span></span><i class="fa-solid fa-check theme-option-check" aria-hidden="true"></i></button></li>
+  </ul>
+</div></div></nav>
+</header><main id="main-content" class="relative"><section class="mx-auto flex min-h-[65vh] max-w-4xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6"><span class="rounded-full border border-red-100 bg-red-50 px-4 py-2 text-xs font-bold uppercase tracking-[.2em] text-primaryRed" data-i18n="notFoundEyebrow">404 · Page not found</span><h1 class="mt-7 text-5xl font-extrabold sm:text-7xl"><span data-i18n="notFoundTitle">Lost in the digital space.</span></h1><p class="mt-6 max-w-xl text-lg leading-8 text-textMuted" data-i18n="notFoundDescription">The page you’re looking for may have moved or no longer exists.</p><a href="index.html" class="mt-9 inline-flex min-h-12 items-center gap-3 rounded-full bg-primaryRed px-7 py-3.5 font-semibold text-white hover:bg-red-800"><i class="fa-solid fa-arrow-left"></i> <span data-i18n="notFoundHome">Back to Home</span></a></section></main><footer class="bg-brandNavy py-12 text-white"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+<div><a href="index.html" class="inline-flex items-center gap-3" aria-label="VibeSyncro Technologies home">
+  <div class="h-10 w-10 overflow-hidden relative flex items-center justify-center" aria-hidden="true">
+    <div class="logo-css-art logo-css-art-footer absolute"></div>
+  </div>
+  <span class="font-heading font-extrabold text-xl tracking-tight"><span class="text-primaryRed">Vibe</span><span class="text-white">Syncro</span></span>
+</a><p class="mt-5 max-w-xs text-sm leading-7 text-slate-300"><span data-i18n="footerTagline">Building &amp; Connecting People with Privacy &amp; Security.</span></p></div>
+<div><h2 class="font-heading font-bold text-white"><span data-i18n="footerCompany">Company</span></h2><ul class="mt-4 space-y-3 text-sm text-slate-300"><li><a class="hover:text-white" href="about.html"><span data-i18n="footerAbout">About us</span></a></li><li><a class="hover:text-white" href="research.html"><span data-i18n="footerResearch">AI &amp; Security Research</span></a></li><li><a class="hover:text-white" href="contact.html"><span data-i18n="footerContact">Contact</span></a></li></ul></div>
+<div><h2 class="font-heading font-bold text-white"><span data-i18n="footerProducts">Products</span></h2><ul class="mt-4 space-y-3 text-sm text-slate-300"><li><a class="hover:text-white" href="products.html"><span data-i18n="footerAndroid">Android apps</span></a></li><li><a class="hover:text-white" href="safemobile.html"><span data-i18n="footerSafeMobile">SafeMobile</span></a></li><li><a class="hover:text-white" href="https://play.google.com/store/apps/developer?id=VibeSyncro+Technologies+Pvt+Ltd&amp;hl=en_IN" target="_blank" rel="noopener noreferrer"><span data-i18n="footerGooglePlay">Google Play</span></a></li></ul></div>
+<div><h2 class="font-heading font-bold text-white"><span data-i18n="footerGetInTouch">Get in touch</span></h2><p class="mt-4 text-sm leading-6 text-slate-200"><span class="block font-semibold text-white">VibeSyncro Technologies Pvt Ltd</span><span class="block">Doddanna Angadi, Bhumenahalli</span><span class="block">Karnataka 561205, India</span></p><a href="mailto:admin@vibesyncro.com" class="mt-3 inline-block text-sm text-slate-300 hover:text-white">admin@vibesyncro.com</a><ul class="mt-3 space-y-2 text-sm text-slate-300"><li><a class="hover:text-white" href="privacy.html"><span data-i18n="footerPrivacy">Privacy Policy</span></a></li><li><a class="hover:text-white" href="terms.html"><span data-i18n="footerTerms">Terms of Service</span></a></li></ul></div>
+</div><div class="mt-10 border-t border-white/15 pt-6 text-sm font-semibold text-white">© <span id="year"></span> VibeSyncro Technologies Pvt Ltd. All rights reserved.</div></div></footer><script src="js/i18n.js" defer></script><script src="js/site.js" defer></script></body></html>
