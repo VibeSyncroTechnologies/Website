@@ -35,7 +35,11 @@ Contact and Notify-Me forms retain Formspree integration. Replace `REPLACE_WITH_
 
 English, Hindi, Telugu, Tamil and Kannada UI dictionaries are currently shipped. The selector translates shared navigation and the skip link; page-body translations are not complete. Do not advertise full-site or 52-language coverage until reviewed translations are added.
 
-## Navigation and page shell\n\nThe complete header and footer markup is included directly in all eight HTML pages. Each page references `logo.png` from the repository root in both locations; no JavaScript include is required to render the logo. `js/site.js` only handles the responsive hamburger menu, current-page state, form fallbacks and SafeMobile capability interactions.\n\n## GitHub Pages deployment
+## Navigation and page shell\n\nThe complete header and footer markup is included directly in all eight HTML pages. Each page references `logo.png` from the repository root in both locations; no JavaScript include is required to render the logo. `js/site.js` only handles the responsive hamburger menu, current-page state, form fallbacks and SafeMobile capability interactions.\n\n## Website visitor statistics
+
+The eight public content pages include a site-wide unique-visitor counter and a hidden per-page view counter powered by CounterAPI. The site-wide counter appears in the footer; **View traffic trends** opens the aggregate report at https://counterapi.com/vibesyncro.com/view/any. Each page's hidden counter uses its current URL as its key, allowing page-level counts to be reviewed separately through CounterAPI. Tracking begins when this integration is deployed; earlier visits are not backfilled. Counts are approximate and depend on the third-party service, visitor browser settings and its abuse filters. See the Privacy Policy for the disclosure.
+
+## GitHub Pages deployment
 
 Use repository **Settings → Pages → Deploy from a branch → main → /(root)** and verify deployment after GitHub reports a successful Pages build. The code change itself does not verify Pages settings or live deployment.
 
