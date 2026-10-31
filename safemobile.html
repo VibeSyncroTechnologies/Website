@@ -172,6 +172,7 @@
       <i class="fas fa-lock text-2xl text-primaryRed" aria-hidden="true"></i>
       <h3 class="mt-4 font-heading text-xl font-bold text-brandNavy">Privacy-first core</h3>
       <p class="mt-3 leading-7 text-textMuted">APK contents, scan hashes, verdicts and device-posture snapshots are not uploaded to a developer-operated server. Optional threat/model downloads use GitHub services; user-initiated Pro purchases use Google Play Billing.</p>
+      <a href="https://github.com/navyask911/VibeSync-SafeMobile-Antivirus/blob/main/docs/PRIVACY_POLICY.md" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 font-semibold text-primaryRed underline underline-offset-4">Read the app privacy policy <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
     </article>
   </div>
 </section>
@@ -182,8 +183,8 @@
       <div>
         <p class="text-xs font-bold uppercase tracking-[.2em] text-cyan-300">Continuous improvement · ML research</p>
         <h2 class="mt-3 font-heading text-3xl font-bold sm:text-4xl">A separate training pipeline for better candidates</h2>
-        <p class="mt-5 leading-8 text-slate-200">SafeMobile's companion ML repository trains and exports a compact TensorFlow Lite research model using a frozen 215-feature Drebin schema. The pipeline can accept controlled, pre-extracted feature rows from the app project's research workflow, remove duplicates and holdout overlap, and test each candidate against the same fixed holdout before publishing a new model version.</p>
-        <p class="mt-4 leading-8 text-slate-200">This is repository-side research—not cloud scanning of users' phones. The installed app does not send personal APKs, scan results or device data to the training repository.</p>
+        <p class="mt-5 leading-8 text-slate-200">SafeMobile's companion ML repository trains and exports a compact TensorFlow Lite research model using a frozen 215-feature Drebin schema. This is a feature-vector training pipeline, not a cloud scanner or a library of downloadable malware APKs. Its initial baseline uses the public Drebin 215-feature dataset; the workflow can accept controlled, pre-extracted research rows from the app project's own pipeline, remove duplicates and holdout overlap, and test each candidate against the same fixed holdout before publishing a new model version.</p>
+        <p class="mt-4 leading-8 text-slate-200">This is repository-side research—not cloud scanning of users' phones. The installed app does not send personal APKs, scan results, file hashes or device data to the training repository. Synthetic fallback data is test-only and cannot pass the update promotion gate.</p>
         <div class="mt-7 flex flex-wrap gap-3">
           <a href="https://github.com/navyask911/safemobile-Antivirus-Trained-ML-Data-of-Android-malware" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center gap-2 rounded-lg bg-white px-5 py-2.5 font-semibold text-brandNavy transition hover:bg-cyan-50">ML training repository <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
           <a href="https://navyask911.github.io/safemobile-Antivirus-Trained-ML-Data-of-Android-malware/" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center gap-2 rounded-lg border border-white/30 px-5 py-2.5 font-semibold text-white transition hover:bg-white/10">Live ML dashboard <i class="fas fa-chart-line" aria-hidden="true"></i></a>
