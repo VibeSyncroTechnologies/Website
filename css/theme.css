@@ -875,3 +875,49 @@ html[dir="rtl"] header nav a::after,html[dir="rtl"] footer ul a::after{transform
 :root[data-theme="safety"] .text-brandNavy {
   color: #0A2540 !important;
 }
+
+
+/* SafeMobile: keep Cyber Secure text paired with dark, high-contrast surfaces.
+   Other themes retain their existing light/warm presentation. */
+:root[data-theme="secure"] body.safemobile-page {
+  background: #0B0F19 !important;
+  color: #E2E8F0;
+}
+:root[data-theme="secure"] .safemobile-page .safemobile-hero {
+  background: linear-gradient(128deg, #071321 0%, #0B1B2E 54%, #101D31 100%) !important;
+}
+:root[data-theme="secure"] .safemobile-page .safemobile-hero-badge {
+  background: #0B2236 !important;
+  border-color: #0EA5E9 !important;
+  color: #67E8F9 !important;
+}
+:root[data-theme="secure"] .safemobile-page .safemobile-secondary-button {
+  background: #18243A !important;
+  border-color: #334155 !important;
+  color: #E2E8F0 !important;
+}
+:root[data-theme="secure"] .safemobile-page .safemobile-secondary-button:hover {
+  background: #24344D !important;
+}
+:root[data-theme="secure"] .safemobile-page .safemobile-stat {
+  background: #1E293B !important;
+  border: 1px solid #334155 !important;
+}
+:root[data-theme="secure"] .safemobile-page .safemobile-validation {
+  background: #211D14 !important;
+  border-color: #8A6424 !important;
+}
+:root[data-theme="secure"] .safemobile-page .safemobile-validation h2 {
+  color: #FEF3C7 !important;
+}
+:root[data-theme="secure"] .safemobile-page .safemobile-validation p {
+  color: #E2D6B5 !important;
+}
+:root[data-theme="secure"] .safemobile-page .safemobile-validation-badge {
+  background: #6B4B14 !important;
+  border: 1px solid #C08A2D !important;
+  color: #FDE68A !important;
+}
+:root[data-theme="secure"] .safemobile-page .safemobile-validation a {
+  color: #FCA5A5 !important;
+}
