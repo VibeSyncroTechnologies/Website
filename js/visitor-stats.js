@@ -1,10 +1,11 @@
 (function () {
   "use strict";
 
-  // Use CounterAPI's documented JSON endpoint directly. This avoids the
-  // embed widget, which has an external jQuery dependency.
+  // CounterAPI supports JSONP for browsers where cross-origin XHR is blocked.
+  // This avoids depending on CORS headers while keeping requests client-side.
   var namespace = "vibesyncro.com";
   var apiRoot = "https://counterapi.com/api/";
+  var requestTimeoutMs = 12000;
 
   function setUnavailable(type) {
     var value = document.querySelector('[data-counter-value="' + type + '"]');
@@ -35,6 +36,7 @@
       if (typeof reportUrl === "string" && /^https:\/\/counterapi\.com\//i.test(reportUrl)) {
         link.href = reportUrl;
         link.removeAttribute("aria-disabled");
+        link.removeAttribute("title");
       } else {
         link.removeAttribute("href");
         link.setAttribute("aria-disabled", "true");
@@ -43,42 +45,53 @@
   }
 
   function requestCount(type, action, key, options) {
-    var url = apiRoot + encodeURIComponent(namespace) + "/" +
+    var endpoint = apiRoot + encodeURIComponent(namespace) + "/" +
       encodeURIComponent(action) + "/" + encodeURIComponent(key);
-    var params = new URLSearchParams(options || {});
-    var query = params.toString();
-    if (query) url += "?" + query;
-
     var fallbackUrl = "https://counterapi.com/" + encodeURIComponent(namespace) +
       "/" + encodeURIComponent(action) + "/" + encodeURIComponent(key);
-    var request = new XMLHttpRequest();
+    var params = new URLSearchParams(options || {});
+    var callbackName = "__vibesyncroCounter_" + type + "_" +
+      Date.now().toString(36) + "_" + Math.random().toString(36).slice(2);
+    var script = document.createElement("script");
+    var finished = false;
+    var timeoutId;
 
-    request.open("GET", url, true);
-    request.responseType = "json";
-    request.timeout = 10000;
+    function cleanup() {
+      if (finished) return;
+      finished = true;
+      window.clearTimeout(timeoutId);
+      script.onerror = null;
+      if (script.parentNode) script.parentNode.removeChild(script);
+      try { delete window[callbackName]; }
+      catch (_) { window[callbackName] = undefined; }
+    }
 
-    request.onload = function () {
-      var data = request.response;
-
-      if (typeof data === "string") {
-        try { data = JSON.parse(data); } catch (_) { data = null; }
-      }
-
-      if (request.status >= 200 && request.status < 300 &&
-          data && Number.isFinite(Number(data.value))) {
+    window[callbackName] = function (data) {
+      cleanup();
+      if (data && Number.isFinite(Number(data.value))) {
         setCount(type, data, fallbackUrl);
       } else {
         setUnavailable(type);
       }
     };
 
-    request.onerror = function () { setUnavailable(type); };
-    request.ontimeout = function () { setUnavailable(type); };
-    request.onabort = function () { setUnavailable(type); };
+    params.set("callback", callbackName);
+    script.async = true;
+    script.src = endpoint + "?" + params.toString();
+    script.onerror = function () {
+      cleanup();
+      setUnavailable(type);
+    };
+
+    timeoutId = window.setTimeout(function () {
+      cleanup();
+      setUnavailable(type);
+    }, requestTimeoutMs);
 
     try {
-      request.send();
+      document.head.appendChild(script);
     } catch (_) {
+      cleanup();
       setUnavailable(type);
     }
   }
@@ -88,10 +101,10 @@
     ? canonical.href
     : window.location.origin + window.location.pathname;
 
-  // "any" is CounterAPI's read-only aggregation key; unique=true reports
-  // distinct visitor hashes across all page-view events in this namespace.
+  // CounterAPI documents "any" as a read-only aggregation key. unique=true
+  // returns distinct visitor hashes across all "view" events in this namespace.
   requestCount("site", "view", "any", { unique: "true", readOnly: "true" });
 
-  // A canonical URL provides a stable, separate counter for each public page.
+  // Keep the canonical URL as the page key to match the existing page-view series.
   requestCount("page", "view", pageKey, {});
 })();
