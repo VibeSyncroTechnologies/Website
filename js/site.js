@@ -232,13 +232,13 @@
         canvas.height = Math.round(height * pixelRatio);
         context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
-        const count = Math.max(28, Math.min(78, Math.round((width * height) / 14500)));
+        const count = Math.max(28, Math.min(78, Math.round((width * height) / 9000)));
         particles = Array.from({ length: count }, () => ({
           x: Math.random() * width,
           y: Math.random() * height,
           vx: (Math.random() - 0.5) * 0.22,
           vy: (Math.random() - 0.5) * 0.22,
-          radius: 1 + Math.random() * 1.15,
+          radius: 2 + Math.random() * 2,
           accent: Math.random() > 0.84
         }));
         draw();
@@ -270,7 +270,7 @@
 
           context.beginPath();
           context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-          context.globalAlpha = particle.accent ? 0.36 : 0.30;
+          context.globalAlpha = particle.accent ? 0.75 : 0.65;
           context.fillStyle = particle.accent ? particleThemeColors.primary : particleThemeColors.secondary;
           context.fill();
           context.globalAlpha = 1;
@@ -285,9 +285,9 @@
               context.beginPath();
               context.moveTo(particle.x, particle.y);
               context.lineTo(other.x, other.y);
-              context.globalAlpha = (1 - distance / 112) * 0.16;
+              context.globalAlpha = (1 - distance / 112) * 0.4;
               context.strokeStyle = particleThemeColors.secondary;
-              context.lineWidth = 0.7;
+              context.lineWidth = 1.5;
               context.stroke();
               context.globalAlpha = 1;
             }
@@ -300,9 +300,9 @@
             context.beginPath();
             context.moveTo(particle.x, particle.y);
             context.lineTo(pointer.x, pointer.y);
-            context.globalAlpha = (1 - mouseDistance / 145) * 0.24;
+            context.globalAlpha = (1 - mouseDistance / 145) * 0.55;
             context.strokeStyle = particleThemeColors.primary;
-            context.lineWidth = 0.8;
+            context.lineWidth = 1.5;
             context.stroke();
             context.globalAlpha = 1;
           }
