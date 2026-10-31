@@ -189,7 +189,7 @@
   // Load the saved language once the page DOM is ready.
   if (window.VibeI18n) window.VibeI18n.init();
 
-  // Particle networks: each hero canvas owns its own visibility-aware animation loop.
+  // High-visibility neon neural network, with one observer and animation loop per canvas.
   function initParticleCanvases() {
     const canvases = Array.from(document.querySelectorAll(".particle-canvas"));
     if (!canvases.length) return;
@@ -198,16 +198,15 @@
       ? window.matchMedia("(prefers-reduced-motion: reduce)")
       : { matches: false };
 
-    function readParticleThemeColors() {
-      const styles = getComputedStyle(document.documentElement);
-      return {
-        primary: styles.getPropertyValue("--brand-primary").trim() || "#C8102E",
-        secondary: styles.getPropertyValue("--brand-secondary").trim() || "#0EA2EB"
-      };
-    }
+    // Fixed neon colors keep the network vivid regardless of the selected site theme.
+    const particleThemeColors = {
+      primary: "#00E5FF",
+      secondary: "#FFFFFF"
+    };
 
     canvases.forEach((canvas) => {
       if (!canvas.getContext) return;
+
       const context = canvas.getContext("2d");
       if (!context) return;
 
@@ -221,31 +220,41 @@
       let running = false;
       let reducedMotion = motionQuery.matches;
       let pixelRatio = 1;
-      let particleThemeColors = readParticleThemeColors();
 
       function resize() {
         const rect = canvas.getBoundingClientRect();
         width = Math.max(1, rect.width);
         height = Math.max(1, rect.height);
         pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+
         canvas.width = Math.round(width * pixelRatio);
         canvas.height = Math.round(height * pixelRatio);
         context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
-        const count = Math.max(28, Math.min(78, Math.round((width * height) / 9000)));
+        // Higher cap allows the denser divisor to have a visible effect on large heroes.
+        const count = Math.max(
+          36,
+          Math.min(150, Math.round((width * height) / 5000))
+        );
+
         particles = Array.from({ length: count }, () => ({
           x: Math.random() * width,
           y: Math.random() * height,
           vx: (Math.random() - 0.5) * 0.22,
           vy: (Math.random() - 0.5) * 0.22,
-          radius: 2 + Math.random() * 2,
+          radius: 3 + Math.random() * 2.5,
           accent: Math.random() > 0.84
         }));
+
         draw();
       }
 
       function draw() {
         context.clearRect(0, 0, width, height);
+
+        // Neon glow for both the dots and the connecting lines.
+        context.shadowBlur = 12;
+        context.shadowColor = particleThemeColors.secondary;
 
         for (let i = 0; i < particles.length; i += 1) {
           const particle = particles[i];
@@ -262,56 +271,76 @@
             const dx = particle.x - pointer.x;
             const dy = particle.y - pointer.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
+
             if (distance < 125 && distance > 0) {
               particle.x += (dx / distance) * 0.32;
               particle.y += (dy / distance) * 0.32;
             }
           }
 
+          // Draw high-contrast neon particles.
           context.beginPath();
-          context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+          context.arc(
+            particle.x,
+            particle.y,
+            particle.radius,
+            0,
+            Math.PI * 2
+          );
           context.globalAlpha = particle.accent ? 0.75 : 0.65;
-          context.fillStyle = particle.accent ? particleThemeColors.primary : particleThemeColors.secondary;
+          context.fillStyle = particle.accent
+            ? particleThemeColors.primary
+            : particleThemeColors.secondary;
           context.fill();
           context.globalAlpha = 1;
 
+          // Connect nearby particles with bright, thick lines.
           for (let j = i + 1; j < particles.length; j += 1) {
             const other = particles[j];
             const dx = particle.x - other.x;
             const dy = particle.y - other.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < 112) {
+            if (distance < 120) {
               context.beginPath();
               context.moveTo(particle.x, particle.y);
               context.lineTo(other.x, other.y);
-              context.globalAlpha = (1 - distance / 112) * 0.4;
+              context.globalAlpha = (1 - distance / 120) * 0.8;
               context.strokeStyle = particleThemeColors.secondary;
-              context.lineWidth = 1.5;
+              context.lineWidth = 2.5;
               context.stroke();
               context.globalAlpha = 1;
             }
           }
 
+          // Connect nearby particles to the pointer.
           const mx = particle.x - pointer.x;
           const my = particle.y - pointer.y;
           const mouseDistance = Math.sqrt(mx * mx + my * my);
-          if (!reducedMotion && mouseDistance < 145) {
+
+          if (!reducedMotion && mouseDistance < 150) {
             context.beginPath();
             context.moveTo(particle.x, particle.y);
             context.lineTo(pointer.x, pointer.y);
-            context.globalAlpha = (1 - mouseDistance / 145) * 0.55;
+            context.globalAlpha = (1 - mouseDistance / 150) * 0.9;
             context.strokeStyle = particleThemeColors.primary;
-            context.lineWidth = 1.5;
+            context.lineWidth = 2.5;
             context.stroke();
             context.globalAlpha = 1;
           }
         }
+
+        // Do not let the glow leak into unrelated canvas drawing.
+        context.shadowBlur = 0;
       }
 
       function stop() {
         running = false;
-        if (frame) window.cancelAnimationFrame(frame);
+
+        if (frame) {
+          window.cancelAnimationFrame(frame);
+        }
+
         frame = 0;
       }
 
@@ -320,23 +349,24 @@
           stop();
           return;
         }
+
         draw();
         frame = window.requestAnimationFrame(animate);
       }
 
       function start() {
         if (reducedMotion || running || !visible) return;
+
         running = true;
         frame = window.requestAnimationFrame(animate);
       }
 
-      function handleThemeChange() {
-        particleThemeColors = readParticleThemeColors();
-        draw();
-      }
+      // Re-render on theme changes while retaining the fixed neon palette.
+      document.addEventListener("vibesyncro:themechange", draw);
 
       function handleMotionPreferenceChange(event) {
         reducedMotion = event.matches;
+
         if (reducedMotion) {
           stop();
           draw();
@@ -344,8 +374,6 @@
           start();
         }
       }
-
-      document.addEventListener("vibesyncro:themechange", handleThemeChange);
 
       if (typeof motionQuery.addEventListener === "function") {
         motionQuery.addEventListener("change", handleMotionPreferenceChange);
@@ -356,6 +384,7 @@
       if (host) {
         host.addEventListener("pointermove", (event) => {
           if (reducedMotion) return;
+
           const rect = canvas.getBoundingClientRect();
           pointer.x = event.clientX - rect.left;
           pointer.y = event.clientY - rect.top;
@@ -372,16 +401,23 @@
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.target !== canvas) return;
+
             visible = entry.isIntersecting;
+
             if (visible) start();
             else stop();
           });
         }, { threshold: 0.02 });
+
         observer.observe(canvas);
       }
 
+      // Render exactly one frame for reduced-motion users.
       resize();
-      if (!reducedMotion) start();
+
+      if (!reducedMotion) {
+        start();
+      }
     });
   }
 
