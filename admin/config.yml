@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: VibeSyncroTechnologies/Website
+  branch: main
+  base_url: https://sveltia-cms-auth.vibesyncrotechnologies.workers.dev
