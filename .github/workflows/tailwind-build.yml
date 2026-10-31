@@ -1,0 +1,34 @@
+name: Build production Tailwind CSS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "*.html"
+      - "js/**/*.js"
+      - "tailwind.config.js"
+      - "css/tailwind.input.css"
+      - ".github/workflows/tailwind-build.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build-css:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Compile production CSS
+        run: npx --yes tailwindcss@3.4.17 --config tailwind.config.js --input css/tailwind.input.css --output css/tailwind.generated.css --minify
+      - name: Upload generated stylesheet
+        uses: actions/upload-artifact@v4
+        with:
+          name: tailwind-generated-css
+          path: css/tailwind.generated.css
+          if-no-files-found: error
+          retention-days: 1
