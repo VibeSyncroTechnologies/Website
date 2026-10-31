@@ -28,6 +28,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Validate shared JavaScript
+        run: node --check js/site.js && node --check js/i18n.js
       - name: Compile production CSS
         run: npx --yes tailwindcss@3.4.17 --config tailwind.config.js --input css/tailwind.input.css --output css/tailwind.generated.css --minify
       - name: Commit generated stylesheet
