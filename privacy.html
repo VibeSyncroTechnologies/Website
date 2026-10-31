@@ -3,12 +3,23 @@
 (function () {
   var allowedThemes = ["secure", "privacy", "safety"];
   var savedTheme = null;
-  try { savedTheme = window.localStorage.getItem("vibesyncro-theme"); }
-  catch (error) { savedTheme = null; }
+  var preferenceMigrationKey = "vibesyncro-theme-bright-default-v1";
+  try {
+    savedTheme = window.localStorage.getItem("vibesyncro-theme");
+    // One-time reset of a previously saved Safety Warmth value so the new
+    // bright default is applied. Users can still select Safety Warmth again.
+    if (window.localStorage.getItem(preferenceMigrationKey) !== "done") {
+      if (savedTheme === "safety") {
+        window.localStorage.removeItem("vibesyncro-theme");
+        savedTheme = null;
+      }
+      window.localStorage.setItem(preferenceMigrationKey, "done");
+    }
+  } catch (error) { savedTheme = null; }
+  var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
   var theme = allowedThemes.indexOf(savedTheme) !== -1
     ? savedTheme
-    : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "secure" : "privacy");
+    : (prefersDark ? "secure" : "privacy");
   document.documentElement.setAttribute("data-theme", theme);
 })();
 </script><title>Privacy Policy | VibeSyncro Technologies Pvt Ltd</title>
