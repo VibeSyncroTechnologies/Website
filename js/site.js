@@ -197,6 +197,11 @@
     const motionQuery = window.matchMedia
       ? window.matchMedia("(prefers-reduced-motion: reduce)")
       : { matches: false };
+    // Keep mobile rendering light: use a static, smaller particle field rather
+    // than running an O(n²) animation loop on touch devices.
+    const mobileLiteMode = !!(window.matchMedia &&
+      (window.matchMedia("(max-width: 767px)").matches ||
+       window.matchMedia("(pointer: coarse)").matches));
 
     function readParticleThemeColors() {
       const styles = getComputedStyle(document.documentElement);
@@ -220,7 +225,7 @@
       let frame = 0;
       let visible = !("IntersectionObserver" in window);
       let running = false;
-      let reducedMotion = motionQuery.matches;
+      let reducedMotion = motionQuery.matches || mobileLiteMode;
       let pixelRatio = 1;
       let particleThemeColors = readParticleThemeColors();
 
@@ -234,10 +239,9 @@
         canvas.height = Math.round(height * pixelRatio);
         context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
-        const count = Math.max(
-          28,
-          Math.min(78, Math.round((width * height) / 11000))
-        );
+        const count = mobileLiteMode
+          ? Math.max(12, Math.min(24, Math.round((width * height) / 24000)))
+          : Math.max(28, Math.min(78, Math.round((width * height) / 11000)));
 
         particles = Array.from({ length: count }, () => ({
           x: Math.random() * width,
@@ -361,7 +365,7 @@
       document.addEventListener("vibesyncro:themechange", handleThemeChange);
 
       function handleMotionPreferenceChange(event) {
-        reducedMotion = event.matches;
+        reducedMotion = event.matches || mobileLiteMode;
 
         if (reducedMotion) {
           stop();
