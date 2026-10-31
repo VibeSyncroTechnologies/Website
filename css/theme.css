@@ -737,7 +737,7 @@ input:not([type="checkbox"]):not([type="radio"]),textarea{border-color:var(--bor
 #homeHero {
   min-height: 620px;
 }
-#heroParticles {
+.particle-canvas {
   opacity: 0.78;
 }
 #privacyJourney .reveal-pending {
@@ -771,7 +771,7 @@ input:not([type="checkbox"]):not([type="radio"]),textarea{border-color:var(--bor
     transform: none;
     transition: none;
   }
-  #heroParticles {
+  .particle-canvas {
     opacity: 0.3;
   }
 }

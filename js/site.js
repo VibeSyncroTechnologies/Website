@@ -189,166 +189,200 @@
   // Load the saved language once the page DOM is ready.
   if (window.VibeI18n) window.VibeI18n.init();
 
-  // Canvas particle network: paused outside the hero and disabled for reduced motion.
-  function initParticleHero() {
-    const canvas = document.getElementById("heroParticles");
-    if (!canvas || !canvas.getContext) return;
-
-    const context = canvas.getContext("2d");
-    if (!context) return;
+  // Particle networks: each hero canvas owns its own visibility-aware animation loop.
+  function initParticleCanvases() {
+    const canvases = Array.from(document.querySelectorAll(".particle-canvas"));
+    if (!canvases.length) return;
 
     const motionQuery = window.matchMedia
       ? window.matchMedia("(prefers-reduced-motion: reduce)")
       : { matches: false };
-    const reducedMotion = motionQuery.matches;
-    const hero = document.getElementById("homeHero");
-    let width = 0;
-    let height = 0;
-    let particles = [];
-    let pointer = { x: -1000, y: -1000 };
-    let frame = 0;
-    let visible = true;
-    let running = false;
-    let pixelRatio = 1;
-    let particleThemeColors = readParticleThemeColors();
+
     function readParticleThemeColors() {
-      const styles=getComputedStyle(document.documentElement);
+      const styles = getComputedStyle(document.documentElement);
       return {
-        primary:styles.getPropertyValue("--brand-primary").trim()||"#C8102E",
-        secondary:styles.getPropertyValue("--brand-secondary").trim()||"#0EA2EB"
+        primary: styles.getPropertyValue("--brand-primary").trim() || "#C8102E",
+        secondary: styles.getPropertyValue("--brand-secondary").trim() || "#0EA2EB"
       };
     }
 
-    function resize() {
-      const rect = canvas.getBoundingClientRect();
-      width = Math.max(1, rect.width);
-      height = Math.max(1, rect.height);
-      pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
-      canvas.width = Math.round(width * pixelRatio);
-      canvas.height = Math.round(height * pixelRatio);
-      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    canvases.forEach((canvas) => {
+      if (!canvas.getContext) return;
+      const context = canvas.getContext("2d");
+      if (!context) return;
 
-      const count = Math.max(28, Math.min(78, Math.round((width * height) / 14500)));
-      particles = Array.from({ length: count }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.22,
-        vy: (Math.random() - 0.5) * 0.22,
-        radius: 1 + Math.random() * 1.15,
-        accent: Math.random() > 0.84
-      }));
-      draw();
-    }
+      const host = canvas.closest("section") || canvas.parentElement;
+      let width = 0;
+      let height = 0;
+      let particles = [];
+      let pointer = { x: -1000, y: -1000 };
+      let frame = 0;
+      let visible = !("IntersectionObserver" in window);
+      let running = false;
+      let reducedMotion = motionQuery.matches;
+      let pixelRatio = 1;
+      let particleThemeColors = readParticleThemeColors();
 
-    function draw() {
-      context.clearRect(0, 0, width, height);
+      function resize() {
+        const rect = canvas.getBoundingClientRect();
+        width = Math.max(1, rect.width);
+        height = Math.max(1, rect.height);
+        pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+        canvas.width = Math.round(width * pixelRatio);
+        canvas.height = Math.round(height * pixelRatio);
+        context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
-      for (let i = 0; i < particles.length; i += 1) {
-        const particle = particles[i];
+        const count = Math.max(28, Math.min(78, Math.round((width * height) / 14500)));
+        particles = Array.from({ length: count }, () => ({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.22,
+          vy: (Math.random() - 0.5) * 0.22,
+          radius: 1 + Math.random() * 1.15,
+          accent: Math.random() > 0.84
+        }));
+        draw();
+      }
 
-        if (!reducedMotion && visible) {
-          particle.x += particle.vx;
-          particle.y += particle.vy;
+      function draw() {
+        context.clearRect(0, 0, width, height);
 
-          if (particle.x < -5) particle.x = width + 5;
-          if (particle.x > width + 5) particle.x = -5;
-          if (particle.y < -5) particle.y = height + 5;
-          if (particle.y > height + 5) particle.y = -5;
+        for (let i = 0; i < particles.length; i += 1) {
+          const particle = particles[i];
 
-          const dx = particle.x - pointer.x;
-          const dy = particle.y - pointer.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < 125 && distance > 0) {
-            particle.x += (dx / distance) * 0.32;
-            particle.y += (dy / distance) * 0.32;
+          if (!reducedMotion && visible && running) {
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+
+            if (particle.x < -5) particle.x = width + 5;
+            if (particle.x > width + 5) particle.x = -5;
+            if (particle.y < -5) particle.y = height + 5;
+            if (particle.y > height + 5) particle.y = -5;
+
+            const dx = particle.x - pointer.x;
+            const dy = particle.y - pointer.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance < 125 && distance > 0) {
+              particle.x += (dx / distance) * 0.32;
+              particle.y += (dy / distance) * 0.32;
+            }
           }
-        }
 
-        context.beginPath();
-        context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        context.globalAlpha=particle.accent?0.36:0.30;
-        context.fillStyle=particle.accent?particleThemeColors.primary:particleThemeColors.secondary;
-        context.fill();
-        context.globalAlpha=1;
+          context.beginPath();
+          context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+          context.globalAlpha = particle.accent ? 0.36 : 0.30;
+          context.fillStyle = particle.accent ? particleThemeColors.primary : particleThemeColors.secondary;
+          context.fill();
+          context.globalAlpha = 1;
 
-        for (let j = i + 1; j < particles.length; j += 1) {
-          const other = particles[j];
-          const dx = particle.x - other.x;
-          const dy = particle.y - other.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < 112) {
+          for (let j = i + 1; j < particles.length; j += 1) {
+            const other = particles[j];
+            const dx = particle.x - other.x;
+            const dy = particle.y - other.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 112) {
+              context.beginPath();
+              context.moveTo(particle.x, particle.y);
+              context.lineTo(other.x, other.y);
+              context.globalAlpha = (1 - distance / 112) * 0.16;
+              context.strokeStyle = particleThemeColors.secondary;
+              context.lineWidth = 0.7;
+              context.stroke();
+              context.globalAlpha = 1;
+            }
+          }
+
+          const mx = particle.x - pointer.x;
+          const my = particle.y - pointer.y;
+          const mouseDistance = Math.sqrt(mx * mx + my * my);
+          if (!reducedMotion && mouseDistance < 145) {
             context.beginPath();
             context.moveTo(particle.x, particle.y);
-            context.lineTo(other.x, other.y);
-            context.globalAlpha=(1-distance/112)*0.16;
-            context.strokeStyle=particleThemeColors.secondary;
-            context.lineWidth=0.7;
+            context.lineTo(pointer.x, pointer.y);
+            context.globalAlpha = (1 - mouseDistance / 145) * 0.24;
+            context.strokeStyle = particleThemeColors.primary;
+            context.lineWidth = 0.8;
             context.stroke();
-            context.globalAlpha=1;
+            context.globalAlpha = 1;
           }
         }
+      }
 
-        const mx = particle.x - pointer.x;
-        const my = particle.y - pointer.y;
-        const mouseDistance = Math.sqrt(mx * mx + my * my);
-        if (!reducedMotion && mouseDistance < 145) {
-          context.beginPath();
-          context.moveTo(particle.x, particle.y);
-          context.lineTo(pointer.x, pointer.y);
-          context.globalAlpha=(1-mouseDistance/145)*0.24;
-          context.strokeStyle=particleThemeColors.primary;
-          context.lineWidth=0.8;
-          context.stroke();
-          context.globalAlpha=1;
+      function stop() {
+        running = false;
+        if (frame) window.cancelAnimationFrame(frame);
+        frame = 0;
+      }
+
+      function animate() {
+        if (!running || reducedMotion || !visible) {
+          stop();
+          return;
+        }
+        draw();
+        frame = window.requestAnimationFrame(animate);
+      }
+
+      function start() {
+        if (reducedMotion || running || !visible) return;
+        running = true;
+        frame = window.requestAnimationFrame(animate);
+      }
+
+      function handleThemeChange() {
+        particleThemeColors = readParticleThemeColors();
+        draw();
+      }
+
+      function handleMotionPreferenceChange(event) {
+        reducedMotion = event.matches;
+        if (reducedMotion) {
+          stop();
+          draw();
+        } else if (visible) {
+          start();
         }
       }
-    }
 
-    document.addEventListener("vibesyncro:themechange",()=>{particleThemeColors=readParticleThemeColors();draw();});
+      document.addEventListener("vibesyncro:themechange", handleThemeChange);
 
-    function animate() {
-      if (!running || reducedMotion || !visible) {
-        running = false;
-        return;
+      if (typeof motionQuery.addEventListener === "function") {
+        motionQuery.addEventListener("change", handleMotionPreferenceChange);
+      } else if (typeof motionQuery.addListener === "function") {
+        motionQuery.addListener(handleMotionPreferenceChange);
       }
-      draw();
-      frame = window.requestAnimationFrame(animate);
-    }
 
-    function start() {
-      if (reducedMotion || running || !visible) return;
-      running = true;
-      frame = window.requestAnimationFrame(animate);
-    }
+      if (host) {
+        host.addEventListener("pointermove", (event) => {
+          if (reducedMotion) return;
+          const rect = canvas.getBoundingClientRect();
+          pointer.x = event.clientX - rect.left;
+          pointer.y = event.clientY - rect.top;
+        }, { passive: true });
 
-    function stop() {
-      running = false;
-      if (frame) window.cancelAnimationFrame(frame);
-    }
+        host.addEventListener("pointerleave", () => {
+          pointer = { x: -1000, y: -1000 };
+        }, { passive: true });
+      }
 
-    hero.addEventListener("pointermove", (event) => {
-      if (reducedMotion) return;
-      const rect = canvas.getBoundingClientRect();
-      pointer.x = event.clientX - rect.left;
-      pointer.y = event.clientY - rect.top;
-    }, { passive: true });
+      window.addEventListener("resize", resize, { passive: true });
 
-    hero.addEventListener("pointerleave", () => {
-      pointer = { x: -1000, y: -1000 };
-    }, { passive: true });
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.target !== canvas) return;
+            visible = entry.isIntersecting;
+            if (visible) start();
+            else stop();
+          });
+        }, { threshold: 0.02 });
+        observer.observe(canvas);
+      }
 
-    window.addEventListener("resize", resize, { passive: true });
-    if ("IntersectionObserver" in window && hero) {
-      const observer = new IntersectionObserver((entries) => {
-        visible = entries.some((entry) => entry.isIntersecting);
-        if (visible) start();
-        else stop();
-      }, { threshold: 0.02 });
-      observer.observe(hero);
-    }
-
-    resize();
-    if (!reducedMotion) start();
+      resize();
+      if (!reducedMotion) start();
+    });
   }
 
   // Scroll narrative reveal. Content stays visible when JS or IntersectionObserver is unavailable.
@@ -555,7 +589,7 @@
     });
   });
 
-  initParticleHero();
+  initParticleCanvases();
   initScrollReveal();
   initMagneticButtons();
   initAnimatedCounters();
