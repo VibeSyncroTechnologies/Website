@@ -866,12 +866,12 @@ html[dir="rtl"] header nav a::after,html[dir="rtl"] footer ul a::after{transform
  .radar-wrap::before,#privacyJourney .reveal.is-visible .journey-icon{animation:none!important}
 }
 
- 
-/* Warm tan/amber treatment for the existing pixel-art brand mark. */
-.logo-tan {
-  filter: sepia(0.8) saturate(2) hue-rotate(5deg) brightness(1.1);
+
+/* Keep the core brand wordmark colors consistent in Safety Warmth. */
+:root[data-theme="safety"] .text-primaryRed {
+  color: #C8102E !important;
 }
 
-:root[data-theme="safety"] .logo-css-art {
-  filter: sepia(0.8) saturate(2) hue-rotate(5deg) brightness(1.1);
+:root[data-theme="safety"] .text-brandNavy {
+  color: #0A2540 !important;
 }
