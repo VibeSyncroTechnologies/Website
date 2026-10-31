@@ -4,6 +4,22 @@
 const LANGUAGES=[
 ["en","English","English"],["hi","हिन्दी","Hindi"],["te","తెలుగు","Telugu"],["ta","தமிழ்","Tamil"],["kn","ಕನ್ನಡ","Kannada"],["ml","മലയാളം","Malayalam"],["mr","मराठी","Marathi"],["gu","ગુજરાતી","Gujarati"],["bn","বাংলা","Bengali"],["pa","ਪੰਜਾਬੀ","Punjabi"],["ur","اردو","Urdu"],["or","ଓଡ଼ିଆ","Odia"],["as","অসমীয়া","Assamese"],["ne","नेपाली","Nepali"],["si","සිංහල","Sinhala"],["es","Español","Spanish"],["fr","Français","French"],["de","Deutsch","German"],["it","Italiano","Italian"],["pt","Português","Portuguese"],["ru","Русский","Russian"],["uk","Українська","Ukrainian"],["pl","Polski","Polish"],["nl","Nederlands","Dutch"],["sv","Svenska","Swedish"],["no","Norsk","Norwegian"],["da","Dansk","Danish"],["fi","Suomi","Finnish"],["tr","Türkçe","Turkish"],["ar","العربية","Arabic"],["fa","فارسی","Persian"],["he","עברית","Hebrew"],["id","Bahasa Indonesia","Indonesian"],["ms","Bahasa Melayu","Malay"],["th","ไทย","Thai"],["vi","Tiếng Việt","Vietnamese"],["ja","日本語","Japanese"],["ko","한국어","Korean"],["zh","中文","Chinese"],["tl","Filipino","Filipino"],["sw","Kiswahili","Swahili"],["am","አማርኛ","Amharic"],["ha","Hausa","Hausa"],["yo","Yorùbá","Yoruba"],["zu","isiZulu","Zulu"],["af","Afrikaans","Afrikaans"],["cs","Čeština","Czech"],["hu","Magyar","Hungarian"],["ro","Română","Romanian"],["el","Ελληνικά","Greek"],["bg","Български","Bulgarian"],["hr","Hrvatski","Croatian"]];
 const supported=LANGUAGES.map(x=>x[0]),rtl=new Set(["ar","fa","he","ur"]),fallback="en";
+const LOCALE_FONTS={
+ hi:"Noto Sans Devanagari",mr:"Noto Sans Devanagari",ne:"Noto Sans Devanagari",
+ te:"Noto Sans Telugu",ta:"Noto Sans Tamil",kn:"Noto Sans Kannada",ml:"Noto Sans Malayalam",
+ bn:"Noto Sans Bengali",as:"Noto Sans Bengali",gu:"Noto Sans Gujarati",pa:"Noto Sans Gurmukhi",
+ ur:"Noto Sans Arabic",ar:"Noto Sans Arabic",fa:"Noto Sans Arabic",he:"Noto Sans Hebrew",
+ si:"Noto Sans Sinhala",th:"Noto Sans Thai",ja:"Noto Sans JP",ko:"Noto Sans KR",zh:"Noto Sans SC",am:"Noto Sans Ethiopic"
+};
+function loadLocaleFont(code){
+ const family=LOCALE_FONTS[code];
+ if(!family)return;
+ let link=document.getElementById("vibesyncro-locale-font");
+ if(!link){link=document.createElement("link");link.id="vibesyncro-locale-font";link.rel="stylesheet";document.head.appendChild(link);}
+ if(link.dataset.family===family)return;
+ link.dataset.family=family;
+ link.href="https://fonts.googleapis.com/css2?family="+encodeURIComponent(family).replace(/%20/g,"+")+":wght@400;500;600;700&display=swap";
+}
 let dictionary={},english=null,activeLanguage=fallback,initPromise=null;
 const menus=Array.from(document.querySelectorAll("[data-language-menu]"));
 const getLang=code=>LANGUAGES.find(x=>x[0]===code)||LANGUAGES[0];
@@ -73,7 +89,7 @@ function translateDom(dict){
  }));
 }
 async function loadJson(code){
- const url=new URL("locales/"+code+".json",document.baseURI),r=await fetch(url.toString(),{cache:"no-cache"});
+ const url=new URL("locales/"+code+".json",document.baseURI),r=await fetch(url.toString());
  if(!r.ok)throw new Error("Locale load failed: "+code+" ("+r.status+")");return r.json();
 }
 async function apply(language,options){
@@ -81,7 +97,7 @@ async function apply(language,options){
  try{
   if(!english)english=await loadJson(fallback);
   const translated=requested===fallback?{}:await loadJson(requested);
-  dictionary=Object.assign({},english,translated);activeLanguage=requested;
+  dictionary=Object.assign({},english,translated);activeLanguage=requested;loadLocaleFont(requested);
   document.documentElement.lang=requested;document.documentElement.dir=rtl.has(requested)?"rtl":"ltr";
   translateDom(dictionary);syncMenus();
   if(settings.persist!==false){try{localStorage.setItem("vibesyncro-language",requested);}catch(_){}}
