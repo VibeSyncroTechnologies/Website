@@ -189,7 +189,7 @@
   // Load the saved language once the page DOM is ready.
   if (window.VibeI18n) window.VibeI18n.init();
 
-  // High-visibility neon neural network, with one observer and animation loop per canvas.
+  // Subtle neural network, with one observer and animation loop per canvas.
   function initParticleCanvases() {
     const canvases = Array.from(document.querySelectorAll(".particle-canvas"));
     if (!canvases.length) return;
@@ -198,11 +198,13 @@
       ? window.matchMedia("(prefers-reduced-motion: reduce)")
       : { matches: false };
 
-    // Fixed neon colors keep the network vivid regardless of the selected site theme.
-    const particleThemeColors = {
-      primary: "#00E5FF",
-      secondary: "#FFFFFF"
-    };
+    function readParticleThemeColors() {
+      const styles = getComputedStyle(document.documentElement);
+      return {
+        primary: styles.getPropertyValue("--brand-primary").trim() || "#C8102E",
+        secondary: styles.getPropertyValue("--brand-secondary").trim() || "#0EA2EB"
+      };
+    }
 
     canvases.forEach((canvas) => {
       if (!canvas.getContext) return;
@@ -220,6 +222,7 @@
       let running = false;
       let reducedMotion = motionQuery.matches;
       let pixelRatio = 1;
+      let particleThemeColors = readParticleThemeColors();
 
       function resize() {
         const rect = canvas.getBoundingClientRect();
@@ -231,10 +234,9 @@
         canvas.height = Math.round(height * pixelRatio);
         context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 
-        // Higher cap allows the denser divisor to have a visible effect on large heroes.
         const count = Math.max(
-          36,
-          Math.min(150, Math.round((width * height) / 5000))
+          28,
+          Math.min(78, Math.round((width * height) / 11000))
         );
 
         particles = Array.from({ length: count }, () => ({
@@ -242,7 +244,7 @@
           y: Math.random() * height,
           vx: (Math.random() - 0.5) * 0.22,
           vy: (Math.random() - 0.5) * 0.22,
-          radius: 3 + Math.random() * 2.5,
+          radius: 1.5 + Math.random() * 1.5,
           accent: Math.random() > 0.84
         }));
 
@@ -251,10 +253,6 @@
 
       function draw() {
         context.clearRect(0, 0, width, height);
-
-        // Neon glow for both the dots and the connecting lines.
-        context.shadowBlur = 12;
-        context.shadowColor = particleThemeColors.secondary;
 
         for (let i = 0; i < particles.length; i += 1) {
           const particle = particles[i];
@@ -278,7 +276,6 @@
             }
           }
 
-          // Draw high-contrast neon particles.
           context.beginPath();
           context.arc(
             particle.x,
@@ -287,51 +284,46 @@
             0,
             Math.PI * 2
           );
-          context.globalAlpha = particle.accent ? 0.75 : 0.65;
+          context.globalAlpha = 0.45;
           context.fillStyle = particle.accent
             ? particleThemeColors.primary
             : particleThemeColors.secondary;
           context.fill();
           context.globalAlpha = 1;
 
-          // Connect nearby particles with bright, thick lines.
           for (let j = i + 1; j < particles.length; j += 1) {
             const other = particles[j];
             const dx = particle.x - other.x;
             const dy = particle.y - other.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < 120) {
+            if (distance < 112) {
               context.beginPath();
               context.moveTo(particle.x, particle.y);
               context.lineTo(other.x, other.y);
-              context.globalAlpha = (1 - distance / 120) * 0.8;
+              context.globalAlpha = (1 - distance / 112) * 0.25;
               context.strokeStyle = particleThemeColors.secondary;
-              context.lineWidth = 2.5;
+              context.lineWidth = 1.2;
               context.stroke();
               context.globalAlpha = 1;
             }
           }
 
-          // Connect nearby particles to the pointer.
           const mx = particle.x - pointer.x;
           const my = particle.y - pointer.y;
           const mouseDistance = Math.sqrt(mx * mx + my * my);
 
-          if (!reducedMotion && mouseDistance < 150) {
+          if (!reducedMotion && mouseDistance < 145) {
             context.beginPath();
             context.moveTo(particle.x, particle.y);
             context.lineTo(pointer.x, pointer.y);
-            context.globalAlpha = (1 - mouseDistance / 150) * 0.9;
+            context.globalAlpha = (1 - mouseDistance / 145) * 0.35;
             context.strokeStyle = particleThemeColors.primary;
-            context.lineWidth = 2.5;
+            context.lineWidth = 1.2;
             context.stroke();
             context.globalAlpha = 1;
           }
         }
-
-        // Do not let the glow leak into unrelated canvas drawing.
-        context.shadowBlur = 0;
       }
 
       function stop() {
@@ -361,8 +353,12 @@
         frame = window.requestAnimationFrame(animate);
       }
 
-      // Re-render on theme changes while retaining the fixed neon palette.
-      document.addEventListener("vibesyncro:themechange", draw);
+      function handleThemeChange() {
+        particleThemeColors = readParticleThemeColors();
+        draw();
+      }
+
+      document.addEventListener("vibesyncro:themechange", handleThemeChange);
 
       function handleMotionPreferenceChange(event) {
         reducedMotion = event.matches;
@@ -412,7 +408,7 @@
         observer.observe(canvas);
       }
 
-      // Render exactly one frame for reduced-motion users.
+      // Render a static frame for reduced-motion users.
       resize();
 
       if (!reducedMotion) {
