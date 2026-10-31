@@ -11,7 +11,7 @@ on:
       - ".github/workflows/tailwind-build.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build-css:
@@ -25,10 +25,14 @@ jobs:
           node-version: 20
       - name: Compile production CSS
         run: npx --yes tailwindcss@3.4.17 --config tailwind.config.js --input css/tailwind.input.css --output css/tailwind.generated.css --minify
-      - name: Upload generated stylesheet
-        uses: actions/upload-artifact@v4
-        with:
-          name: tailwind-generated-css
-          path: css/tailwind.generated.css
-          if-no-files-found: error
-          retention-days: 1
+      - name: Commit generated stylesheet
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add css/tailwind.generated.css
+          if git diff --cached --quiet; then
+            echo "Production CSS is already up to date."
+          else
+            git commit -m "Build production Tailwind stylesheet"
+            git push
+          fi
