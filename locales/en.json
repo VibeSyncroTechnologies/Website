@@ -181,5 +181,19 @@
   "safeBenchmarkMetric4Value": "0.0%",
   "safeGithubTitle": "Explore the SafeMobile engineering work",
   "safeGithubDesc": "Review the source code, release artifacts, implementation notes and validation reports in the public repository.",
-  "safeGithubButton": "View on GitHub"
+  "safeGithubButton": "View on GitHub",
+  "safeThreatEyebrow": "Community-powered security intelligence",
+  "safeThreatTitle": "Global Threat Contribution",
+  "safeThreatDesc": "Every verified contribution helps strengthen collective mobile defense. Explore model quality, research dataset coverage and the status of connected threat intelligence sources.",
+  "safeThreatStat1Value": "1",
+  "safeThreatStat1Label": "Confirmed threats",
+  "safeThreatStat2Value": "45",
+  "safeThreatStat2Label": "Active contributors*",
+  "safeThreatStat3Value": "v1.0.1",
+  "safeThreatStat3Label": "Deployed model",
+  "safeThreatStat4Value": "26",
+  "safeThreatStat4Label": "Live IOCs (TweetFeed)",
+  "safeThreatDataNote": "Metrics snapshot: 13 Nov 2026, 10:13 am IST. The 45-contributor figure is a demo placeholder until a verified Cloudflare contribution export is connected. The embedded dashboard loads its own updated research and source-status data.",
+  "safeThreatIframeTitle": "SafeMobile Live Threat Intelligence Dashboard",
+  "safeThreatLink": "Open full dashboard in new tab"
 }
