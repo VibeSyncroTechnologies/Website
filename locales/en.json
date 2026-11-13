@@ -57,7 +57,7 @@
   "productsDescription": "A growing collection of thoughtful digital tools — from everyday Android utilities to research-led privacy and security initiatives.",
   "safeEyebrow": "Active development · Pre-release validation",
   "safeTitle": "Cybersecurity that stays on your device.",
-  "safeDescription": "SafeMobile is an Android security app in active development. Signed build 1.0.18 is prepared for Play Console handoff, with local-first APK inspection, limited static DEX indicators, device-posture insights and user-controlled response tools. Public Google Play availability has not been confirmed.",
+  "safeDescription": "SafeMobile is an Android security app in active development. Signed build 1.9.0 is published as a GitHub release with APK and AAB artifacts, across-device CI validation, local-first APK inspection, limited static DEX indicators, device-posture insights and user-controlled response tools. Public Google Play availability has not been confirmed.",
   "contactEyebrow": "Contact",
   "contactTitle": "Let’s build something meaningful.",
   "contactDescription": "Have a question about our apps, research or company? Send us a message. We would be glad to hear from you.",
@@ -98,9 +98,9 @@
   "legalNotice": "This agreement is written in English. In the event of any discrepancy or conflict between the English version and any translated version, the English version shall prevail.",
   "safeSubtitle": "On-device Malware Scanning. Ad-supported Free Tier. No AdMob Ads with Pro.",
   "safeTags": "Android 8.0+ · Kotlin · Jetpack Compose · Privacy-first security",
-  "safeReleaseCta": "View signed v1.0.18 build",
+  "safeReleaseCta": "Download v1.9.0 APK",
   "safeSourceCta": "Source code & CI",
-  "safeReleaseNote": "A signed v1.0.18 Android App Bundle is published as a release artifact and prepared for Play Console submission. This does not confirm public Google Play availability.",
+  "safeReleaseNote": "A signed v1.9.0 Android App Bundle is published as a release artifact and prepared for Play Console submission. This does not confirm public Google Play availability.",
   "safeHeroPanelTitle": "Engineering snapshot",
   "safeHeroPlatformLabel": "Platform",
   "safeHeroPlatformValue": "Android 8.0+ (API 26)",
@@ -165,7 +165,7 @@
   "safeNotifyButton": "Notify me",
   "safeTeaserEyebrow": "Active development · Pre-release validation",
   "safeTeaserTitle": "SafeMobile Antivirus",
-  "safeTeaserDescription": "A privacy-first Android security app with local inspection, limited static threat indicators and a continuously evaluated ML research pipeline. Signed build 1.0.18 is prepared for Play Console; public Google Play availability is not yet confirmed.",
+  "safeTeaserDescription": "A privacy-first Android security app with local inspection, limited static threat indicators and a continuously evaluated ML research pipeline. Signed build 1.9.0 is published on GitHub; public Google Play availability is not yet confirmed.",
   "safeTeaserCta": "Explore SafeMobile development",
   "safeHeroPanelAria": "SafeMobile engineering snapshot",
   "safeCardMultiTitle": "Multi-Engine",
@@ -195,5 +195,7 @@
   "safeThreatStat4Label": "Live IOCs (TweetFeed)",
   "safeThreatDataNote": "Metrics snapshot: 13 Nov 2026, 10:13 am IST. The 45-contributor figure is a demo placeholder until a verified Cloudflare contribution export is connected. The embedded dashboard loads its own updated research and source-status data.",
   "safeThreatIframeTitle": "SafeMobile Live Threat Intelligence Dashboard",
-  "safeThreatLink": "Open full dashboard in new tab"
+  "safeThreatLink": "Open full dashboard in new tab",
+  "safeCiValidationLabel": "CI/CD Validation · Passed",
+  "safeCiValidationText": "CI Build #1543: Passed across API 26, 28, 33, 34, 36."
 }
