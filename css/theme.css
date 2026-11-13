@@ -125,91 +125,122 @@ footer #footer-neural-net{
   pointer-events:none!important;
 }
 
-/* Living ecosystem: low-contrast vector silhouettes beneath the footer neural canvas. */
-footer .footer-ecosystem-layer{
+/* Cinematic footer evolution film-strip, beneath the live neural canvas. */
+footer .footer-evolution-layer{
   position:absolute;
   inset:0;
   z-index:0;
   overflow:hidden;
   pointer-events:none;
+  opacity:.6;
 }
-footer .footer-ecosystem-art{
+footer .footer-highway-stream{
   position:absolute;
+  z-index:0;
+  right:0;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:3px;
+  background-image:linear-gradient(90deg,transparent,rgba(6,182,212,.8),rgba(16,185,129,.8),rgba(168,85,247,.8),rgba(245,158,11,.8),transparent);
+  background-size:120px 100%;
+  animation:highway-pulse 2.5s infinite linear;
+}
+@keyframes highway-pulse{
+  0%{background-position:0 0}
+  100%{background-position:120px 0}
+}
+
+/* Use viewport units for a real cross-screen pass rather than moving only by the SVG's own width. */
+@keyframes cinematic-video-pan{
+  0%{transform:translate3d(-15vw,0,0) scale(.9);opacity:0;filter:blur(4px)}
+  10%{opacity:1;filter:blur(0)}
+  50%{transform:translate3d(35vw,-6px,0) scale(1.05)}
+  90%{opacity:1;filter:blur(0)}
+  100%{transform:translate3d(110vw,-12px,0) scale(1.1);opacity:0;filter:blur(4px)}
+}
+@keyframes neon-glow-pulse{
+  0%,100%{filter:drop-shadow(0 0 4px currentColor) brightness(1)}
+  50%{filter:drop-shadow(0 0 14px currentColor) brightness(1.3)}
+}
+@keyframes footer-building-rise{
+  0%{transform:translateY(18px);opacity:.18}
+  100%{transform:translateY(0);opacity:1}
+}
+@keyframes footer-code-flow{
+  to{stroke-dashoffset:-48}
+}
+@keyframes footer-data-pulse{
+  0%,100%{opacity:.45;transform:scale(.85)}
+  50%{opacity:1;transform:scale(1.2)}
+}
+footer .footer-video-node{
+  position:absolute;
+  bottom:5px;
+  left:0;
   display:block;
-  fill:none;
-  stroke:rgba(6, 182, 212, 0.4);
-  stroke-width:1.5;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-  vector-effect:non-scaling-stroke;
-  filter:drop-shadow(0 0 5px rgba(6,182,212,.12));
+  height:auto;
+  max-height:150px;
+  overflow:visible;
+  will-change:transform,opacity,filter;
+  animation:cinematic-video-pan 18s infinite linear;
+}
+footer .footer-video-node .footer-neon-pulse{
+  animation:neon-glow-pulse 3s infinite ease-in-out;
+  transform-box:fill-box;
   transform-origin:center;
 }
-footer .footer-ecosystem-person{
-  width:clamp(130px,18vw,220px);
-  height:auto;
-  left:3%;
-  top:10%;
+footer .footer-video-node:nth-child(2){left:0%;animation-delay:0s}
+footer .footer-video-node:nth-child(3){left:25%;animation-delay:4.5s}
+footer .footer-video-node:nth-child(4){left:50%;animation-delay:9s}
+footer .footer-video-node:nth-child(5){left:75%;animation-delay:13.5s}
+footer .footer-building-rise{
+  animation:footer-building-rise 4.5s ease-in-out infinite alternate;
+  transform-box:fill-box;
+  transform-origin:bottom;
 }
-footer .footer-ecosystem-walker{
-  width:clamp(96px,13vw,160px);
-  height:auto;
-  left:43%;
-  bottom:2%;
+footer .footer-code-stream{
+  stroke-dasharray:5 9;
+  animation:footer-code-flow 3s linear infinite;
 }
-footer .footer-ecosystem-bird{
-  width:clamp(100px,15vw,180px);
-  height:auto;
-  right:27%;
-  top:5%;
+footer .footer-nature-nodes circle{
+  animation:footer-data-pulse 3.6s ease-in-out infinite;
+  transform-box:fill-box;
+  transform-origin:center;
 }
-footer .footer-ecosystem-tree{
-  width:clamp(140px,20vw,240px);
-  height:auto;
-  right:1%;
-  bottom:-2%;
-}
-footer .animate-drift-1{animation:drift-1 26s ease-in-out infinite}
-footer .animate-drift-2{animation:drift-2 32s ease-in-out infinite}
-footer .animate-drift-3{animation:drift-3 24s ease-in-out infinite}
-footer .animate-drift-4{animation:drift-4 36s ease-in-out infinite}
-
-@keyframes drift-1{
-  0%{transform:translate(0,0) rotate(0deg);opacity:.1}
-  50%{transform:translate(40px,-20px) rotate(5deg);opacity:.4}
-  100%{transform:translate(0,0) rotate(0deg);opacity:.1}
-}
-@keyframes drift-2{
-  0%{transform:translate(0,0) scale(1);opacity:.2}
-  50%{transform:translate(-50px,30px) scale(1.1);opacity:.5}
-  100%{transform:translate(0,0) scale(1);opacity:.2}
-}
-@keyframes drift-3{
-  0%{transform:translate(0,0) rotate(-2deg);opacity:.12}
-  50%{transform:translate(24px,18px) rotate(3deg);opacity:.42}
-  100%{transform:translate(0,0) rotate(-2deg);opacity:.12}
-}
-@keyframes drift-4{
-  0%{transform:translate(0,0) scale(.98) rotate(1deg);opacity:.1}
-  50%{transform:translate(-26px,-24px) scale(1.04) rotate(-3deg);opacity:.38}
-  100%{transform:translate(0,0) scale(.98) rotate(1deg);opacity:.1}
+footer .footer-nature-nodes circle:nth-child(2n){animation-delay:.8s}
+footer #footer-neural-net{
+  position:absolute!important;
+  inset:0;
+  z-index:1!important;
+  display:block;
+  width:100%;
+  height:100%;
+  pointer-events:none!important;
 }
 @media(prefers-reduced-motion:reduce){
-  footer .footer-ecosystem-layer .animate-drift-1,
-  footer .footer-ecosystem-layer .animate-drift-2,
-  footer .footer-ecosystem-layer .animate-drift-3,
-  footer .footer-ecosystem-layer .animate-drift-4{
+  footer .footer-evolution-layer{
+    opacity:.1!important;
+  }
+  footer .footer-evolution-layer .footer-video-node,
+  footer .footer-evolution-layer .footer-neon-pulse,
+  footer .footer-evolution-layer .footer-highway-stream,
+  footer .footer-evolution-layer .footer-building-rise,
+  footer .footer-evolution-layer .footer-code-stream,
+  footer .footer-evolution-layer .footer-nature-nodes circle{
     animation:none!important;
+    opacity:.1!important;
+    filter:none!important;
     transform:none!important;
   }
 }
 @media(max-width:640px){
-  footer .footer-ecosystem-person{left:-2%;top:7%}
-  footer .footer-ecosystem-walker{left:37%;bottom:4%}
-  footer .footer-ecosystem-bird{right:17%;top:2%}
-  footer .footer-ecosystem-tree{right:-8%;bottom:-3%}
+  footer .footer-video-node{max-height:110px}
+  footer .footer-video-node:nth-child(2){width:230px!important}
+  footer .footer-video-node:nth-child(3){width:240px!important}
+  footer .footer-video-node:nth-child(4){width:240px!important}
+  footer .footer-video-node:nth-child(5){width:230px!important}
 }
-
 footer .footer-neon-orb{
   position:absolute;
   z-index:0;
