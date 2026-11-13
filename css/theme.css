@@ -125,6 +125,91 @@ footer #footer-neural-net{
   pointer-events:none!important;
 }
 
+/* Living ecosystem: low-contrast vector silhouettes beneath the footer neural canvas. */
+footer .footer-ecosystem-layer{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
+  pointer-events:none;
+}
+footer .footer-ecosystem-art{
+  position:absolute;
+  display:block;
+  fill:none;
+  stroke:rgba(6, 182, 212, 0.4);
+  stroke-width:1.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  vector-effect:non-scaling-stroke;
+  filter:drop-shadow(0 0 5px rgba(6,182,212,.12));
+  transform-origin:center;
+}
+footer .footer-ecosystem-person{
+  width:clamp(130px,18vw,220px);
+  height:auto;
+  left:3%;
+  top:10%;
+}
+footer .footer-ecosystem-walker{
+  width:clamp(96px,13vw,160px);
+  height:auto;
+  left:43%;
+  bottom:2%;
+}
+footer .footer-ecosystem-bird{
+  width:clamp(100px,15vw,180px);
+  height:auto;
+  right:27%;
+  top:5%;
+}
+footer .footer-ecosystem-tree{
+  width:clamp(140px,20vw,240px);
+  height:auto;
+  right:1%;
+  bottom:-2%;
+}
+footer .animate-drift-1{animation:drift-1 26s ease-in-out infinite}
+footer .animate-drift-2{animation:drift-2 32s ease-in-out infinite}
+footer .animate-drift-3{animation:drift-3 24s ease-in-out infinite}
+footer .animate-drift-4{animation:drift-4 36s ease-in-out infinite}
+
+@keyframes drift-1{
+  0%{transform:translate(0,0) rotate(0deg);opacity:.1}
+  50%{transform:translate(40px,-20px) rotate(5deg);opacity:.4}
+  100%{transform:translate(0,0) rotate(0deg);opacity:.1}
+}
+@keyframes drift-2{
+  0%{transform:translate(0,0) scale(1);opacity:.2}
+  50%{transform:translate(-50px,30px) scale(1.1);opacity:.5}
+  100%{transform:translate(0,0) scale(1);opacity:.2}
+}
+@keyframes drift-3{
+  0%{transform:translate(0,0) rotate(-2deg);opacity:.12}
+  50%{transform:translate(24px,18px) rotate(3deg);opacity:.42}
+  100%{transform:translate(0,0) rotate(-2deg);opacity:.12}
+}
+@keyframes drift-4{
+  0%{transform:translate(0,0) scale(.98) rotate(1deg);opacity:.1}
+  50%{transform:translate(-26px,-24px) scale(1.04) rotate(-3deg);opacity:.38}
+  100%{transform:translate(0,0) scale(.98) rotate(1deg);opacity:.1}
+}
+@media(prefers-reduced-motion:reduce){
+  footer .footer-ecosystem-layer .animate-drift-1,
+  footer .footer-ecosystem-layer .animate-drift-2,
+  footer .footer-ecosystem-layer .animate-drift-3,
+  footer .footer-ecosystem-layer .animate-drift-4{
+    animation:none!important;
+    transform:none!important;
+  }
+}
+@media(max-width:640px){
+  footer .footer-ecosystem-person{left:-2%;top:7%}
+  footer .footer-ecosystem-walker{left:37%;bottom:4%}
+  footer .footer-ecosystem-bird{right:17%;top:2%}
+  footer .footer-ecosystem-tree{right:-8%;bottom:-3%}
+}
+
 footer .footer-neon-orb{
   position:absolute;
   z-index:0;
