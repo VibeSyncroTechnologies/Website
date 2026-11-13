@@ -59,4 +59,4 @@ When the final domain is ready, configure it in **Settings → Pages → Custom 
 
 ## Public product scope
 
-Only the three public Google Play apps supplied by the company and SafeMobile (In Development) are shown. Private ongoing project directories are intentionally excluded.
+Only the three public Google Play apps supplied by the company and SafeMobile (In Development) are shown. Private ongoing project directories are intentionally excluded .
