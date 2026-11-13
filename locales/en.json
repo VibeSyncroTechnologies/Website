@@ -197,5 +197,6 @@
   "safeThreatIframeTitle": "SafeMobile Live Threat Intelligence Dashboard",
   "safeThreatLink": "Open full dashboard in new tab",
   "safeCiValidationLabel": "CI/CD Validation · Passed",
-  "safeCiValidationText": "CI Build #1543: Passed across API 26, 28, 33, 34, 36."
+  "safeCiValidationText": "CI Build #1543: Passed across API 26, 28, 33, 34, 36.",
+  "safeCiValidationAria": "CI/CD validation passed"
 }
