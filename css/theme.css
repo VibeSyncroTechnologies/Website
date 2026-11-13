@@ -155,6 +155,26 @@ input:not([type="checkbox"]):not([type="radio"]),textarea{border-color:var(--bor
   background:rgba(10,37,64,.86);
   border-color:rgba(255,255,255,.18);
 }
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .glass-panel.glass-panel-tinted:hover{
+    box-shadow:0 22px 48px -16px rgba(0,0,0,.48),inset 0 1px 0 rgba(255,255,255,.2);
+  }
+}
+.glass-inset{
+  background:rgba(255,255,255,.08);
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
+}
+:root[data-theme="secure"] .glass-inset{
+  background:rgba(255,255,255,.055);
+  border-color:rgba(255,255,255,.12);
+}
+:root[data-theme="safety"] .glass-inset{
+  background:rgba(255,255,255,.09);
+  border-color:rgba(255,255,255,.16);
+}
 /* Soft radial light behind the main page heroes; particle canvases remain above it. */
 .hero-glow{
   position:absolute;
