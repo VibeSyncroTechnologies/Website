@@ -4,7 +4,7 @@
   --text-primary: #1E293B; --text-muted: #64748B;
   --brand-primary: #7C3AED; --brand-secondary: #4C1D95;
   --border-color: #EDE9FE; --header-bg: rgb(255 255 255 / 96%);
-  --footer-bg: #24133E; --footer-muted: #D8CCED; --deep-panel: #24133E;
+  --footer-bg:#0A2540; --footer-muted:#CBD5E1; --deep-panel: #24133E;
   --brand-primary-hover: #6D28D9; --accent-soft: #F5F0FF; --accent-border: #DDD6FE;
   --input-bg: #FFFFFF; --focus-ring: #7C3AED; --on-brand: #FFFFFF;
   --brand-red: var(--brand-primary); --brand-navy: var(--text-primary);
@@ -24,21 +24,21 @@ a,button { transition:color .2s ease,background-color .2s ease,border-color .2s 
 :root[data-theme="secure"] {
   color-scheme:dark; --bg-main:#0B0F19; --bg-surface:#131D31; --surface-soft:#18243A;
   --text-primary:#E2E8F0; --text-muted:#94A3B8; --brand-primary:#C8102E; --brand-secondary:#0EA2EB;
-  --border-color:#1E293B; --header-bg:rgb(19 29 49 / 96%); --footer-bg:#070B12; --footer-muted:#AAB7C9;
+  --border-color:#1E293B; --header-bg:rgb(19 29 49 / 96%); --footer-bg:#0A2540; --footer-muted:#CBD5E1;
   --deep-panel:#070B12; --brand-primary-hover:#A70D26; --accent-soft:#211A2A; --accent-border:#5A2639;
   --input-bg:#10192A; --focus-ring:#0EA2EB; --on-brand:#FFFFFF;
 }
 :root[data-theme="privacy"] {
   color-scheme:light; --bg-main:#FBFBFD; --bg-surface:#FFFFFF; --surface-soft:#F5F3FA;
   --text-primary:#1E293B; --text-muted:#64748B; --brand-primary:#7C3AED; --brand-secondary:#4C1D95;
-  --border-color:#EDE9FE; --header-bg:rgb(255 255 255 / 96%); --footer-bg:#24133E; --footer-muted:#D8CCED;
+  --border-color:#EDE9FE; --header-bg:rgb(255 255 255 / 96%); --footer-bg:#0A2540; --footer-muted:#CBD5E1;
   --deep-panel:#24133E; --brand-primary-hover:#6D28D9; --accent-soft:#F5F0FF; --accent-border:#DDD6FE;
   --input-bg:#FFFFFF; --focus-ring:#7C3AED; --on-brand:#FFFFFF;
 }
 :root[data-theme="safety"] {
   color-scheme:light; --bg-main:#F5F0EB; --bg-surface:#FFFFFF; --surface-soft:#EFE8E0;
   --text-primary:#1C1C23; --text-muted:#6B625B; --brand-primary:#FF550C; --brand-secondary:#2DD4BF;
-  --border-color:#E7E0D8; --header-bg:rgb(255 255 255 / 96%); --footer-bg:#25212A; --footer-muted:#D8D0C9;
+  --border-color:#E7E0D8; --header-bg:rgb(255 255 255 / 96%); --footer-bg:#0A2540; --footer-muted:#CBD5E1;
   --deep-panel:#25212A; --brand-primary-hover:#E44805; --accent-soft:#FFF0E8; --accent-border:#F5CDBB;
   --input-bg:#FFFFFF; --focus-ring:#FF550C; --on-brand:#FFFFFF;
 }
@@ -60,8 +60,12 @@ header{background-color:var(--header-bg)!important;border-color:var(--border-col
 header nav a{color:var(--text-primary)}
 header nav a:hover{color:var(--brand-primary)!important}
 #mobileMenu{background-color:var(--bg-surface)!important;border-color:var(--border-color)!important}
-footer,footer.bg-brandNavy{background-color:var(--footer-bg)!important;color:#fff}
-footer .text-slate-300{color:var(--footer-muted)!important}
+footer,footer.bg-brandNavy{background-color:#0A2540!important;color:#fff!important}
+footer .text-slate-300,footer .text-slate-200{color:#CBD5E1!important}
+footer .text-slate-400{color:#94A3B8!important}
+footer h2{color:#fff!important;font-weight:700!important}
+footer a:not(.logo-footer){transition:color .18s ease}
+footer a:not(.logo-footer):hover,footer a:not(.logo-footer):focus-visible{color:#fff!important}
 button.bg-primaryRed,a.bg-primaryRed{color:var(--on-brand)!important}
 .hover\:bg-red-700:hover,.hover\:bg-red-800:hover{background-color:var(--brand-primary-hover)!important}
 .hover\:bg-red-50:hover{background-color:var(--accent-soft)!important}
@@ -727,8 +731,13 @@ input:not([type="checkbox"]):not([type="radio"]),textarea{border-color:var(--bor
     #0EA2EB 135px 125px 0 1.5px;
 }
 
-.logo-css-art-footer {
-  filter: brightness(0) invert(1);
+.logo-footer{
+  display:inline-flex;
+  align-items:center;
+  color:#fff!important;
+  text-decoration:none;
+  white-space:nowrap;
+  letter-spacing:-.025em;
 }
 
 
@@ -874,6 +883,13 @@ html[dir="rtl"] header nav a::after,html[dir="rtl"] footer ul a::after{transform
 
 :root[data-theme="safety"] .text-brandNavy {
   color: #0A2540 !important;
+}
+
+:root[data-theme="safety"] header .header-wordmark .text-primaryRed{
+  color:#C8102E!important;
+}
+:root[data-theme="safety"] header .header-wordmark .text-brandNavy{
+  color:#0A2540!important;
 }
 
 
