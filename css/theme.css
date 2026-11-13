@@ -237,9 +237,12 @@ footer #footer-neural-net{
   footer .footer-evolution-layer .footer-bird-flight,
   footer .footer-evolution-layer .footer-nature-nodes circle{
     animation:none!important;
-    opacity:.1!important;
     filter:none!important;
     transform:none!important;
+  }
+  footer .footer-evolution-layer .footer-video-node,
+  footer .footer-evolution-layer .footer-highway-stream{
+    opacity:.1!important;
   }
 }
 @media(max-width:640px){
