@@ -421,6 +421,193 @@
     });
   }
 
+  // Dense footer neural network; independent from the hero particle canvas.
+  function initFooterParticles() {
+    const canvas = document.getElementById("footer-neural-net");
+    if (!canvas || canvas.dataset.initialized === "true") return;
+
+    let context;
+    try {
+      context = canvas.getContext("2d", { alpha: true });
+    } catch (error) {
+      return;
+    }
+    if (!context) return;
+
+    canvas.dataset.initialized = "true";
+    const footer = canvas.closest("footer") || canvas.parentElement;
+    const motionQuery = window.matchMedia
+      ? window.matchMedia("(prefers-reduced-motion: reduce)")
+      : { matches: false };
+
+    const particleCount = 64;
+    const connectionDistance = 132;
+    const particles = [];
+    let width = 0;
+    let height = 0;
+    let pixelRatio = 1;
+    let frame = 0;
+    let running = false;
+    let visible = !("IntersectionObserver" in window);
+    let reducedMotion = motionQuery.matches;
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      const nextWidth = Math.max(1, rect.width);
+      const nextHeight = Math.max(1, rect.height);
+      const scaleX = width > 0 ? nextWidth / width : 1;
+      const scaleY = height > 0 ? nextHeight / height : 1;
+
+      if (particles.length) {
+        particles.forEach((particle) => {
+          particle.x *= scaleX;
+          particle.y *= scaleY;
+        });
+      }
+
+      width = nextWidth;
+      height = nextHeight;
+      pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+      canvas.width = Math.round(width * pixelRatio);
+      canvas.height = Math.round(height * pixelRatio);
+      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+      if (!particles.length) {
+        for (let i = 0; i < particleCount; i += 1) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.42,
+            vy: (Math.random() - 0.5) * 0.34,
+            radius: 1.1 + Math.random() * 1.35
+          });
+        }
+      }
+
+      draw(false);
+    }
+
+    function draw(advance) {
+      context.clearRect(0, 0, width, height);
+
+      if (advance && !reducedMotion) {
+        particles.forEach((particle) => {
+          particle.x += particle.vx;
+          particle.y += particle.vy;
+
+          if (particle.x <= particle.radius || particle.x >= width - particle.radius) {
+            particle.vx *= -1;
+            particle.x = Math.max(particle.radius, Math.min(width - particle.radius, particle.x));
+          }
+          if (particle.y <= particle.radius || particle.y >= height - particle.radius) {
+            particle.vy *= -1;
+            particle.y = Math.max(particle.radius, Math.min(height - particle.radius, particle.y));
+          }
+        });
+      }
+
+      // Draw connections first so the particle points remain crisp above them.
+      for (let i = 0; i < particles.length; i += 1) {
+        const particle = particles[i];
+        for (let j = i + 1; j < particles.length; j += 1) {
+          const other = particles[j];
+          const dx = particle.x - other.x;
+          const dy = particle.y - other.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < connectionDistance) {
+            context.beginPath();
+            context.moveTo(particle.x, particle.y);
+            context.lineTo(other.x, other.y);
+            context.globalAlpha = (1 - distance / connectionDistance) * 0.22;
+            context.strokeStyle = "rgba(6, 182, 212, 0.42)";
+            context.lineWidth = 0.8;
+            context.stroke();
+          }
+        }
+      }
+
+      context.globalAlpha = 1;
+      particles.forEach((particle) => {
+        context.beginPath();
+        context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        context.fillStyle = "rgba(6, 182, 212, 0.6)";
+        context.shadowColor = "rgba(6, 182, 212, 0.5)";
+        context.shadowBlur = 6;
+        context.fill();
+      });
+
+      context.globalAlpha = 1;
+      context.shadowBlur = 0;
+    }
+
+    function stop() {
+      running = false;
+      if (frame) window.cancelAnimationFrame(frame);
+      frame = 0;
+    }
+
+    function animate() {
+      if (!running || reducedMotion || !visible || document.hidden) {
+        stop();
+        return;
+      }
+      draw(true);
+      frame = window.requestAnimationFrame(animate);
+    }
+
+    function start() {
+      if (reducedMotion || running || !visible || document.hidden) return;
+      running = true;
+      frame = window.requestAnimationFrame(animate);
+    }
+
+    function syncAnimationState() {
+      if (reducedMotion) {
+        stop();
+        draw(false);
+      } else if (visible && !document.hidden) {
+        start();
+      } else {
+        stop();
+      }
+    }
+
+    function handleMotionPreferenceChange(event) {
+      reducedMotion = event.matches;
+      syncAnimationState();
+    }
+
+    if (typeof motionQuery.addEventListener === "function") {
+      motionQuery.addEventListener("change", handleMotionPreferenceChange);
+    } else if (typeof motionQuery.addListener === "function") {
+      motionQuery.addListener(handleMotionPreferenceChange);
+    }
+
+    document.addEventListener("visibilitychange", syncAnimationState);
+    window.addEventListener("resize", resize, { passive: true });
+
+    if ("ResizeObserver" in window && footer) {
+      const resizeObserver = new ResizeObserver(resize);
+      resizeObserver.observe(footer);
+    }
+
+    if ("IntersectionObserver" in window && footer) {
+      const visibilityObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.target !== footer) return;
+          visible = entry.isIntersecting;
+          syncAnimationState();
+        });
+      }, { threshold: 0.01 });
+      visibilityObserver.observe(footer);
+    }
+
+    // Always paint one frame; reduced-motion users stay on this still frame.
+    resize();
+    syncAnimationState();
+  }
+
   // Scroll narrative reveal. Content stays visible when JS or IntersectionObserver is unavailable.
   function initScrollReveal() {
     const items = Array.from(document.querySelectorAll(".reveal"));
@@ -504,6 +691,7 @@
   });
 
   initParticleCanvases();
+  initFooterParticles();
   initScrollReveal();
   initMagneticButtons();
   initAnimatedCounters();
