@@ -54,7 +54,7 @@ body.bg-bgLight,.bg-bgLight{background-color:var(--bg-main)!important}
 .bg-red-50{background-color:var(--accent-soft)!important}
 .text-brandNavy,.text-textDark{color:var(--text-primary)!important}
 .text-textMuted,.text-gray-400{color:var(--text-muted)!important}
-.text-primaryRed{color:var(--brand-primary)!important}
+.text-primaryRed{color:#C8102E!important}
 .border-slate-100,.border-slate-200,.border-slate-300,.border-slate-200\/60,.border-red-100,.border-blue-100,.border-brandNavy{border-color:var(--border-color)!important}
 header{
   background-color:rgba(255,255,255,.78)!important;
@@ -93,9 +93,21 @@ footer h2{color:#fff!important;font-weight:700!important}
 footer a:not(.logo-footer){transition:color .18s ease}
 footer a:not(.logo-footer):hover,footer a:not(.logo-footer):focus-visible{color:#fff!important}
 button.bg-primaryRed,a.bg-primaryRed{color:var(--on-brand)!important}
+/* Brand-red type and Google Play header CTA stay independent of theme button fills. */
+.hero-title-accent,.text-primaryRed{color:#C8102E!important}
+.brand-google-play-cta{
+  background-color:#C8102E!important;
+  border-color:#C8102E!important;
+  color:#fff!important;
+}
+.brand-google-play-cta:hover,.brand-google-play-cta:focus-visible{
+  background-color:#A70D26!important;
+  border-color:#A70D26!important;
+  color:#fff!important;
+}
 .hover\:bg-red-700:hover,.hover\:bg-red-800:hover{background-color:var(--brand-primary-hover)!important}
 .hover\:bg-red-50:hover{background-color:var(--accent-soft)!important}
-.hover\:text-primaryRed:hover{color:var(--brand-primary)!important}
+.hover\:text-primaryRed:hover{color:#C8102E!important}
 .from-red-50,.from-slate-50{--tw-gradient-from:var(--accent-soft)!important;--tw-gradient-to:var(--accent-soft)!important}
 .to-white,.via-white{--tw-gradient-to:var(--bg-surface)!important}
 .to-brandNavy,.from-brandNavy{--tw-gradient-to:var(--deep-panel)!important;--tw-gradient-from:var(--deep-panel)!important}
@@ -1011,17 +1023,9 @@ html[dir="rtl"] header nav a::after,html[dir="rtl"] footer ul a::after{transform
 }
 
 
-/* Keep the core brand wordmark colors consistent in Safety Warmth. */
-:root[data-theme="safety"] .text-primaryRed {
-  color: #C8102E !important;
-}
-
+/* Keep the core brand wordmark navy consistent in Safety Warmth. */
 :root[data-theme="safety"] .text-brandNavy {
   color: #0A2540 !important;
-}
-
-:root[data-theme="safety"] header .header-wordmark .text-primaryRed{
-  color:#C8102E!important;
 }
 :root[data-theme="safety"] header .header-wordmark .text-brandNavy{
   color:#0A2540!important;
