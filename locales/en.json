@@ -166,5 +166,20 @@
   "safeTeaserEyebrow": "Active development · Pre-release validation",
   "safeTeaserTitle": "SafeMobile Antivirus",
   "safeTeaserDescription": "A privacy-first Android security app with local inspection, limited static threat indicators and a continuously evaluated ML research pipeline. Signed build 1.0.18 is prepared for Play Console; public Google Play availability is not yet confirmed.",
-  "safeTeaserCta": "Explore SafeMobile development"
+  "safeTeaserCta": "Explore SafeMobile development",
+  "safeHeroPanelAria": "SafeMobile engineering snapshot",
+  "safeCardMultiTitle": "Multi-Engine",
+  "safeCardMultiDesc": "Local SHA-256 checks and bounded DEX inspection through five Kotlin YARA-compatible rules. The bundled offline hash is currently EICAR-only; rule matches are advisory, not full YARA detection.",
+  "safeCardIncidentTitle": "Incident Response",
+  "safeCardIncidentDesc": "A five-second alarm-stream siren, security notification and user-confirmed uninstall flow. Android permissions, Do Not Disturb and OEM background rules can affect alert delivery.",
+  "safeCardPrivacyTitle": "Privacy-First",
+  "safeCardPrivacyDesc": "Core scans and history stay on-device. Optional user-approved threat contribution sends a SHA-256 indicator only; private quarantine is encrypted and user-controlled.",
+  "safeCardProTitle": "Pro Tier",
+  "safeCardProDesc": "₹299 annual India list price, subject to the active Google Play offer. Active Pro entitlement excludes AdMob; access is cached locally in an encrypted device-bound entitlement.",
+  "safeBenchmarkMetric1Value": "200/200",
+  "safeBenchmarkMetric3Value": "0.0%",
+  "safeBenchmarkMetric4Value": "0.0%",
+  "safeGithubTitle": "Explore the SafeMobile engineering work",
+  "safeGithubDesc": "Review the source code, release artifacts, implementation notes and validation reports in the public repository.",
+  "safeGithubButton": "View on GitHub"
 }
