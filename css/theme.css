@@ -56,7 +56,24 @@ body.bg-bgLight,.bg-bgLight{background-color:var(--bg-main)!important}
 .text-textMuted,.text-gray-400{color:var(--text-muted)!important}
 .text-primaryRed{color:var(--brand-primary)!important}
 .border-slate-100,.border-slate-200,.border-slate-300,.border-slate-200\/60,.border-red-100,.border-blue-100,.border-brandNavy{border-color:var(--border-color)!important}
-header{background-color:var(--header-bg)!important;border-color:var(--border-color)!important;color:var(--text-primary)}
+header{
+  background-color:rgba(255,255,255,.64)!important;
+  -webkit-backdrop-filter:blur(18px) saturate(1.35);
+  backdrop-filter:blur(18px) saturate(1.35);
+  border-color:rgba(255,255,255,.28)!important;
+  box-shadow:0 8px 28px rgba(15,23,42,.06);
+  color:var(--text-primary);
+}
+:root[data-theme="secure"] header{
+  background-color:rgba(19,29,49,.76)!important;
+  border-color:rgba(255,255,255,.12)!important;
+  box-shadow:0 10px 32px rgba(0,0,0,.24);
+}
+:root[data-theme="safety"] header{
+  background-color:rgba(255,255,255,.74)!important;
+  border-color:rgba(255,255,255,.62)!important;
+  box-shadow:0 10px 30px rgba(115,75,45,.08);
+}
 header nav a{color:var(--text-primary)}
 header nav a:hover{color:var(--brand-primary)!important}
 #mobileMenu{background-color:var(--bg-surface)!important;border-color:var(--border-color)!important}
@@ -81,6 +98,78 @@ button.bg-primaryRed,a.bg-primaryRed{color:var(--on-brand)!important}
 .to-blue-600{--tw-gradient-to:var(--brand-secondary)!important}
 input,textarea,select{accent-color:var(--brand-primary)}
 input:not([type="checkbox"]):not([type="radio"]),textarea{border-color:var(--border-color);background-color:var(--input-bg);color:var(--text-primary)}
+
+/* Silky Glassmorphism: shared illuminated surfaces */
+.glass-panel{
+  position:relative;
+  background:rgba(255,255,255,.62);
+  -webkit-backdrop-filter:blur(16px);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.44);
+  box-shadow:
+    0 4px 6px -1px rgba(0,0,0,.05),
+    0 10px 15px -3px rgba(0,0,0,.05),
+    inset 0 1px 0 rgba(255,255,255,.64);
+  border-radius:1rem;
+  transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s cubic-bezier(.4,0,.2,1),border-color .3s ease;
+}
+:root[data-theme="secure"] .glass-panel{
+  background:rgba(19,29,49,.68);
+  border-color:rgba(255,255,255,.12);
+  box-shadow:
+    0 10px 30px -10px rgba(0,0,0,.5),
+    inset 0 1px 0 rgba(255,255,255,.15);
+}
+:root[data-theme="safety"] .glass-panel{
+  background:rgba(255,255,255,.74);
+  border-color:rgba(255,255,255,.66);
+  box-shadow:
+    0 10px 30px -10px rgba(200,150,100,.16),
+    inset 0 1px 0 rgba(255,255,255,.82);
+}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .glass-panel:hover{
+    transform:translateY(-4px) scale(1.01);
+    box-shadow:0 20px 40px -10px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.72);
+    border-color:rgba(255,255,255,.68);
+  }
+  :root[data-theme="secure"] .glass-panel:hover{
+    box-shadow:0 22px 42px -12px rgba(0,0,0,.58),inset 0 1px 0 rgba(255,255,255,.2);
+  }
+  :root[data-theme="safety"] .glass-panel:hover{
+    box-shadow:0 22px 42px -12px rgba(140,90,50,.18),inset 0 1px 0 rgba(255,255,255,.9);
+  }
+}
+/* Tinted dashboard glass for dark, high-tech feature panels */
+.glass-panel-tinted{
+  background:rgba(10,37,64,.84);
+  border:1px solid rgba(255,255,255,.12);
+  color:#fff;
+  box-shadow:0 18px 46px -18px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.14);
+}
+:root[data-theme="secure"] .glass-panel-tinted{
+  background:rgba(7,11,18,.86);
+  border-color:rgba(255,255,255,.14);
+}
+:root[data-theme="safety"] .glass-panel-tinted{
+  background:rgba(10,37,64,.86);
+  border-color:rgba(255,255,255,.18);
+}
+/* Soft radial light behind the main page heroes; particle canvases remain above it. */
+.hero-glow{
+  position:absolute;
+  z-index:0;
+  inset:-12%;
+  pointer-events:none;
+  opacity:.58;
+  filter:blur(34px);
+  background:
+    radial-gradient(circle at 78% 18%,color-mix(in srgb,var(--brand-primary) 24%,transparent),transparent 48%),
+    radial-gradient(circle at 12% 86%,color-mix(in srgb,var(--brand-secondary) 18%,transparent),transparent 46%);
+  transform:scale(1.04);
+}
+:root[data-theme="secure"] .hero-glow{opacity:.42}
+:root[data-theme="safety"] .hero-glow{opacity:.38}
 
 /* Accessible theme selector */
 .theme-menu{position:relative}
