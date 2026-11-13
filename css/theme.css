@@ -174,6 +174,10 @@ footer .footer-highway-stream{
   0%,100%{opacity:.45;transform:scale(.85)}
   50%{opacity:1;transform:scale(1.2)}
 }
+@keyframes footer-bird-flap{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-5px) rotate(-3deg)}
+}
 footer .footer-video-node{
   position:absolute;
   bottom:5px;
@@ -184,6 +188,7 @@ footer .footer-video-node{
   overflow:visible;
   will-change:transform,opacity,filter;
   animation:cinematic-video-pan 18s infinite linear;
+  animation-fill-mode:both;
 }
 footer .footer-video-node .footer-neon-pulse{
   animation:neon-glow-pulse 3s infinite ease-in-out;
@@ -209,6 +214,11 @@ footer .footer-nature-nodes circle{
   transform-origin:center;
 }
 footer .footer-nature-nodes circle:nth-child(2n){animation-delay:.8s}
+footer .footer-bird-flight{
+  animation:footer-bird-flap 2.8s ease-in-out infinite;
+  transform-box:fill-box;
+  transform-origin:center;
+}
 footer #footer-neural-net{
   position:absolute!important;
   inset:0;
@@ -219,14 +229,12 @@ footer #footer-neural-net{
   pointer-events:none!important;
 }
 @media(prefers-reduced-motion:reduce){
-  footer .footer-evolution-layer{
-    opacity:.1!important;
-  }
   footer .footer-evolution-layer .footer-video-node,
   footer .footer-evolution-layer .footer-neon-pulse,
   footer .footer-evolution-layer .footer-highway-stream,
   footer .footer-evolution-layer .footer-building-rise,
   footer .footer-evolution-layer .footer-code-stream,
+  footer .footer-evolution-layer .footer-bird-flight,
   footer .footer-evolution-layer .footer-nature-nodes circle{
     animation:none!important;
     opacity:.1!important;
