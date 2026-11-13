@@ -57,22 +57,31 @@ body.bg-bgLight,.bg-bgLight{background-color:var(--bg-main)!important}
 .text-primaryRed{color:var(--brand-primary)!important}
 .border-slate-100,.border-slate-200,.border-slate-300,.border-slate-200\/60,.border-red-100,.border-blue-100,.border-brandNavy{border-color:var(--border-color)!important}
 header{
-  background-color:rgba(255,255,255,.64)!important;
-  -webkit-backdrop-filter:blur(18px) saturate(1.35);
-  backdrop-filter:blur(18px) saturate(1.35);
-  border-color:rgba(255,255,255,.28)!important;
-  box-shadow:0 8px 28px rgba(15,23,42,.06);
+  background-color:rgba(255,255,255,.78)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(1.5)!important;
+  backdrop-filter:blur(24px) saturate(1.5)!important;
+  border-color:rgba(255,255,255,.72)!important;
+  box-shadow:0 12px 34px rgba(15,23,42,.09),inset 0 1px 0 rgba(255,255,255,.95);
   color:var(--text-primary);
 }
 :root[data-theme="secure"] header{
-  background-color:rgba(19,29,49,.76)!important;
-  border-color:rgba(255,255,255,.12)!important;
-  box-shadow:0 10px 32px rgba(0,0,0,.24);
+  background-color:rgba(19,29,49,.86)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(1.4)!important;
+  backdrop-filter:blur(24px) saturate(1.4)!important;
+  border-color:rgba(255,255,255,.2)!important;
+  box-shadow:0 14px 36px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.18);
 }
 :root[data-theme="safety"] header{
-  background-color:rgba(255,255,255,.74)!important;
-  border-color:rgba(255,255,255,.62)!important;
-  box-shadow:0 10px 30px rgba(115,75,45,.08);
+  background-color:rgba(255,255,255,.82)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(1.45)!important;
+  backdrop-filter:blur(24px) saturate(1.45)!important;
+  border-color:rgba(255,255,255,.86)!important;
+  box-shadow:0 12px 32px rgba(115,75,45,.11),inset 0 1px 0 rgba(255,255,255,.98);
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  header{background-color:rgba(255,255,255,.96)!important}
+  :root[data-theme="secure"] header{background-color:rgba(19,29,49,.97)!important}
+  :root[data-theme="safety"] header{background-color:rgba(255,255,255,.97)!important}
 }
 header nav a{color:var(--text-primary)}
 header nav a:hover{color:var(--brand-primary)!important}
@@ -99,82 +108,99 @@ button.bg-primaryRed,a.bg-primaryRed{color:var(--on-brand)!important}
 input,textarea,select{accent-color:var(--brand-primary)}
 input:not([type="checkbox"]):not([type="radio"]),textarea{border-color:var(--border-color);background-color:var(--input-bg);color:var(--text-primary)}
 
-/* Silky Glassmorphism: shared illuminated surfaces */
+/* Silky Glassmorphism: stronger illuminated surfaces */
 .glass-panel{
   position:relative;
-  background:rgba(255,255,255,.62);
-  -webkit-backdrop-filter:blur(16px);
-  backdrop-filter:blur(16px);
-  border:1px solid rgba(255,255,255,.44);
+  background:rgba(255,255,255,.75)!important;
+  -webkit-backdrop-filter:blur(20px)!important;
+  backdrop-filter:blur(20px)!important;
+  border:1px solid rgba(255,255,255,.8)!important;
+  border-top:1px solid rgba(255,255,255,1)!important;
   box-shadow:
     0 4px 6px -1px rgba(0,0,0,.05),
-    0 10px 15px -3px rgba(0,0,0,.05),
-    inset 0 1px 0 rgba(255,255,255,.64);
+    0 10px 20px -5px rgba(0,0,0,.1),
+    inset 0 1px 0 rgba(255,255,255,.9)!important;
   border-radius:1rem;
   transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s cubic-bezier(.4,0,.2,1),border-color .3s ease;
 }
 :root[data-theme="secure"] .glass-panel{
-  background:rgba(19,29,49,.68);
-  border-color:rgba(255,255,255,.12);
+  background:rgba(19,29,49,.8)!important;
+  border:1px solid rgba(255,255,255,.15)!important;
+  border-top:1px solid rgba(255,255,255,.3)!important;
+  -webkit-backdrop-filter:blur(20px)!important;
+  backdrop-filter:blur(20px)!important;
   box-shadow:
-    0 10px 30px -10px rgba(0,0,0,.5),
-    inset 0 1px 0 rgba(255,255,255,.15);
+    0 10px 30px -10px rgba(0,0,0,.7),
+    inset 0 1px 0 rgba(255,255,255,.2)!important;
 }
 :root[data-theme="safety"] .glass-panel{
-  background:rgba(255,255,255,.74);
-  border-color:rgba(255,255,255,.66);
+  background:rgba(255,255,255,.82)!important;
+  border:1px solid rgba(255,255,255,.9)!important;
+  border-top:1px solid #fff!important;
+  -webkit-backdrop-filter:blur(20px)!important;
+  backdrop-filter:blur(20px)!important;
   box-shadow:
-    0 10px 30px -10px rgba(200,150,100,.16),
-    inset 0 1px 0 rgba(255,255,255,.82);
+    0 10px 30px -10px rgba(200,150,100,.2),
+    inset 0 1px 0 rgba(255,255,255,.96)!important;
 }
 @media (hover:hover) and (prefers-reduced-motion:no-preference){
   .glass-panel:hover{
     transform:translateY(-4px) scale(1.01);
-    box-shadow:0 20px 40px -10px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.72);
-    border-color:rgba(255,255,255,.68);
+    box-shadow:0 20px 40px -10px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.96)!important;
+    border-color:rgba(255,255,255,.92)!important;
   }
   :root[data-theme="secure"] .glass-panel:hover{
-    box-shadow:0 22px 42px -12px rgba(0,0,0,.58),inset 0 1px 0 rgba(255,255,255,.2);
+    box-shadow:0 22px 42px -12px rgba(0,0,0,.72),inset 0 1px 0 rgba(255,255,255,.24)!important;
+    border-color:rgba(255,255,255,.24)!important;
   }
   :root[data-theme="safety"] .glass-panel:hover{
-    box-shadow:0 22px 42px -12px rgba(140,90,50,.18),inset 0 1px 0 rgba(255,255,255,.9);
+    box-shadow:0 22px 42px -12px rgba(140,90,50,.22),inset 0 1px 0 #fff!important;
+    border-color:#fff!important;
   }
 }
 /* Tinted dashboard glass for dark, high-tech feature panels */
 .glass-panel-tinted{
-  background:rgba(10,37,64,.84);
-  border:1px solid rgba(255,255,255,.12);
+  background:rgba(10,37,64,.9)!important;
+  border:1px solid rgba(255,255,255,.2)!important;
+  border-top:1px solid rgba(255,255,255,.34)!important;
   color:#fff;
-  box-shadow:0 18px 46px -18px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.14);
+  -webkit-backdrop-filter:blur(20px)!important;
+  backdrop-filter:blur(20px)!important;
+  box-shadow:0 18px 46px -18px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.18)!important;
 }
 :root[data-theme="secure"] .glass-panel-tinted{
-  background:rgba(7,11,18,.86);
-  border-color:rgba(255,255,255,.14);
+  background:rgba(7,11,18,.92)!important;
+  border-color:rgba(255,255,255,.2)!important;
 }
 :root[data-theme="safety"] .glass-panel-tinted{
-  background:rgba(10,37,64,.86);
-  border-color:rgba(255,255,255,.18);
+  background:rgba(10,37,64,.9)!important;
+  border-color:rgba(255,255,255,.24)!important;
 }
 @media (hover:hover) and (prefers-reduced-motion:no-preference){
   .glass-panel.glass-panel-tinted:hover{
-    box-shadow:0 22px 48px -16px rgba(0,0,0,.48),inset 0 1px 0 rgba(255,255,255,.2);
+    transform:translateY(-4px) scale(1.01);
+    box-shadow:0 22px 48px -16px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.24)!important;
   }
 }
 .glass-inset{
-  background:rgba(255,255,255,.08);
-  -webkit-backdrop-filter:blur(12px);
-  backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,.14);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
+  background:rgba(255,255,255,.1)!important;
+  -webkit-backdrop-filter:blur(14px)!important;
+  backdrop-filter:blur(14px)!important;
+  border:1px solid rgba(255,255,255,.2)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18)!important;
 }
 :root[data-theme="secure"] .glass-inset{
-  background:rgba(255,255,255,.055);
-  border-color:rgba(255,255,255,.12);
+  background:rgba(255,255,255,.075)!important;
+  border-color:rgba(255,255,255,.16)!important;
 }
 :root[data-theme="safety"] .glass-inset{
-  background:rgba(255,255,255,.09);
-  border-color:rgba(255,255,255,.16);
+  background:rgba(255,255,255,.12)!important;
+  border-color:rgba(255,255,255,.22)!important;
 }
+/* Keep the dashboard section heading and copy bright on its navy surface. */
+.safemobile-page [data-i18n="safeThreatTitle"]{color:#fff!important}
+.safemobile-page [data-i18n="safeThreatEyebrow"]{color:#67e8f9!important}
+.safemobile-page [data-i18n="safeThreatDesc"]{color:#cbd5e1!important}
 /* Soft radial light behind the main page heroes; particle canvases remain above it. */
 .hero-glow{
   position:absolute;
