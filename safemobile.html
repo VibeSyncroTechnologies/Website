@@ -108,27 +108,67 @@
 </div></div></nav>
 </header><main id="main-content">
 <section class="safemobile-hero relative isolate overflow-hidden bg-gradient-to-br from-cyan-50 via-white to-blue-50">
+  <canvas class="particle-canvas absolute inset-0 w-full h-full pointer-events-none z-0" aria-hidden="true"></canvas>
   <div class="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
     <div class="grid items-center gap-12 lg:grid-cols-[1.05fr_.95fr]">
-      <div>
-        <span class="safemobile-hero-badge inline-flex rounded-full border border-cyan-200 bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-cyan-800"><span data-i18n="safeEyebrow">Active development · Pre-release validation</span></span>
-        <h1 class="mt-6 font-heading text-4xl font-extrabold leading-tight text-brandNavy sm:text-5xl lg:text-6xl"><span data-i18n="safeTitle">Cybersecurity that stays on your device.</span></h1>
-        <p class="mt-6 max-w-2xl text-lg font-semibold leading-8 text-textMuted" data-i18n="safeSubtitle">On-device Malware Scanning. Ad-supported Free Tier. No AdMob Ads with Pro.</p>
-        <p class="mt-4 max-w-2xl text-sm leading-7 text-textMuted"><span data-i18n="safeTags">Android 8.0+ · Kotlin · Jetpack Compose · Privacy-first security</span></p>
+      <div class="relative z-10">
+        <span class="safemobile-hero-badge inline-flex rounded-full border border-cyan-200 bg-white px-4 py-2 text-xs font-bold uppercase tracking-wider text-cyan-800">
+          <span data-i18n="safeEyebrow">Active development · Pre-release validation</span>
+        </span>
+        <h1 class="mt-6 font-heading text-4xl font-extrabold leading-tight text-brandNavy sm:text-5xl lg:text-6xl">
+          <span data-i18n="safeTitle">Cybersecurity that stays on your device.</span>
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg font-semibold leading-8 text-textMuted" data-i18n="safeSubtitle">
+          On-device Malware Scanning. Ad-supported Free Tier. No AdMob Ads with Pro.
+        </p>
+        <p class="mt-4 max-w-2xl text-sm leading-7 text-textMuted">
+          <span data-i18n="safeTags">Android 8.0+ · Kotlin · Jetpack Compose · Privacy-first security</span>
+        </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="https://github.com/navyask911/VibeSync-SafeMobile-Antivirus/releases/tag/safemobile-v1.0.18-code20261111-run12" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-12 items-center gap-2 rounded-lg bg-primaryRed px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-red-700"><span data-i18n="safeReleaseCta">View signed v1.0.18 build</span> <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-          <a href="https://github.com/navyask911/VibeSync-SafeMobile-Antivirus" target="_blank" rel="noopener noreferrer" class="safemobile-secondary-button inline-flex min-h-12 items-center gap-2 rounded-lg border border-brandNavy/20 bg-white px-6 py-3 font-semibold text-brandNavy transition hover:bg-slate-50"><span data-i18n="safeSourceCta">Source code &amp; CI</span> <i class="fab fa-github" aria-hidden="true"></i></a>
+          <a href="https://github.com/navyask911/VibeSync-SafeMobile-Antivirus/releases/tag/safemobile-v1.0.18-code20261111-run12"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex min-h-12 items-center gap-2 rounded-lg bg-primaryRed px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-red-700">
+            <span data-i18n="safeReleaseCta">View signed v1.0.18 build</span>
+            <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/navyask911/VibeSync-SafeMobile-Antivirus"
+             target="_blank" rel="noopener noreferrer"
+             class="safemobile-secondary-button inline-flex min-h-12 items-center gap-2 rounded-lg border border-brandNavy/20 bg-white px-6 py-3 font-semibold text-brandNavy transition hover:bg-slate-50">
+            <span data-i18n="safeSourceCta">Source code &amp; CI</span>
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
         </div>
-        <p class="mt-5 max-w-2xl text-sm leading-6 text-textMuted" data-i18n="safeReleaseNote">A signed v1.0.18 Android App Bundle is published as a release artifact and prepared for Play Console submission. This does not confirm public Google Play availability.</p>
+        <p class="mt-5 max-w-2xl text-sm leading-6 text-textMuted" data-i18n="safeReleaseNote">
+          A signed v1.0.18 Android App Bundle is published as a release artifact and prepared for Play Console submission. This does not confirm public Google Play availability.
+        </p>
       </div>
-      <aside class="rounded-3xl border border-slate-200 bg-white p-7 shadow-xl sm:p-9" aria-label="SafeMobile engineering snapshot">
-        <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-[1.7rem] bg-gradient-to-br from-brandNavy to-cyan-700 text-white shadow-lg"><i class="fas fa-shield-halved text-4xl" aria-hidden="true"></i></div>
-        <h2 class="mt-6 text-center font-heading text-2xl font-bold text-brandNavy"><span data-i18n="safeHeroPanelTitle">Engineering snapshot</span></h2>
+
+      <aside class="relative z-10 rounded-3xl border border-slate-200 bg-white p-7 shadow-xl sm:p-9"
+             aria-label="SafeMobile engineering snapshot"
+             data-i18n-attr="aria-label:safeHeroPanelAria">
+        <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-[1.7rem] bg-gradient-to-br from-brandNavy to-cyan-700 text-white shadow-lg">
+          <i class="fas fa-shield-halved text-4xl" aria-hidden="true"></i>
+        </div>
+        <h2 class="mt-6 text-center font-heading text-2xl font-bold text-brandNavy">
+          <span data-i18n="safeHeroPanelTitle">Engineering snapshot</span>
+        </h2>
         <dl class="mt-6 space-y-4">
-          <div class="flex items-start justify-between gap-4 border-b border-slate-100 pb-3"><dt class="text-sm text-textMuted" data-i18n="safeHeroPlatformLabel">Platform</dt><dd class="text-right text-sm font-bold text-brandNavy" data-i18n="safeHeroPlatformValue">Android 8.0+ (API 26)</dd></div>
-          <div class="flex items-start justify-between gap-4 border-b border-slate-100 pb-3"><dt class="text-sm text-textMuted" data-i18n="safeHeroStackLabel">Application stack</dt><dd class="text-right text-sm font-bold text-brandNavy" data-i18n="safeHeroStackValue">Kotlin · Jetpack Compose</dd></div>
-          <div class="flex items-start justify-between gap-4 border-b border-slate-100 pb-3"><dt class="text-sm text-textMuted" data-i18n="safeHeroDetectionLabel">Detection path</dt><dd class="max-w-[60%] text-right text-sm font-bold text-brandNavy" data-i18n="safeHeroDetectionValue">Local SHA-256 + bounded DEX rules</dd></div>
-          <div class="flex items-start justify-between gap-4"><dt class="text-sm text-textMuted" data-i18n="safeHeroMlLabel">ML classification</dt><dd class="text-right text-sm font-bold text-amber-700" data-i18n="safeHeroMlValue">Research only · not validated</dd></div>
+          <div class="flex items-start justify-between gap-4 border-b border-slate-100 pb-3">
+            <dt class="text-sm text-textMuted" data-i18n="safeHeroPlatformLabel">Platform</dt>
+            <dd class="text-right text-sm font-bold text-brandNavy" data-i18n="safeHeroPlatformValue">Android 8.0+ (API 26)</dd>
+          </div>
+          <div class="flex items-start justify-between gap-4 border-b border-slate-100 pb-3">
+            <dt class="text-sm text-textMuted" data-i18n="safeHeroStackLabel">Application stack</dt>
+            <dd class="text-right text-sm font-bold text-brandNavy" data-i18n="safeHeroStackValue">Kotlin · Jetpack Compose</dd>
+          </div>
+          <div class="flex items-start justify-between gap-4 border-b border-slate-100 pb-3">
+            <dt class="text-sm text-textMuted" data-i18n="safeHeroDetectionLabel">Detection path</dt>
+            <dd class="max-w-[60%] text-right text-sm font-bold text-brandNavy" data-i18n="safeHeroDetectionValue">Local SHA-256 + bounded DEX rules</dd>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <dt class="text-sm text-textMuted" data-i18n="safeHeroMlLabel">ML classification</dt>
+            <dd class="text-right text-sm font-bold text-amber-700" data-i18n="safeHeroMlValue">Research only · not validated</dd>
+          </div>
         </dl>
       </aside>
     </div>
@@ -141,51 +181,38 @@
     <h2 class="mt-3 font-heading text-3xl font-bold text-brandNavy sm:text-4xl" data-i18n="safeFeaturesTitle">Core security features</h2>
     <p class="mt-4 leading-8 text-textMuted" data-i18n="safeFeaturesDesc">A local-first security design with clear capability boundaries. Detection coverage is limited and remains under validation.</p>
   </div>
-  <div class="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <i class="fas fa-fingerprint text-2xl text-primaryRed" aria-hidden="true"></i>
-      <h3 class="mt-4 font-heading text-xl font-bold text-brandNavy" data-i18n="safeFeature1Title">Multi-Engine Inspection</h3>
-      <p class="mt-3 leading-7 text-textMuted" data-i18n="safeFeature1Desc">Local SHA-256 matching (the bundled offline definition currently contains only the harmless EICAR test marker) plus static DEX inspection through a bounded Kotlin YARA-compatible rule subset. The five bundled rules are limited and their matches are advisory; this is not full YARA.</p>
+
+  <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+      <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-primaryRed">
+        <i class="fas fa-fingerprint text-2xl" aria-hidden="true"></i>
+      </div>
+      <h3 class="mt-5 font-heading text-xl font-bold text-brandNavy" data-i18n="safeCardMultiTitle">Multi-Engine</h3>
+      <p class="mt-3 leading-7 text-textMuted" data-i18n="safeCardMultiDesc">Local SHA-256 checks and bounded DEX inspection through five Kotlin YARA-compatible rules. The bundled offline hash is currently EICAR-only; rule matches are advisory, not full YARA detection.</p>
     </article>
-    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <i class="fas fa-bell text-2xl text-primaryRed" aria-hidden="true"></i>
-      <h3 class="mt-4 font-heading text-xl font-bold text-brandNavy" data-i18n="safeFeature2Title">Incident Response</h3>
-      <p class="mt-3 leading-7 text-textMuted" data-i18n="safeFeature2Desc">A five-second alarm-stream siren, security notification and user-confirmed Android uninstall flow. Audio and notification delivery remain subject to Android permissions, Do Not Disturb and OEM background policies.</p>
+
+    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+      <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-primaryRed">
+        <i class="fas fa-bell text-2xl" aria-hidden="true"></i>
+      </div>
+      <h3 class="mt-5 font-heading text-xl font-bold text-brandNavy" data-i18n="safeCardIncidentTitle">Incident Response</h3>
+      <p class="mt-3 leading-7 text-textMuted" data-i18n="safeCardIncidentDesc">A five-second alarm-stream siren, security notification and user-confirmed uninstall flow. Android permissions, Do Not Disturb and OEM background rules can affect alert delivery.</p>
     </article>
-    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <i class="fas fa-mobile-screen-button text-2xl text-primaryRed" aria-hidden="true"></i>
-      <h3 class="mt-4 font-heading text-xl font-bold text-brandNavy" data-i18n="safeFeature3Title">Device Posture Audit</h3>
-      <p class="mt-3 leading-7 text-textMuted" data-i18n="safeFeature3Desc">Inspects Accessibility services, Device Administrator apps, notification listeners and overlay permissions. These are device-risk signals, not proof that an app is malicious.</p>
+
+    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+      <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-primaryRed">
+        <i class="fas fa-shield-halved text-2xl" aria-hidden="true"></i>
+      </div>
+      <h3 class="mt-5 font-heading text-xl font-bold text-brandNavy" data-i18n="safeCardPrivacyTitle">Privacy-First</h3>
+      <p class="mt-3 leading-7 text-textMuted" data-i18n="safeCardPrivacyDesc">Core scans and history stay on-device. Optional user-approved threat contribution sends a SHA-256 indicator only; private quarantine is encrypted and user-controlled.</p>
     </article>
-    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <i class="fas fa-globe text-2xl text-primaryRed" aria-hidden="true"></i>
-      <h3 class="mt-4 font-heading text-xl font-bold text-brandNavy" data-i18n="safeFeature4Title">Global &amp; Accessible</h3>
-      <p class="mt-3 leading-7 text-textMuted" data-i18n="safeFeature4Desc">51 bundled locale resource folders, Light, Midnight and OLED themes, and screen-reader-friendly Compose accessibility semantics.</p>
-    </article>
-    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <i class="fas fa-network-wired text-2xl text-primaryRed" aria-hidden="true"></i>
-      <h3 class="mt-4 font-heading text-xl font-bold text-brandNavy" data-i18n="safeFeature5Title">Global Threat Intelligence</h3>
-      <p class="mt-3 leading-7 text-textMuted" data-i18n="safeFeature5Desc">OFF by default. Optional, user-approved contribution submits a SHA-256 threat indicator; the local source locator is excluded from the HTTP payload. APK bytes and scan history are not uploaded.</p>
-    </article>
-    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <i class="fas fa-robot text-2xl text-primaryRed" aria-hidden="true"></i>
-      <h3 class="mt-4 font-heading text-xl font-bold text-brandNavy" data-i18n="safeFeature6Title">Research MLOps</h3>
-      <p class="mt-3 leading-7 text-textMuted" data-i18n="safeFeature6Desc">GitHub Actions ingests pre-extracted 215-feature research rows dispatched by the app, validates schema and holdout metrics, and promotes only eligible candidates. Scheduled validation does not automatically publish a new model.</p>
-    </article>
-    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <i class="fas fa-rectangle-ad text-2xl text-primaryRed" aria-hidden="true"></i>
-      <h3 class="mt-4 font-heading text-xl font-bold text-brandNavy" data-i18n="safeFeature7Title">Ad-supported Free Tier</h3>
-      <p class="mt-3 leading-7 text-textMuted" data-i18n="safeFeature7Desc">The Free tier uses consent-gated Google AdMob advertising, including banners. An active local Pro entitlement blocks AdMob initialization and ad requests.</p>
-    </article>
-    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <i class="fas fa-gem text-2xl text-primaryRed" aria-hidden="true"></i>
-      <h3 class="mt-4 font-heading text-xl font-bold text-brandNavy" data-i18n="safeFeature8Title">SafeMobile Pro</h3>
-      <p class="mt-3 leading-7 text-textMuted" data-i18n="safeFeature8Desc">₹299 annual India list price, subject to the active Google Play offer. Pro access is cached locally in an encrypted, device-bound 365-day entitlement with a one-day grace buffer. No developer cloud account or cloud backup is provided.</p>
-    </article>
-    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <i class="fas fa-box-archive text-2xl text-primaryRed" aria-hidden="true"></i>
-      <h3 class="mt-4 font-heading text-xl font-bold text-brandNavy" data-i18n="safeFeature9Title">Private Quarantine</h3>
-      <p class="mt-3 leading-7 text-textMuted" data-i18n="safeFeature9Desc">App-private encrypted quarantine uses Tink Streaming AEAD with an Android Keystore-wrapped keyset, guided restore and user-controlled removal. The original file is not silently deleted.</p>
+
+    <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+      <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-primaryRed">
+        <i class="fas fa-gem text-2xl" aria-hidden="true"></i>
+      </div>
+      <h3 class="mt-5 font-heading text-xl font-bold text-brandNavy" data-i18n="safeCardProTitle">Pro Tier</h3>
+      <p class="mt-3 leading-7 text-textMuted" data-i18n="safeCardProDesc">₹299 annual India list price, subject to the active Google Play offer. Active Pro entitlement excludes AdMob; access is cached locally in an encrypted device-bound entitlement.</p>
     </article>
   </div>
 </section>
@@ -197,6 +224,7 @@
       <h2 class="mt-3 font-heading text-3xl font-bold text-brandNavy sm:text-4xl" data-i18n="safeArchitectureTitle">Engineering Architecture</h2>
       <p class="mt-4 leading-8 text-textMuted" data-i18n="safeArchitectureDesc">The implementation separates local detection, signed intelligence, experimental ML and private persistence. Each layer has explicit limits.</p>
     </div>
+
     <div class="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
       <div class="overflow-x-auto">
         <table class="w-full min-w-[680px] border-collapse text-left">
@@ -227,6 +255,7 @@
         </table>
       </div>
     </div>
+
     <p class="mt-4 text-xs leading-6 text-textMuted" data-i18n="safeArchitectureNote">The Android app has no kernel privilege. Static inspection does not execute APK code and cannot observe every runtime, packed, native or dynamically loaded behaviour.</p>
   </div>
 </section>
@@ -238,34 +267,53 @@
       <h2 class="mt-3 font-heading text-3xl font-bold sm:text-4xl" data-i18n="safeBenchmarkTitle">Security Validation &amp; Annual Benchmarking</h2>
       <p class="mt-5 leading-8 text-slate-200" data-i18n="safeBenchmarkDesc">Industry Benchmark #11 — verified 31 October 2026. The active scanner did not return confirmed detections for this particular malicious-source cohort. SUSPICIOUS is triage, not a confirmed threat.</p>
     </div>
+
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-      <article class="rounded-2xl border border-white/15 bg-white/10 p-5"><p class="text-xs font-semibold uppercase tracking-wider text-slate-300" data-i18n="safeBenchmarkMetric1Label">Scanned APKs</p><p class="mt-3 text-3xl font-extrabold tabular-nums">200/200</p></article>
-      <article class="rounded-2xl border border-white/15 bg-white/10 p-5"><p class="text-xs font-semibold uppercase tracking-wider text-slate-300" data-i18n="safeBenchmarkMetric2Label">Emulator shard health</p><p class="mt-3 text-3xl font-extrabold tabular-nums" data-i18n="safeBenchmarkMetric2Value">10/10 succeeded</p></article>
-      <article class="rounded-2xl border border-white/15 bg-white/10 p-5"><p class="text-xs font-semibold uppercase tracking-wider text-slate-300" data-i18n="safeBenchmarkMetric3Label">Confirmed-detection TPR</p><p class="mt-3 text-3xl font-extrabold tabular-nums">0.0%</p></article>
-      <article class="rounded-2xl border border-white/15 bg-white/10 p-5"><p class="text-xs font-semibold uppercase tracking-wider text-slate-300" data-i18n="safeBenchmarkMetric4Label">Confirmed-detection FPR</p><p class="mt-3 text-3xl font-extrabold tabular-nums">0.0%</p></article>
-      <article class="rounded-2xl border border-white/15 bg-white/10 p-5 sm:col-span-2 lg:col-span-1"><p class="text-xs font-semibold uppercase tracking-wider text-slate-300" data-i18n="safeBenchmarkMetric5Label">Average scan latency</p><p class="mt-3 text-2xl font-extrabold tabular-nums" data-i18n="safeBenchmarkMetric5Value">4,109.48 ms / APK</p></article>
+      <article class="rounded-2xl border border-white/15 bg-white/10 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wider text-slate-300" data-i18n="safeBenchmarkMetric1Label">Scanned APKs</p>
+        <p class="mt-3 text-3xl font-extrabold tabular-nums" data-i18n="safeBenchmarkMetric1Value">200/200</p>
+      </article>
+      <article class="rounded-2xl border border-white/15 bg-white/10 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wider text-slate-300" data-i18n="safeBenchmarkMetric2Label">Emulator shard health</p>
+        <p class="mt-3 text-3xl font-extrabold tabular-nums" data-i18n="safeBenchmarkMetric2Value">10/10 succeeded</p>
+      </article>
+      <article class="rounded-2xl border border-white/15 bg-white/10 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wider text-slate-300" data-i18n="safeBenchmarkMetric3Label">Confirmed-detection TPR</p>
+        <p class="mt-3 text-3xl font-extrabold tabular-nums" data-i18n="safeBenchmarkMetric3Value">0.0%</p>
+      </article>
+      <article class="rounded-2xl border border-white/15 bg-white/10 p-5">
+        <p class="text-xs font-semibold uppercase tracking-wider text-slate-300" data-i18n="safeBenchmarkMetric4Label">Confirmed-detection FPR</p>
+        <p class="mt-3 text-3xl font-extrabold tabular-nums" data-i18n="safeBenchmarkMetric4Value">0.0%</p>
+      </article>
+      <article class="rounded-2xl border border-white/15 bg-white/10 p-5 sm:col-span-2 lg:col-span-1">
+        <p class="text-xs font-semibold uppercase tracking-wider text-slate-300" data-i18n="safeBenchmarkMetric5Label">Average scan latency</p>
+        <p class="mt-3 text-2xl font-extrabold tabular-nums" data-i18n="safeBenchmarkMetric5Value">4,109.48 ms / APK</p>
+      </article>
     </div>
+
     <p class="mx-auto mt-8 max-w-4xl text-sm leading-7 text-slate-300" data-i18n="safeBenchmarkFootnote">The cohort contained 100 source-labelled malicious APKs and 100 benign APKs. Source labels are not independently adjudicated ground truth, and the research ML candidate scored zero samples in this run. These corpus- and build-specific measurements are not certification or a guarantee of protection.</p>
+
     <div class="mt-7 text-center">
-      <a href="https://github.com/navyask911/VibeSync-SafeMobile-Antivirus/blob/main/docs/BENCHMARK_REPORT.md" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-semibold text-white underline decoration-cyan-300 underline-offset-4 hover:text-cyan-100"><span data-i18n="safeBenchmarkLink">Read the verified benchmark report</span> <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+      <a href="https://github.com/navyask911/VibeSync-SafeMobile-Antivirus/blob/main/docs/BENCHMARK_REPORT.md"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-2 font-semibold text-white underline decoration-cyan-300 underline-offset-4 hover:text-cyan-100">
+        <span data-i18n="safeBenchmarkLink">Read the verified benchmark report</span>
+        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+      </a>
     </div>
   </div>
 </section>
 
-<section class="bg-bgGray py-16">
-  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-    <form id="notify-form" class="notify-form rounded-2xl border border-slate-200 bg-white p-8 shadow-md" action="https://formspree.io/f/xgaalrbj" method="POST">
-      <p class="text-xs font-bold uppercase tracking-[.18em] text-primaryRed" data-i18n="safeNotifyEyebrow">Follow development</p>
-      <h2 class="mt-3 font-heading text-3xl font-bold text-brandNavy" data-i18n="safeNotifyTitle">Get SafeMobile progress updates</h2>
-      <p class="mt-3 leading-7 text-textMuted" data-i18n="safeNotifyDescription">Leave your email address to hear about testing milestones and public release availability when confirmed.</p>
-      <input type="hidden" name="_subject" value="SafeMobile development updates">
-      <div data-fs-success class="hidden p-4 mb-4 text-sm text-green-700 bg-green-50 rounded-lg" role="status" aria-live="polite"></div>
-      <div data-fs-error class="hidden p-4 mb-4 text-sm text-red-700 bg-red-50 rounded-lg" role="alert"></div>
-      <label for="safeNotifyEmail" class="mb-2 mt-6 block text-sm font-semibold text-brandNavy" data-i18n="safeNotifyEmailLabel">Email address</label>
-      <input id="safeNotifyEmail" class="form-control" type="email" name="email" data-fs-field required autocomplete="email" placeholder="Your email address" data-i18n-attr="placeholder:safeNotifyEmailPlaceholder">
-      <span data-fs-error="email" class="mt-1 hidden text-xs text-red-500"></span>
-      <button type="submit" data-fs-submit-btn class="mt-5 min-h-12 w-full rounded-lg bg-primaryRed px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-red-700" data-i18n="safeNotifyButton">Notify me</button>
-    </form>
+<section class="bg-bgGray py-14">
+  <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+    <h2 class="font-heading text-2xl font-bold text-brandNavy sm:text-3xl" data-i18n="safeGithubTitle">Explore the SafeMobile engineering work</h2>
+    <p class="mx-auto mt-3 max-w-2xl leading-7 text-textMuted" data-i18n="safeGithubDesc">Review the source code, release artifacts, implementation notes and validation reports in the public repository.</p>
+    <a href="https://github.com/navyask911/VibeSync-SafeMobile-Antivirus"
+       target="_blank" rel="noopener noreferrer"
+       class="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-primaryRed px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-red-700">
+      <span data-i18n="safeGithubButton">View on GitHub</span>
+      <i class="fab fa-github" aria-hidden="true"></i>
+    </a>
   </div>
 </section>
 </main><footer class="bg-brandNavy py-12 text-white"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -293,18 +341,4 @@
     <span class="text-xs font-normal text-slate-400">via <a href="https://hits.sh/" target="_blank" rel="noopener noreferrer" class="underline underline-offset-2 hover:text-white">Hits.sh</a></span>
   </div>
 </div>
-</div></footer><script src="js/i18n.js" defer></script><script src="js/site.js" defer></script>
-<script>
-  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-
-  // Initialize Contact Form
-  if (document.querySelector('#contact-form')) {
-    formspree('initForm', { formElement: '#contact-form', formId: 'xgaalrbj' });
-  }
-
-  // Initialize Notify Form (SafeMobile updates)
-  if (document.querySelector('#notify-form')) {
-    formspree('initForm', { formElement: '#notify-form', formId: 'xgaalrbj' });
-  }
-</script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script></body></html>
+</div></footer><script src="js/i18n.js" defer></script><script src="js/site.js" defer></script></body></html>
